@@ -2,7 +2,10 @@
   "hello": "Halo Dunia",
   "text": {
     "login": "Masuk",
-    "forgotPassword": "Lupa Password?"
+    "forgotPassword": "Lupa Password?",
+    "sendConfirmation": "Kirim Konfirmasi",
+    "haveAccount": "Sudah punya akun?",
+    "loginHere": "Masuk di Sini"
   },
   "page": {
     "home": {
@@ -10,14 +13,22 @@
       "subInfo": "Silakan masuk menggunakan akun Anda.",
       "presentBy": "Present by:",
       "supportBy": "Support by:"
+    },
+    "forgotPass": {
+      "title": "Lupa Password"
     }
   },
   "label": {
     "codeDistributor": "Kode Distributor",
     "username": "Username",
-    "password": "Password"
+    "password": "Password",
+    "email": "Email"
   },
   "placeholder": {
     "input": "Masukkan {label}"
+  },
+  "validation": {
+    "requiredFreeText": "{label} perlu diisi",
+    "requiredSelect": "{label} perlu dipilih"
   }
 }

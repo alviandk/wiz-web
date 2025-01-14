@@ -1,9 +1,17 @@
 <script lang="ts" setup>
 import Divider from 'primevue/divider'
 
-function onSubmitLogin() {
-  alert('login') // eslint-disable-line
+type Props = {
+  errors: {
+    codeDistributor?: string
+    username?: string
+    password?: string
+  }
+  isDisable: boolean
+  isLoadingLogin: boolean
+  onSubmitLogin: () => void
 }
+const props = defineProps<Props>()
 </script>
 
 <template>
@@ -14,7 +22,7 @@ function onSubmitLogin() {
     <div class="p-6">
       <p class="text-base text-[#333333] mb-1 font-semibold">{{ $t('page.home.welcome') }}</p>
       <p class="text-sm text-[#68788D] font-normal mb-6">{{ $t('page.home.subInfo') }}</p>
-      <form class="flex flex-col gap-4" @submit.prevent="onSubmitLogin">
+      <form class="flex flex-col gap-4" @submit.prevent="props.onSubmitLogin">
         <ElementsInputText
           id="codeDistributor"
           :label="$t('label.codeDistributor')"
@@ -30,9 +38,12 @@ function onSubmitLogin() {
           :label="$t('label.password')"
           :placeholder="$t('placeholder.input', { label: $t('label.password') })"
         />
-        <ElementsButton type="submit" class="bg-[#FF234B] text-sm font-semibold">
-          <!-- :disabled="props.isDisable || props.isLoadingLogin"
-        :is-loading="props.isLoadingLogin" -->
+        <ElementsButton
+          type="submit"
+          class="bg-[#FF234B] text-sm font-semibold mt-1.5"
+          :disabled="props.isDisable || props.isLoadingLogin"
+          :is-loading="props.isLoadingLogin"
+        >
           <p class="w-full font-semibold">{{ $t('text.login') }}</p>
         </ElementsButton>
         <div class="flex justify-center">

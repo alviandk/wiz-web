@@ -1,7 +1,16 @@
+<script setup lang="ts">
+import { useLogin } from '~/composable/auth'
+
+const { errors, isDisable, isLoadingLogin, onSubmitLogin } = useLogin()
+</script>
+
 <template>
-  <div class="min-h-screen flex min-w-[950px] overflow-x-auto overflow-y-hidden">
-    <div class="flex-1 px-[85px] m-auto">
-      <SignInForm />
-    </div>
+  <div>
+    <SignInForm
+      :errors="errors"
+      :on-submit-login="onSubmitLogin"
+      :is-disable="isDisable"
+      :is-loading-login="isLoadingLogin"
+    />
   </div>
 </template>
