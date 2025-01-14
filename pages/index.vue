@@ -1,12 +1,9 @@
-<script setup lang="ts">
-const locale = useLocaleData().currentLocale()
-const token = useTokenData().currentToken()
+<script lang="ts" setup>
+definePageMeta({ middleware: ['login'] })
 </script>
+
 <template>
-  <div>
-    <ClientOnly>
-      <p>I18n: {{ $t('hello') }} ({{ locale }})</p>
-      <p>Token: {{ token }}</p>
-    </ClientOnly>
-  </div>
+  <NuxtLayout name="auth">
+    <SignIn />
+  </NuxtLayout>
 </template>

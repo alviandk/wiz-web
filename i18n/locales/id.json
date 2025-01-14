@@ -1,3 +1,23 @@
 {
-  "hello": "Halo Dunia"
+  "hello": "Halo Dunia",
+  "text": {
+    "login": "Masuk",
+    "forgotPassword": "Lupa Password?"
+  },
+  "page": {
+    "home": {
+      "welcome": "Selamat datang Distributor!",
+      "subInfo": "Silakan masuk menggunakan akun Anda.",
+      "presentBy": "Present by:",
+      "supportBy": "Support by:"
+    }
+  },
+  "label": {
+    "codeDistributor": "Kode Distributor",
+    "username": "Username",
+    "password": "Password"
+  },
+  "placeholder": {
+    "input": "Masukkan {label}"
+  }
 }

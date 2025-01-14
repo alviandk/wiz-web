@@ -17,6 +17,6 @@ export default defineNuxtConfig({
     langDir: 'i18n/locales',
   },
   webfont: {
-    families: ['Poppins'],
+    families: ['Manrope'],
   },
 })

@@ -28,9 +28,12 @@ export default defineNuxtModule<WebFontOptions>({
 
     // https://github.com/nuxt-community/google-fonts-module
     installModule('@nuxtjs/google-fonts', {
-      families: Array.isArray(fontFamilies)
-        ? Object.fromEntries(fontFamilies.map((family) => [family, true]))
-        : fontFamilies,
+      families: {
+        Manrope: [400, 500, 600, 700, 800],
+      },
+      // families: Array.isArray(fontFamilies)
+      //   ? Object.fromEntries(fontFamilies.map((family) => [family, true]))
+      //   : fontFamilies,
     } as NuxtGoogleFontOptions)
 
     // https://github.com/nuxt-modules/fontaine

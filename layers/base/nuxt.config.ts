@@ -106,4 +106,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: ['primevue/resources/themes/lara-light-indigo/theme.css', '~/assets/css/main.css', 'primeicons/primeicons.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 })
