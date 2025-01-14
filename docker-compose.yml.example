@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    ports:
+      - '8000:3000'
+    networks:
+      - default
+    environment:
+      ## DEFINE process.env ACCESSIBLE ENV HERE:
+      ## DEFINE NUXT MANAGED PRIVATE ENV HERE:
+      NUXT_APP_BASE_URL: /
+      NUXT_DEBUG_CONTEXTS:
+      NUXT_ENDPOINT_API: https://dummyjson.com
+
+      ## DEFINE NUXT MANAGED PUBLIC ENV HERE:
+      NUXT_PUBLIC_TOKEN:
+
+networks:
+  default:
+    driver: bridge
