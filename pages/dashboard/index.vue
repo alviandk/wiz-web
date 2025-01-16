@@ -6,9 +6,7 @@ useServerSeoMeta({ title: t('text.dashboard') })
 </script>
 
 <template>
-  <div class="min-w-[950px] overflow-x-auto">
-    <NuxtLayout name="sidebar">
-      <Dashboard />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout name="sidebar">
+    <Dashboard />
+  </NuxtLayout>
 </template>

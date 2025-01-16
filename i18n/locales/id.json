@@ -10,6 +10,11 @@
     "success": "Berhasil!",
     "dashboard": "Dashboard"
   },
+  "menu": {
+    "dashboard": "Dashboard",
+    "manageDashboard": "Kelola Dashboard",
+    "orderTransaction": "Pesanan & Transaksi"
+  },
   "page": {
     "home": {
       "welcome": "Selamat datang Distributor!",

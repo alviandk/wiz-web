@@ -1,7 +1,37 @@
 <script setup>
+import Accordion from 'primevue/accordion'
+import AccordionTab from 'primevue/accordiontab'
 import { useSidebar } from '~/composable/layout'
 
+const { t } = useI18n()
+
 const { visibleMenu, onChangeVisible } = useSidebar()
+
+const menus = [
+  {
+    id: 1,
+    name: t('menu.dashboard'),
+    icon: 'icon-dashboard.svg',
+    subItems: [
+      {
+        id: 1,
+        name: t('menu.dashboard'),
+        link: '/dashboard',
+      },
+      {
+        id: 1,
+        name: t('menu.manageDashboard'),
+        link: '/dashboard/manage',
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: t('menu.orderTransaction'),
+    link: '/order-transaction',
+    icon: 'icon-document.svg',
+  },
+]
 </script>
 
 <template>
@@ -20,8 +50,48 @@ const { visibleMenu, onChangeVisible } = useSidebar()
         </a>
       </div>
       <div class="layout-menu-container p-6">
-        {{ visibleMenu }} <br />
-        menu list
+        <div class="flex flex-col gap-1">
+          <div v-for="item in menus" :key="item.id">
+            <Accordion
+              :pt="{
+                root: { class: 'm-0 min-h-[45px]' },
+              }"
+            >
+              <AccordionTab
+                :pt="{
+                  header: { class: 'bg-transparent border-none' },
+                  headerAction: {
+                    class: 'bg-transparent border-none flex-row-reverse focus:shadow-none h-[45px] px-0',
+                  },
+                  headerIcon: { class: 'flex-row-reverse' },
+                  content: {
+                    class: '!bg-transparent border-none py-0',
+                  },
+                }"
+              >
+                <template #header>
+                  <div
+                    class="text-left w-full text-sm font-semibold text-[#68788D] items-center flex gap-3 justify-start"
+                  >
+                    <img :src="`/images/${item.icon}`" alt="icon plus" class="h-5 w-5" />
+                    <!-- <IconBlock class="h-5 w-5" /> -->
+                    <span>{{ item.name }}</span>
+                  </div>
+                </template>
+                <div
+                  v-for="child in item.subItems"
+                  :key="child.id"
+                  :to="child.link"
+                  :class="`p-3 w-full block relative text-sm font-semibold text-[#68788D] rounded-xl cursor-pointer hover:bg-[#F5F7F9] hover:text-[#FF234B]`"
+                  @click="navigateTo(child.link)"
+                >
+                  <!-- ${appsState.menuActive.value === child.link ? 'bg-[#1D634A]' : ''} -->
+                  {{ child.name }}
+                </div>
+              </AccordionTab>
+            </Accordion>
+          </div>
+        </div>
       </div>
     </div>
 
