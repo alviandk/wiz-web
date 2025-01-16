@@ -21,7 +21,7 @@ const props = defineProps<Props>()
           :label="$t('label.codeDistributor')"
           :placeholder="$t('placeholder.input', { label: $t('label.codeDistributor') })"
         />
-        <ElementsInputPassword
+        <ElementsInputText
           id="email"
           :label="$t('label.email')"
           :placeholder="$t('placeholder.input', { label: $t('label.email') })"

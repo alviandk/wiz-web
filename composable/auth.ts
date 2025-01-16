@@ -1,4 +1,6 @@
 import { object, string } from 'yup'
+// eslint-disable-next-line import/no-named-as-default
+import useToasts from './utilities'
 
 const keyLocalization = 'validation.requiredFreeText'
 const keyPassword = 'label.password'
@@ -38,6 +40,7 @@ export const useLogin = () => {
 
 export const useForgotPassword = () => {
   const { t } = useI18n()
+  const toast = useToasts()
 
   const isLoadingForgot = ref(false)
   const isDisable = ref(true)
@@ -60,6 +63,8 @@ export const useForgotPassword = () => {
 
   const onSubmitForgot = handleSubmit((form) => {
     console.log('form forgot password', form) // eslint-disable-line
+    toast.error({ message: 'Email yang Anda masukkan tidak terdaftar' })
+    toast.success({ message: 'Berhasil' })
   })
 
   return {

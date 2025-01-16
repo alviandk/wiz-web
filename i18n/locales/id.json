@@ -5,7 +5,9 @@
     "forgotPassword": "Lupa Password?",
     "sendConfirmation": "Kirim Konfirmasi",
     "haveAccount": "Sudah punya akun?",
-    "loginHere": "Masuk di Sini"
+    "loginHere": "Masuk di Sini",
+    "failed": "Ditemukan kesalahan",
+    "success": "Berhasil!"
   },
   "page": {
     "home": {
