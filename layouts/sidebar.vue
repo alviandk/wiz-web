@@ -1,10 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import Accordion from 'primevue/accordion'
 import AccordionTab from 'primevue/accordiontab'
 import { useSidebar } from '~/composable/layout'
 
-const { t } = useI18n()
+type Props = {
+  pageTitle?: string
+}
+const props = defineProps<Props>()
 
+const { t } = useI18n()
 const { visibleMenu, onChangeVisible } = useSidebar()
 
 const menus = [
@@ -14,19 +18,19 @@ const menus = [
     icon: 'icon-dashboard.svg',
     subItems: [
       {
-        id: 1,
+        id: 2,
         name: t('menu.dashboard'),
         link: '/dashboard',
       },
       {
-        id: 1,
+        id: 3,
         name: t('menu.manageDashboard'),
         link: '/dashboard/manage',
       },
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: t('menu.orderTransaction'),
     link: '/order-transaction',
     icon: 'icon-document.svg',
@@ -97,8 +101,8 @@ const menus = [
 
     <!-- Right Side -->
     <div :class="`layout-content-wrapper`">
-      <UITopbar :on-click="onChangeVisible" />
-      <div class="layout-content px-8 pt-5 pb-8 min-h-screen">
+      <UITopbar :on-click="onChangeVisible" :page-title="props.pageTitle" />
+      <div class="layout-content px-8 pt-5 pb-8 min-h-screen bg-white">
         <slot></slot>
       </div>
     </div>

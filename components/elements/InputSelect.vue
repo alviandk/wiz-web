@@ -1,5 +1,5 @@
 <template>
-  <div :class="`flex flex-col gap-2 w-full ${props.containerClass}`">
+  <div :class="`flex flex-col w-full ${props.containerClass}`">
     <label :for="props.id" :class="`font-bold text-sm text-[#353F45] ${props.classLabel}`">
       {{ props.label }} <span v-if="props.isRequired" class="text-red-500">*</span>
     </label>
@@ -11,14 +11,12 @@
         v-model="field.value.value"
         :pt="{
           root: {
-            class: `w-full border-[#CED2D9] border-[1px] ${props.errorMessage ? 'border-red-500' : ''} ${
-              props.rootClass
-            }`,
+            class: `w-full border-0 bg-[#F3F7FB] ${props.errorMessage ? 'border-red-500' : ''} ${props.rootClass}`,
           },
           input: { class: 'text-sm' },
           wrapper: { class: 'text-sm' },
           item: ({ context }) => ({
-            class: `hover:bg-[#E1F7F1] focus:bg-white ${context.selected ? 'bg-[#E1F7F1] text-[#353F45]' : ''} ${
+            class: `text-[#353F45] hover:text-[#FF234B] hover:bg-[#FDF0F1] focus:bg-white ${context.selected ? 'bg-[#FDF0F1] text-[#FF234B]' : ''} ${
               props.itemClass
             }`,
           }),

@@ -28,7 +28,7 @@ const props = defineProps<Props>()
         />
         <ElementsButton
           type="submit"
-          class="bg-[#FF234B] text-sm font-semibold mt-1.5"
+          class="text-sm font-semibold mt-1.5"
           :disabled="props.isDisable || props.isLoadingForgot"
           :is-loading="props.isLoadingForgot"
         >

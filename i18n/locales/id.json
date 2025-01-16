@@ -1,6 +1,7 @@
 {
   "hello": "Halo Dunia",
   "text": {
+    "back": "Kembali",
     "login": "Masuk",
     "forgotPassword": "Lupa Password?",
     "sendConfirmation": "Kirim Konfirmasi",
@@ -8,7 +9,13 @@
     "loginHere": "Masuk di Sini",
     "failed": "Ditemukan kesalahan",
     "success": "Berhasil!",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "detail": "Detail",
+    "add": "Tambah",
+    "addDashboard": "Tambah Dashboard",
+    "detailDashboard": "Detail Dashboard",
+    "searchData": "Cari Data",
+    "writeDescProduct": "Tulis Deskripsi Produk"
   },
   "menu": {
     "dashboard": "Dashboard",
@@ -30,10 +37,19 @@
     "codeDistributor": "Kode Distributor",
     "username": "Username",
     "password": "Password",
-    "email": "Email"
+    "email": "Email",
+    "border": "Border",
+    "title": "Judul",
+    "description": "Deskripsi",
+    "priority": "Prioritas",
+    "role": "Role",
+    "action": "Aksi",
+    "name": "Nama",
+    "key": "Key"
   },
   "placeholder": {
-    "input": "Masukkan {label}"
+    "input": "Masukkan {label}",
+    "select": "Pilih {label}"
   },
   "validation": {
     "requiredFreeText": "{label} perlu diisi",
