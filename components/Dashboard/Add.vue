@@ -59,11 +59,23 @@ const { onBack } = useSidebar()
           </div>
           <Divider type="dashed" />
           <div class="flex justify-end">
-            <ElementsButton class="!w-fit" @click="navigateTo('/dashboard/add/1')">
+            <ElementsButton class="!w-fit text-sm font-semibold" @click="navigateTo('/dashboard/add/1')">
               <i class="pi pi-plus mr-3"></i>
               {{ $t('text.add') }}
             </ElementsButton>
           </div>
+        </div>
+        <div class="flex gap-3 items-center justify-end mt-6">
+          <ElementsButton
+            class="!w-[120px] bg-transparent border border-[#FF234B] !text-[#FF234B] text-sm font-semibold"
+            @click="onBack"
+          >
+            {{ $t('text.cancel') }}
+          </ElementsButton>
+          <ElementsButton class="!w-[120px] text-sm font-semibold">
+            <i class="pi pi-plus mr-3"></i>
+            {{ $t('text.add') }}
+          </ElementsButton>
         </div>
       </form>
     </UICard>

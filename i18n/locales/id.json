@@ -1,6 +1,7 @@
 {
   "hello": "Halo Dunia",
   "text": {
+    "cancel": "Batal",
     "back": "Kembali",
     "login": "Masuk",
     "forgotPassword": "Lupa Password?",
@@ -12,10 +13,15 @@
     "dashboard": "Dashboard",
     "detail": "Detail",
     "add": "Tambah",
+    "save": "Simpan",
+    "delete": "Hapus",
     "addDashboard": "Tambah Dashboard",
     "detailDashboard": "Detail Dashboard",
+    "editDashboard": "Edit Dashboard",
     "searchData": "Cari Data",
-    "writeDescProduct": "Tulis Deskripsi Produk"
+    "writeDescProduct": "Tulis Deskripsi Produk",
+    "deleteDashboard": "Hapus data Dashboard?",
+    "deleteDashboardInformation": "Data yang akan Anda hapus Status Anggota?"
   },
   "menu": {
     "dashboard": "Dashboard",

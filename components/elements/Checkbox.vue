@@ -4,6 +4,7 @@ import Checkbox from 'primevue/checkbox'
 type Props = {
   id: string
   label?: string
+  disabled?: boolean
 }
 const props = defineProps<Props>()
 
@@ -23,6 +24,7 @@ const field = useField<number[] | boolean>(props.id)
           }
         },
       }"
+      :disabled="disabled"
     />
     <p>{{ props.label }}</p>
   </div>

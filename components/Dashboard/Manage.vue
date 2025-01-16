@@ -10,7 +10,7 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
         <ElementsInputText id="search" :placeholder="$t('text.searchData')" />
       </div>
       <div>
-        <ElementsButton @click="navigateTo('/dashboard/add/1')">
+        <ElementsButton class="text-sm font-semibold" @click="navigateTo('/dashboard/add/1')">
           <i class="pi pi-plus mr-3"></i>
           {{ $t('text.addDashboard') }}
         </ElementsButton>
@@ -18,7 +18,13 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
     </div>
     <UITable :value="manageDashboardDataTable">
       <template #default>
-        <Column field="title" :header="$t('label.title')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
+        <Column
+          field="title"
+          :header="$t('label.title')"
+          header-class="bg-[#F7F9FC]"
+          sortable
+          style="width: 20%; text-transform: capitalize"
+        >
           <template #sorticon>
             <IconSortable />
           </template>
@@ -28,18 +34,30 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
           :header="$t('label.description')"
           header-class="bg-[#F7F9FC]"
           sortable
-          style="width: 20%"
+          style="width: 20%; text-transform: capitalize"
         >
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="priority" :header="$t('label.priority')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
+        <Column
+          field="priority"
+          :header="$t('label.priority')"
+          header-class="bg-[#F7F9FC]"
+          sortable
+          style="width: 20%; text-transform: capitalize"
+        >
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="role" :header="$t('label.role')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
+        <Column
+          field="role"
+          :header="$t('label.role')"
+          header-class="bg-[#F7F9FC]"
+          sortable
+          style="width: 20%; text-transform: capitalize"
+        >
           <template #sorticon>
             <IconSortable />
           </template>
@@ -51,9 +69,12 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
           style="width: 20%; text-align: center"
         >
           <template #body>
-            <ElementsButton class="text-[10px] font-semibold !rounded-full !h-fit !w-fit py-0 px-5">{{
-              $t('text.detail')
-            }}</ElementsButton>
+            <ElementsButton
+              class="text-[10px] font-semibold !rounded-full !h-fit !w-fit py-0 px-5"
+              @click="navigateTo('/dashboard/edit/1')"
+            >
+              {{ $t('text.detail') }}
+            </ElementsButton>
           </template>
         </Column>
       </template>
