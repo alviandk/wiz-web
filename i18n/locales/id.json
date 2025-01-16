@@ -7,7 +7,8 @@
     "haveAccount": "Sudah punya akun?",
     "loginHere": "Masuk di Sini",
     "failed": "Ditemukan kesalahan",
-    "success": "Berhasil!"
+    "success": "Berhasil!",
+    "dashboard": "Dashboard"
   },
   "page": {
     "home": {
