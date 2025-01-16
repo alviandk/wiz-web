@@ -67,14 +67,13 @@ const { onBack } = useSidebar()
         </div>
         <div class="flex gap-3 items-center justify-end mt-6">
           <ElementsButton
-            class="!w-[120px] bg-transparent border border-[#FF234B] !text-[#FF234B] text-sm font-semibold"
+            class="!w-[120px] bg-transparent !border !border-[#FF234B] !text-[#FF234B] text-sm font-semibold"
             @click="onBack"
           >
             {{ $t('text.cancel') }}
           </ElementsButton>
           <ElementsButton class="!w-[120px] text-sm font-semibold">
-            <i class="pi pi-plus mr-3"></i>
-            {{ $t('text.add') }}
+            {{ $t('text.save') }}
           </ElementsButton>
         </div>
       </form>

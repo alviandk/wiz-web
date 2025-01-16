@@ -18,17 +18,17 @@ const { isEditable } = storeToRefs(useDashboardStore())
       <form @submit.prevent="">
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
           <p class="w-[40%] text-sm font-semibold py-3">{{ $t('label.title') }}</p>
-          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] px-4 py-3">Dashboard Pembelian</p>
+          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] py-3">Dashboard Pembelian</p>
           <ElementsInputText v-else id="title" :placeholder="$t('placeholder.input', { label: $t('label.title') })" />
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
           <p class="w-[40%] text-sm font-semibold py-3">{{ $t('label.description') }}</p>
-          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] px-4 py-3">Lorem ipsum</p>
+          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] py-3">Lorem ipsum</p>
           <ElementsInputText v-else id="description" :placeholder="$t('text.writeDescProduct')" />
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
           <p class="w-[40%] text-sm font-semibold py-3">{{ $t('label.priority') }}</p>
-          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] px-4 py-3">2</p>
+          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] py-3">2</p>
           <ElementsInputText
             v-else
             id="priority"
@@ -37,7 +37,7 @@ const { isEditable } = storeToRefs(useDashboardStore())
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
           <p class="w-[40%] text-sm font-semibold py-3">{{ $t('label.role') }}</p>
-          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] px-4 py-3">Admin</p>
+          <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] py-3">Admin</p>
           <ElementsInputSelect
             v-else
             id="role"
