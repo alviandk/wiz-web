@@ -21,12 +21,25 @@
     "searchData": "Cari Data",
     "writeDescProduct": "Tulis Deskripsi Produk",
     "deleteDashboard": "Hapus data Dashboard?",
-    "deleteDashboardInformation": "Data yang akan Anda hapus Status Anggota?"
+    "deleteDashboardInformation": "Data yang akan Anda hapus Status Anggota?",
+    "writeTermsAndPolicy": "Tulis Syarat & Ketentuan",
+    "editS&K": "Edit S&K"
   },
   "menu": {
     "dashboard": "Dashboard",
     "manageDashboard": "Kelola Dashboard",
-    "orderTransaction": "Pesanan & Transaksi"
+    "orderTransaction": "Pesanan & Transaksi",
+    "listMemberUmkm": "List Anggota UMKM",
+    "waitingApproval": "Menunggu Approval",
+    "registeredMembem": "Anggota Terdaftar",
+    "rejectedHistory": "Riwayat Penolakan",
+    "productMaster": "Master Produk",
+    "manageCategory": "Kelola Kategori",
+    "unitMaster": "Master Unit/Layer",
+    "manageUserRole": "Pengelolaan User & Role",
+    "user": "User",
+    "role": "Role",
+    "termsAndPolicy": "Syarat & Ketentuan"
   },
   "page": {
     "home": {
@@ -51,7 +64,8 @@
     "role": "Role",
     "action": "Aksi",
     "name": "Nama",
-    "key": "Key"
+    "key": "Key",
+    "category": "Kategori"
   },
   "placeholder": {
     "input": "Masukkan {label}",
@@ -60,5 +74,11 @@
   "validation": {
     "requiredFreeText": "{label} perlu diisi",
     "requiredSelect": "{label} perlu dipilih"
+  },
+  "termsAndPolicy": {
+    "general": {
+      "title": "Ketentuan Umum",
+      "description": "By accessing and placing an order with Cakram Omnichannel, you confirm that you are in agreement with and bound by the terms of service contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and Cakram Omnichannel. Under no circumstances shall Cakram Omnichannel team be liable for any direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if Cakram Omnichannel team or an authorized representative has been advised of the possibility of such damages. If your use of materials from this site results in the need for servicing, repair or correction of equipment or data, you assume any costs thereof. Cakram Omnichannel will not be responsible for any outcome that may occur during the course of usage of our resources. We reserve the rights to change prices and revise the resources usage policy in any moment."
+    }
   }
 }

@@ -32,9 +32,78 @@ const menus = [
   },
   {
     id: 4,
+    name: t('menu.listMemberUmkm'),
+    icon: 'icon-store.svg',
+    subItems: [
+      {
+        id: 5,
+        name: t('menu.waitingApproval'),
+        link: '',
+      },
+      {
+        id: 6,
+        name: t('menu.registeredMembem'),
+        link: '',
+      },
+      {
+        id: 7,
+        name: t('menu.rejectedHistory'),
+        link: '',
+      },
+    ],
+  },
+  {
+    id: 8,
     name: t('menu.orderTransaction'),
     link: '/order-transaction',
+    icon: 'icon-umbrella.svg',
+    subItems: [],
+  },
+  {
+    id: 9,
+    name: t('menu.productMaster'),
     icon: 'icon-document.svg',
+    subItems: [
+      {
+        id: 10,
+        name: t('menu.productMaster'),
+        link: '',
+      },
+      {
+        id: 11,
+        name: t('menu.manageCategory'),
+        link: '',
+      },
+      {
+        id: 12,
+        name: t('menu.unitMaster'),
+        link: '',
+      },
+    ],
+  },
+  {
+    id: 13,
+    name: t('menu.manageUserRole'),
+    icon: 'icon-group-people.svg',
+    subItems: [
+      {
+        id: 14,
+        name: t('menu.user'),
+        link: '',
+      },
+      {
+        id: 15,
+        name: t('menu.role'),
+        link: '',
+      },
+    ],
+  },
+  {
+    id: 16,
+    name: t('menu.termsAndPolicy'),
+    link: '/terms-and-policy',
+    icon: 'icon-file.svg',
+    subItems: [],
   },
 ]
 </script>
@@ -44,21 +113,29 @@ const menus = [
     :class="`layout-container layout-light layout-static ${visibleMenu ? `layout-static-inactive layout-mobile-inactive` : `layout-static-active layout-mobile-active`} bg-[#f8f9fa]`"
   >
     <!-- Sidebar -->
-    <div class="layout-sidebar !w-[17rem] grid grid-cols-2 gap-4 content-between">
-      <div class="h-full">
-        <div
-          class="sidebar-header p-5 flex items-center gap-3"
-          style="background: linear-gradient(90deg, #ff234b 0%, #f78431 100%)"
-        >
-          <!-- <i class="pi pi-bars text-white text-[1.5rem] cursor-pointer" @click="onChangeVisible"></i> -->
-          <a href="/dashboard" class="m-auto">
-            <img src="/images/logo-wizyztem-white.svg" alt="logo" class="w-[160px] h-[31px]" />
-          </a>
-        </div>
+    <div class="layout-sidebar !w-[17rem]">
+      <div
+        class="sidebar-header p-5 flex items-center gap-3"
+        style="background: linear-gradient(90deg, #ff234b 0%, #f78431 100%)"
+      >
+        <!-- <i class="pi pi-bars text-white text-[1.5rem] cursor-pointer" @click="onChangeVisible"></i> -->
+        <a href="/dashboard" class="m-auto">
+          <img src="/images/logo-wizyztem-white.svg" alt="logo" class="w-[160px] h-[31px]" />
+        </a>
+      </div>
+      <div class="layout-content-scroll h-full grid content-between">
         <div class="layout-menu-container p-6">
           <div class="flex flex-col gap-1">
             <div v-for="item in menus" :key="item.id">
+              <div
+                v-if="!item.subItems.length"
+                class="w-full text-[#68788D] font-semibold text-sm h-[45px] items-center flex gap-3 cursor-pointer mb-1"
+                @click="navigateTo(item.link)"
+              >
+                <img :src="`/images/${item.icon}`" alt="icon plus" class="h-5 w-5" /> <span>{{ item.name }}</span>
+              </div>
               <Accordion
+                v-if="item.subItems.length"
                 :pt="{
                   root: { class: 'm-0 min-h-[45px]' },
                 }"
@@ -99,18 +176,20 @@ const menus = [
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Footer Sidebar -->
-      <div class="flex justify-center gap-2 p-6 mb-2">
-        <div class="text-center">
-          <p class="text-xs font-normal text-[#68788D] leading-[14px] mb-2">{{ $t('page.home.presentBy') }}</p>
-          <img src="/images/logo-meta-solusi-maxima.svg" alt="logo" class="w-[32px] h-[56px] m-auto" />
-        </div>
-        <Divider layout="vertical" />
-        <div class="text-center">
-          <p class="text-xs font-normal text-[#68788D] leading-[14px] mb-2">{{ $t('page.home.presentBy') }}</p>
-          <img src="/images/logo-bank-dki.svg" alt="logo" class="w-[120px] h-[56px] m-auto" />
+        <!-- Footer Sidebar -->
+        <div>
+          <div class="flex justify-center gap-2 p-6 mb-2">
+            <div class="text-center">
+              <p class="text-xs font-normal text-[#68788D] leading-[14px] mb-2">{{ $t('page.home.presentBy') }}</p>
+              <img src="/images/logo-meta-solusi-maxima.svg" alt="logo" class="w-[32px] h-[56px] m-auto" />
+            </div>
+            <Divider layout="vertical" />
+            <div class="text-center">
+              <p class="text-xs font-normal text-[#68788D] leading-[14px] mb-2">{{ $t('page.home.presentBy') }}</p>
+              <img src="/images/logo-bank-dki.svg" alt="logo" class="w-[120px] h-[56px] m-auto" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -140,6 +219,15 @@ const menus = [
   border-right: 1px solid #e7eaf1;
   display: flex;
   flex-direction: column;
+}
+.layout-content-scroll {
+  overflow: auto !important;
+  flex: 1;
+  -ms-overflow-style: none; /* Internet Explorer dan Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.layout-content-scroll::-webkit-scrollbar {
+  display: none;
 }
 /* @media screen and (min-width: 992px) { */
 .layout-static-inactive .layout-sidebar {
