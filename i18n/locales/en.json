@@ -22,11 +22,14 @@
     "deleteDashboard": "Hapus data Dashboard?",
     "deleteDashboardInformation": "Data yang akan Anda hapus Status Anggota?",
     "writeTermsAndPolicy": "Tulis Syarat & Ketentuan",
-    "editS&K": "Edit S&K"
+    "editS&K": "Edit S&K",
+    "addData": "Tambah Data",
+    "importCsv": "Impor CSV"
   },
   "menu": {
     "dashboard": "Dashboard",
     "manageDashboard": "Kelola Dashboard",
+    "manageUMKM": "Binaan UMKM",
     "orderTransaction": "Pesanan & Transaksi",
     "listMemberUmkm": "List Anggota UMKM",
     "waitingApproval": "Menunggu Approval",
@@ -64,7 +67,12 @@
     "action": "Aksi",
     "name": "Nama",
     "key": "Key",
-    "category": "Kategori"
+    "category": "Kategori",
+    "fullName": "Nama Lengkap",
+    "phoneNumber": "No.Handphone",
+    "businessType": "Jenis Usaha",
+    "businessName": "Nama Usaha",
+    "businessAddress": "Alamat Tempat Usaha"
   },
   "placeholder": {
     "input": "Masukkan {label}",

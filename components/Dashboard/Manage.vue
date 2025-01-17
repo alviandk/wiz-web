@@ -7,7 +7,14 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
   <div>
     <div class="flex justify-end items-center gap-3 mb-6">
       <div>
-        <ElementsInputText id="search" :placeholder="$t('text.searchData')" />
+        <ElementsInputText
+          id="search"
+          :placeholder="$t('text.searchData')"
+          container-class="w-[240px]"
+          icon-position="left"
+        >
+          <template #icon> <i class="pi pi-search"></i> </template>
+        </ElementsInputText>
       </div>
       <div>
         <ElementsButton @click="navigateTo('/dashboard/add/1')">
@@ -70,7 +77,7 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
         >
           <template #body>
             <ElementsButton
-              class="text-[10px] font-semibold !rounded-full !h-fit !w-fit py-0 px-5"
+              class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"
               @click="navigateTo('/dashboard/edit/1')"
             >
               {{ $t('text.detail') }}

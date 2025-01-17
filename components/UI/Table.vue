@@ -17,8 +17,9 @@ const props = defineProps<Props>()
     <DataTable
       v-bind="$attrs"
       :pt="{
+        root: { class: 'border rounded-xl overflow-hidden' },
         bodyRow: {
-          class: `min-h-[45px] h-[45px] text-[#353F45] text-xs border-b border-[#E4E5E7] ${props.isLoading ? 'opacity-50' : ''}`,
+          class: `min-h-[45px] h-[45px] text-[#353F45] text-xs border-b ${props.isLoading ? 'opacity-50' : ''}`,
         },
         headerRow: { class: 'text-sm text-[#68788D] font-medium h-[45px]' },
         columnHeaderContent: {

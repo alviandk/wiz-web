@@ -24,7 +24,8 @@
     "writeTermsAndPolicy": "Tulis Syarat & Ketentuan",
     "editS&K": "Edit S&K",
     "addData": "Tambah Data",
-    "importCsv": "Impor CSV"
+    "importCsv": "Impor CSV",
+    "totalData": "Total {x} data"
   },
   "menu": {
     "dashboard": "Dashboard",
@@ -67,7 +68,12 @@
     "action": "Aksi",
     "name": "Nama",
     "key": "Key",
-    "category": "Kategori"
+    "category": "Kategori",
+    "fullName": "Nama Lengkap",
+    "phoneNumber": "No.Handphone",
+    "businessType": "Jenis Usaha",
+    "businessName": "Nama Usaha",
+    "businessAddress": "Alamat Tempat Usaha"
   },
   "placeholder": {
     "input": "Masukkan {label}",

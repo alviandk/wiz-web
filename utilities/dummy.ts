@@ -14,12 +14,12 @@ export const dataUMKM = [
   },
   {
     id: 2,
-    nama: 'John',
-    telepon: '0987654321',
-    jenis_usaha: 'Toko Bangunan',
-    nama_usaha: 'Toko Jaya',
-    alamat_usaha: 'Jakarta Pusat',
+    nama: 'Smith',
+    telepon: '0987654321123',
+    jenis_usaha: 'Toko Kelontong',
+    nama_usaha: 'Toko Abadi',
+    alamat_usaha: 'Jakarta Barat',
   },
 ]
 
-export default { manageDashboardDataTable }
+export default { manageDashboardDataTable, dataUMKM }
