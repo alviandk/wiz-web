@@ -10,7 +10,7 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
         <ElementsInputText id="search" :placeholder="$t('text.searchData')" />
       </div>
       <div>
-        <ElementsButton class="text-sm font-semibold" @click="navigateTo('/dashboard/add/1')">
+        <ElementsButton @click="navigateTo('/dashboard/add/1')">
           <i class="pi pi-plus mr-3"></i>
           {{ $t('text.addDashboard') }}
         </ElementsButton>

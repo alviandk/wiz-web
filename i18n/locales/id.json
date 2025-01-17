@@ -1,5 +1,4 @@
 {
-  "hello": "Halo Dunia",
   "text": {
     "cancel": "Batal",
     "back": "Kembali",
@@ -23,11 +22,14 @@
     "deleteDashboard": "Hapus data Dashboard?",
     "deleteDashboardInformation": "Data yang akan Anda hapus Status Anggota?",
     "writeTermsAndPolicy": "Tulis Syarat & Ketentuan",
-    "editS&K": "Edit S&K"
+    "editS&K": "Edit S&K",
+    "addData": "Tambah Data",
+    "importCsv": "Impor CSV"
   },
   "menu": {
     "dashboard": "Dashboard",
     "manageDashboard": "Kelola Dashboard",
+    "manageUMKM": "Binaan UMKM",
     "orderTransaction": "Pesanan & Transaksi",
     "listMemberUmkm": "List Anggota UMKM",
     "waitingApproval": "Menunggu Approval",

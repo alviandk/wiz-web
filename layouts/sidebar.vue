@@ -54,52 +54,59 @@ const menus = [
   },
   {
     id: 8,
-    name: t('menu.orderTransaction'),
-    link: '/order-transaction',
+    name: t('menu.manageUMKM'),
+    link: '/manage-umkm',
     icon: 'icon-umbrella.svg',
     subItems: [],
   },
   {
     id: 9,
-    name: t('menu.productMaster'),
+    name: t('menu.orderTransaction'),
+    link: '/order-transaction',
     icon: 'icon-document.svg',
+    subItems: [],
+  },
+  {
+    id: 10,
+    name: t('menu.productMaster'),
+    icon: 'icon-box.svg',
     subItems: [
       {
-        id: 10,
+        id: 11,
         name: t('menu.productMaster'),
         link: '',
       },
       {
-        id: 11,
+        id: 12,
         name: t('menu.manageCategory'),
         link: '',
       },
       {
-        id: 12,
+        id: 13,
         name: t('menu.unitMaster'),
         link: '',
       },
     ],
   },
   {
-    id: 13,
+    id: 14,
     name: t('menu.manageUserRole'),
     icon: 'icon-group-people.svg',
     subItems: [
       {
-        id: 14,
+        id: 15,
         name: t('menu.user'),
         link: '',
       },
       {
-        id: 15,
+        id: 16,
         name: t('menu.role'),
         link: '',
       },
     ],
   },
   {
-    id: 16,
+    id: 17,
     name: t('menu.termsAndPolicy'),
     link: '/terms-and-policy',
     icon: 'icon-file.svg',
@@ -132,7 +139,7 @@ const menus = [
                 class="w-full text-[#68788D] font-semibold text-sm h-[45px] items-center flex gap-3 cursor-pointer mb-1"
                 @click="navigateTo(item.link)"
               >
-                <img :src="`/images/${item.icon}`" alt="icon plus" class="h-5 w-5" /> <span>{{ item.name }}</span>
+                <img :src="`/images/${item.icon}`" alt="icon plus" class="h-4 w-4" /> <span>{{ item.name }}</span>
               </div>
               <Accordion
                 v-if="item.subItems.length"
@@ -156,8 +163,8 @@ const menus = [
                     <div
                       class="text-left w-full text-sm font-semibold text-[#68788D] items-center flex gap-3 justify-start"
                     >
-                      <img :src="`/images/${item.icon}`" alt="icon plus" class="h-5 w-5" />
-                      <!-- <IconBlock class="h-5 w-5" /> -->
+                      <img :src="`/images/${item.icon}`" alt="icon plus" class="h-4 w-4" />
+                      <!-- <IconBlock class="h-4 w-4" /> -->
                       <span>{{ item.name }}</span>
                     </div>
                   </template>

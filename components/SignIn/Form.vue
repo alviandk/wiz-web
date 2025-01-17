@@ -40,16 +40,14 @@ const props = defineProps<Props>()
         />
         <ElementsButton
           type="submit"
-          class="text-sm font-semibold mt-1.5"
+          class="mt-1.5"
           :disabled="props.isDisable || props.isLoadingLogin"
           :is-loading="props.isLoadingLogin"
         >
           <p class="w-full font-semibold">{{ $t('text.login') }}</p>
         </ElementsButton>
         <div class="flex justify-center">
-          <NuxtLink class="text-[#FF234B] text-sm font-semibold w-fit" to="/forgot-password">{{
-            $t('text.forgotPassword')
-          }}</NuxtLink>
+          <NuxtLink class="text-[#FF234B] w-fit" to="/forgot-password">{{ $t('text.forgotPassword') }}</NuxtLink>
         </div>
       </form>
 

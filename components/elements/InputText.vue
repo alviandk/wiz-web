@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import InputText from 'primevue/inputtext'
+import InputIcon from 'primevue/inputicon'
 
 type Props = {
   id: string
@@ -12,55 +13,46 @@ type Props = {
   classErrorMessage?: string
   description?: string
   containerClass?: string
-  textInput?: boolean
+  isOnlyNumber?: boolean
   maxInput?: number
-  isUpperCase?: boolean
 }
 const props = defineProps<Props>()
-
 const field = useField<string>(props.id)
-// const emits = defineEmits(['update:model-value'])
 
-function onUpdate(value: string) {
-  const node = document.getElementById(props.id) as HTMLInputElement
-
-  // value become uppercase when typing and there's no special char include space
-  if (props.isUpperCase) {
-    const removeSpaceAndSpecialChar = value.replace(/[^a-zA-Z0-9]/g, '')
-    const result = removeSpaceAndSpecialChar.toUpperCase()
-    node.value = result
-    field.value.value = result
-  } else {
-    field.value.value = value
+function onUpdate(value: string | undefined) {
+  if (typeof value === 'string') {
+    const node = document.getElementById(props.id) as HTMLInputElement
+    if (props.isOnlyNumber) {
+      const result = value.replace(/\D/g, '')
+      node.value = result
+      field.value.value = result
+    } else {
+      field.value.value = value
+    }
   }
 }
 </script>
 
 <template>
-  <div :class="props.containerClass" class="flex flex-col gap-1.5 w-full">
-    <label v-if="props.label" :for="props.id" :class="props.classLabel" class="font-semibold text-sm text-[#333333]">
+  <div :class="`flex flex-col gap-1.5 w-full ${props.containerClass}`">
+    <label v-if="props.label" :for="props.id" :class="`font-bold text-sm text-[#333333] ${props.classLabel}`">
       {{ props.label }} <span v-if="props.isRequired" class="text-red-500">*</span>
     </label>
     <p v-if="props.description" class="text-[#686F73] text-sm mb-2">{{ props.description }}</p>
-    <span :class="props.iconPosition === 'left' ? 'p-input-icon-left' : 'p-input-icon-right'" class="relative">
-      <slot name="icon" />
-      <div v-if="textInput" class="flex items-center absolute top-0 bottom-0 px-2 border-r">
-        <slot name="text" />
-      </div>
-
+    <div class="relative" :icon-position="`${props.iconPosition === 'left' ? 'left' : 'right'}`">
+      <InputIcon class="absolute left-3.5 top-3.5">
+        <slot name="icon" />
+      </InputIcon>
       <InputText
         :id="props.id"
         v-bind="$attrs"
-        v-model="field.value.value"
-        class="h-[48px] text-sm py-3 rounded-xl w-full border-0 bg-[#F3F7FB] disabled:bg-[#EDEEF1]"
-        :class="`${textInput ? '!pl-[48px] !pr-4' : '!px-4'} ${props.errorMessage ? 'border-red-500' : ''} ${
-          props.class
-        }`"
+        :model-value="field.value.value"
+        :class="`h-[48px] text-sm px-4 py-3 rounded-xl w-full border-0 bg-[#F3F7FB] disabled:bg-[#EDEEF1] ${props.errorMessage ? 'border-red-500' : ''} ${iconPosition === 'left' ? 'pl-10' : 'pr-10'} ${props.class}`"
         :maxlength="maxInput"
-        @update="onUpdate"
+        @update:model-value="onUpdate"
       />
-    </span>
-    <span v-if="props.errorMessage" class="text-[#EB3821] text-sm" :class="props.classErrorMessage">
+    </div>
+    <span v-if="props.errorMessage" :class="`text-[#EB3821] text-sm ${props.classErrorMessage}`">
       {{ props.errorMessage }}
     </span>
   </div>

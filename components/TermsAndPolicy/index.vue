@@ -36,8 +36,8 @@ const { t } = useI18n()
         </div>
       </div>
 
-      <div class="flex justify-between items-center mt-6">
-        <p class="font-medium text-sm text-[#68788D]">Ditambahkan pada: 30 Okt 2022, 09.41</p>
+      <div class="flex justify-between flex-wrap md:flex-nowrap items-center mt-6">
+        <p class="font-medium text-sm text-[#68788D] pb-4 md:pb-0">Ditambahkan pada: 30 Okt 2022, 09.41</p>
         <div class="flex gap-3 items-center justify-end">
           <ElementsButton class="rounded-xl !border !border-[#FF234B] bg-transparent !w-fit !px-2.5">
             <IconTrash />
