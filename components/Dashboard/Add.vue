@@ -14,19 +14,22 @@ const { onBack } = useSidebar()
     <UICard>
       <form @submit.prevent="">
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
-          <p class="w-[40%]">{{ $t('label.title') }}</p>
+          <p class="w-[40%] text-sm font-semibold">{{ $t('label.title') }}</p>
           <ElementsInputText id="title" :placeholder="$t('placeholder.input', { label: $t('label.title') })" />
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
-          <p class="w-[40%]">{{ $t('label.description') }}</p>
-          <ElementsInputText id="description" :placeholder="$t('text.writeDescProduct')" />
+          <p class="w-[40%] text-sm font-semibold">{{ $t('label.description') }}</p>
+          <ElementsTextArea
+            id="description"
+            :placeholder="$t('placeholder.write', { label: $t('label.description') })"
+          />
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
-          <p class="w-[40%]">{{ $t('label.priority') }}</p>
+          <p class="w-[40%] text-sm font-semibold">{{ $t('label.priority') }}</p>
           <ElementsInputText id="priority" :placeholder="$t('placeholder.input', { label: $t('label.priority') })" />
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">
-          <p class="w-[40%]">{{ $t('label.role') }}</p>
+          <p class="w-[40%] text-sm font-semibold">{{ $t('label.role') }}</p>
           <ElementsInputSelect
             id="role"
             :placeholder="$t('placeholder.select', { label: $t('label.role') })"

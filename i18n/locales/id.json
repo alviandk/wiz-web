@@ -20,12 +20,16 @@
     "searchData": "Cari Data",
     "writeDescProduct": "Tulis Deskripsi Produk",
     "deleteDashboard": "Hapus data Dashboard?",
-    "deleteDashboardInformation": "Data yang akan Anda hapus Status Anggota?",
+    "deleteDashboardInformation": "Data yang akan Anda hapus {title}",
     "writeTermsAndPolicy": "Tulis Syarat & Ketentuan",
     "editS&K": "Edit S&K",
     "addData": "Tambah Data",
+    "editData": "Edit Data",
     "importCsv": "Impor CSV",
-    "totalData": "Total {x} data"
+    "totalData": "Total {x} data",
+    "editProduct": "Edit Produk",
+    "deleteUmkm": "Hapus UMKM?",
+    "deleteUmkmInformation": "Data yang akan Anda hapus {name}"
   },
   "menu": {
     "dashboard": "Dashboard",
@@ -70,14 +74,19 @@
     "key": "Key",
     "category": "Kategori",
     "fullName": "Nama Lengkap",
-    "phoneNumber": "No.Handphone",
+    "noHp": "No. Handphone",
+    "phoneNumber": "Nomor Handphone",
     "businessType": "Jenis Usaha",
     "businessName": "Nama Usaha",
-    "businessAddress": "Alamat Tempat Usaha"
+    "businessAddress": "Alamat Tempat Usaha",
+    "gender": "Jenis Kelamin (Opsional)",
+    "female": "Perempuan",
+    "male": "Laki-laki"
   },
   "placeholder": {
     "input": "Masukkan {label}",
-    "select": "Pilih {label}"
+    "select": "Pilih {label}",
+    "write": "Tulis {label}"
   },
   "validation": {
     "requiredFreeText": "{label} perlu diisi",

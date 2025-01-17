@@ -135,7 +135,7 @@ const { isEditable } = storeToRefs(useDashboardStore())
     <UIModalConfirmation
       :visible="isModalConfirmationDelete"
       :title="$t('text.deleteDashboard')"
-      :description="$t('text.deleteDashboardInformation')"
+      :description="$t('text.deleteDashboardInformation', { title: 'Status Anggota' })"
       :text-confirm="$t('text.delete')"
       :on-cancel="onToggleModalConfirmationDelete"
       :on-submit="onSubmitDelete"

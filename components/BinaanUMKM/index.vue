@@ -25,7 +25,7 @@ function onPerPageChange() {
           </ElementsInputText>
         </div>
         <div>
-          <ElementsButton @click="navigateTo('/dashboard/add/1')">
+          <ElementsButton @click="navigateTo('/manage-umkm/add/1')">
             <i class="pi pi-plus mr-2"></i>
             {{ $t('text.addData') }}
           </ElementsButton>
@@ -50,7 +50,7 @@ function onPerPageChange() {
               <IconSortable />
             </template>
           </Column>
-          <Column field="telepon" :header="$t('label.phoneNumber')" header-class="bg-[#F7F9FC]" style="width: 20%" />
+          <Column field="telepon" :header="$t('label.noHp')" header-class="bg-[#F7F9FC]" style="width: 20%" />
           <Column
             field="jenis_usaha"
             :header="$t('label.businessType')"
@@ -93,7 +93,7 @@ function onPerPageChange() {
             <template #body>
               <ElementsButton
                 class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"
-                @click="navigateTo('/manage-umkm/detail/1')"
+                @click="navigateTo('/manage-umkm/edit/1')"
               >
                 {{ $t('text.detail') }}
               </ElementsButton>
