@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { useTermsAndPolicy } from './terms-and-policy-setup'
+
 const { t } = useI18n()
+
+const { isModalConfirmationDelete, onToggleModalConfirmationDelete, onSubmitDelete } = useTermsAndPolicy()
 </script>
 
 <template>
@@ -39,7 +43,10 @@ const { t } = useI18n()
       <div class="flex justify-between flex-wrap md:flex-nowrap items-center mt-6">
         <p class="font-medium text-sm text-[#68788D] pb-4 md:pb-0">Ditambahkan pada: 30 Okt 2022, 09.41</p>
         <div class="flex gap-3 items-center justify-end">
-          <ElementsButton class="rounded-xl !border !border-[#FF234B] bg-transparent !w-fit !px-2.5">
+          <ElementsButton
+            class="rounded-xl !border !border-[#FF234B] bg-transparent !w-fit !px-2.5"
+            @click="onToggleModalConfirmationDelete"
+          >
             <IconTrash />
           </ElementsButton>
           <ElementsButton class="!w-fit !bg-[#FDF0F1] !text-[#FF234B]">
@@ -49,5 +56,14 @@ const { t } = useI18n()
         </div>
       </div>
     </UICard>
+
+    <UIModalConfirmation
+      :visible="isModalConfirmationDelete"
+      :title="$t('text.deleteS&K')"
+      :description="$t('text.deleteS&KInformation')"
+      :text-confirm="$t('text.delete')"
+      :on-cancel="onToggleModalConfirmationDelete"
+      :on-submit="onSubmitDelete"
+    />
   </div>
 </template>

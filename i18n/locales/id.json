@@ -23,6 +23,8 @@
     "deleteDashboardInformation": "Data yang akan Anda hapus {title}",
     "writeTermsAndPolicy": "Tulis Syarat & Ketentuan",
     "editS&K": "Edit S&K",
+    "deleteS&K": "Hapus Syarat & Ketentuan?",
+    "deleteS&KInformation": "Syarat dan Ketentuan Privasi akan dihapus. Lanjutkan?",
     "addData": "Tambah Data",
     "editData": "Edit Data",
     "importCsv": "Impor CSV",
