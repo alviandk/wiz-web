@@ -34,6 +34,10 @@
     "deleteUmkmInformation": "Data yang akan Anda hapus {name}"
   },
   "menu": {
+    "profile": "Profil",
+    "changePassword": "Ubah Password",
+    "changeLanguage": "Ubah Bahasa:",
+    "logout": "Keluar",
     "dashboard": "Dashboard",
     "manageDashboard": "Kelola Dashboard",
     "manageUMKM": "Binaan UMKM",

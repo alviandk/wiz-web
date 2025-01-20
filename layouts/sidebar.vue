@@ -204,7 +204,7 @@ const menus = [
     <!-- Right Side -->
     <div :class="`layout-content-wrapper`">
       <UITopbar :on-click="onChangeVisible" :page-title="props.pageTitle" />
-      <div class="layout-content px-8 pt-5 pb-8 min-h-screen bg-white">
+      <div class="layout-content px-8 pt-24 pb-8 min-h-screen bg-white">
         <slot></slot>
       </div>
     </div>
