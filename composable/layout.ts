@@ -54,20 +54,16 @@ export const useSidebar = () => {
       },
     },
     {
-      label: t('menu.changeLanguage'),
+      label: `${t('menu.changeLanguage')}:`,
       icon: 'change-lang',
-      to: '/change-lang',
-      click: () => {
-        navigateTo('/change-lang')
-      },
     },
     {
       label: t('menu.logout'),
       icon: 'logout',
-      click: async () => {
-        await useLogout()
-        navigateTo('/')
-      },
+      // click: async () => {
+      //   await useLogout()
+      //   navigateTo('/')
+      // },
     },
   ])
 
@@ -112,4 +108,31 @@ export const useSidebar = () => {
   }
 }
 
-export default { useSidebar }
+export const useTopBar = () => {
+  const isModalLanguage = ref(false)
+  const isModalLogout = ref(false)
+
+  function onToggleModalSwitchLanguage() {
+    isModalLanguage.value = !isModalLanguage.value
+  }
+
+  function onToggleModalLogout() {
+    isModalLogout.value = !isModalLogout.value
+  }
+
+  async function onLogout() {
+    await useLogout()
+    navigateTo('/')
+  }
+
+  return {
+    isModalLanguage,
+    onToggleModalSwitchLanguage,
+
+    isModalLogout,
+    onToggleModalLogout,
+    onLogout,
+  }
+}
+
+export default { useSidebar, useTopBar }

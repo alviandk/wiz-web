@@ -8,9 +8,9 @@
           <p class="text-xl font-semibold">{{ props.title }}</p>
           <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
         </div>
-        <p class="pb-10 text-base font-normal">{{ props.description }}</p>
+        <p v-if="props.description" class="pb-10 text-base font-normal">{{ props.description }}</p>
 
-        <div class="flex gap-4">
+        <div :class="`flex gap-4 ${props.description ? '' : 'mt-5'}`">
           <ElementsButton
             class="!text-[#FF234B] !border !border-[#FF234B] !bg-transparent"
             @click="slotProps.closeCallback"
@@ -34,7 +34,7 @@
 <script lang="ts" setup>
 type Props = {
   title: string
-  description: string
+  description?: string
   onCancel: () => void
   onSubmit: () => void
   textCancel?: string
@@ -45,6 +45,7 @@ type Props = {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  description: '',
   textCancel: '',
   textConfirm: '',
   btnConfirmClass: '',

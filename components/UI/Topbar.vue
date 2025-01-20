@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSidebar } from '~/composable/layout'
+import { useSidebar, useTopBar } from '~/composable/layout'
 import Menu from 'primevue/menu'
 import Divider from 'primevue/divider'
 // import { useAuthStore } from '~/stores/auth'
@@ -12,6 +12,7 @@ type Props = {
 const props = defineProps<Props>()
 
 const { onChangeVisibleProfile, visibleMenuProfile, menuProfile } = useSidebar()
+const { isModalLanguage, onToggleModalSwitchLanguage, isModalLogout, onToggleModalLogout, onLogout } = useTopBar()
 // const { myProfile } = storeToRefs(useAuthStore())
 </script>
 
@@ -41,24 +42,45 @@ const { onChangeVisibleProfile, visibleMenuProfile, menuProfile } = useSidebar()
               <template #item="{ label, props: propsMenu, item }">
                 <div @click="item.click">
                   <a
-                    v-if="item.icon !== 'change-lang'"
+                    v-if="item.icon === 'profile'"
                     class="flex gap-4 p-4 text-sm font-medium"
                     v-bind="propsMenu.action"
                   >
-                    <img v-if="item.icon === 'profile'" src="/images/icon-user.svg" class="w-5 h-5" />
-                    <img v-if="item.icon === 'change-pass'" src="/images/icon-padlock.svg" class="w-5 h-5" />
-                    <img v-if="item.icon === 'logout'" src="/images/icon-logout.svg" class="w-5 h-5" />
+                    <img src="/images/icon-user.svg" class="w-5 h-5" />
                     <span class="text-sm">{{ label }}</span>
                   </a>
+                  <Divider class="my-0 mx-4 w-auto" />
+
+                  <a
+                    v-if="item.icon === 'change-pass'"
+                    class="flex gap-4 p-4 text-sm font-medium"
+                    v-bind="propsMenu.action"
+                  >
+                    <img src="/images/icon-padlock.svg" class="w-5 h-5" />
+                    <span class="text-sm">{{ label }}</span>
+                  </a>
+                  <Divider class="my-0 mx-4 w-auto" />
+
                   <a
                     v-if="item.icon === 'change-lang'"
                     class="flex gap-4 p-4 text-sm font-medium"
                     v-bind="propsMenu.action"
+                    @click="onToggleModalSwitchLanguage"
                   >
-                    <img v-if="item.icon === 'change-lang'" src="/images/icon-globe.svg" class="w-5 h-5" />
-                    <div>{{ item.label }} <span class="font-normal">Bahasa Indonesia</span></div>
+                    <img src="/images/icon-globe.svg" class="w-5 h-5" />
+                    <div>{{ label }} <span class="font-normal">Bahasa Indonesia</span></div>
                   </a>
-                  <Divider v-if="item.icon !== 'logout'" class="my-0 mx-4 w-auto" />
+                  <Divider class="my-0 mx-4 w-auto" />
+
+                  <a
+                    v-if="item.icon === 'logout'"
+                    class="flex gap-4 p-4 text-sm font-medium"
+                    v-bind="propsMenu.action"
+                    @click="onToggleModalLogout"
+                  >
+                    <img src="/images/icon-logout.svg" class="w-5 h-5" />
+                    <div>{{ label }}</div>
+                  </a>
                 </div>
               </template>
             </Menu>
@@ -66,16 +88,47 @@ const { onChangeVisibleProfile, visibleMenuProfile, menuProfile } = useSidebar()
         </div>
       </div>
     </div>
+
+    <!-- Dialog Logout -->
+    <UIModalConfirmation
+      :visible="isModalLogout"
+      :title="$t('text.logoutAccount')"
+      :text-confirm="$t('text.logout')"
+      :on-cancel="onToggleModalLogout"
+      :on-submit="onLogout"
+    />
+
+    <!-- Dialog Switch Language -->
+    <UIDialog
+      :visible="isModalLanguage"
+      root-class="w-[460px]"
+      container-class="p-6"
+      @update:visible="onToggleModalSwitchLanguage"
+    >
+      <template #default="slotProps">
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-between w-full">
+            <p class="text-xl font-semibold">{{ $t('menu.changeLanguage') }}</p>
+            <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
+          </div>
+          <div class="flex items-center justify-center gap-3 mt-4">
+            <Button class="w-full rounded-xl border px-6 text-center py-3">
+              <img src="/images/flag-indonesia.svg" class="mx-auto mb-2" />
+              <p class="text-sm font-medium">{{ $t('text.langIndo') }}</p>
+            </Button>
+            <Button class="w-full rounded-xl border px-6 text-center py-3">
+              <img src="/images/flag-usa.svg" class="mx-auto mb-2" />
+              <p class="text-sm font-medium">{{ $t('text.langUsa') }}</p>
+            </Button>
+          </div>
+        </div>
+      </template>
+    </UIDialog>
   </div>
 </template>
 
 <style>
-.layout-topbar .topbar-menu {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  gap: 1rem;
+.p-menu {
+  box-shadow: 0px 2px 16px 0px #8a8d8f33;
 }
 </style>
