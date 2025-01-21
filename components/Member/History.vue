@@ -56,7 +56,7 @@ const businessTypes = ref([
         <Column field="fullName" :header="$t('label.fullName')" header-class="bg-[#F7F9FC]" style="width: 20%" />
         <Column
           field="gender"
-          :header="$t('label.gender')"
+          :header="$t('label.genderRequired')"
           header-class="bg-[#F7F9FC]"
           style="text-transform: capitalize"
         >
@@ -111,7 +111,7 @@ const businessTypes = ref([
           <template #body>
             <ElementsButton
               class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"
-              @click="navigateTo('/member/history/detail/1')"
+              @click="navigateTo('/member/history/1')"
             >
               {{ $t('text.detail') }}
             </ElementsButton>
