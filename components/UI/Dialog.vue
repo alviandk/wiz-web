@@ -12,7 +12,7 @@ const props = defineProps<Props>()
   <Dialog
     modal
     :pt="{
-      root: { class: `w-[1000px] rounded-xl relative ${props.rootClass}` },
+      root: { class: `w-[1000px] m-2 rounded-xl relative ${props.rootClass}` },
     }"
   >
     <template #container="slotProps: any">

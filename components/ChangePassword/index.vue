@@ -8,7 +8,6 @@
         <ElementsInputPassword
           id="currentPassword"
           :placeholder="$t('placeholder.input', { label: $t('label.currentPassword') })"
-          disabled
         />
       </div>
       <div class="">
@@ -16,7 +15,6 @@
         <ElementsInputPassword
           id="newPassword"
           :placeholder="$t('placeholder.input', { label: $t('label.newPassword') })"
-          disabled
         />
       </div>
       <div class="">
@@ -24,7 +22,6 @@
         <ElementsInputPassword
           id="confirmNewPassword"
           :placeholder="$t('placeholder.input', { label: $t('label.confirmNewPassword') })"
-          disabled
         />
       </div>
 

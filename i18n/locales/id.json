@@ -1,5 +1,7 @@
 {
   "text": {
+    "filter": "Filter",
+    "resetFilter": "Reset Filter",
     "cancel": "Batal",
     "back": "Kembali",
     "login": "Masuk",
@@ -37,7 +39,18 @@
     "langIndo": "Bahasa Indonesia",
     "langUsa": "English",
     "logoutAccount": "Logout Akun?",
-    "logout": "Logout"
+    "logout": "Logout",
+    "female": "Perempuan",
+    "male": "Laki-laki",
+    "rejectDistributor": "Ditolak Distributor",
+    "rejectBank": "Ditolak Bank",
+    "fashionGarmenTextil": "Fashion/Garmen/Tekstil",
+    "culinary": "Kuliner",
+    "course": "Pendidikan/Kursus",
+    "otomotif": "Otomotif dan Bengkel",
+    "Agriculture": "Agribisnis/Peternakan/Pertanian",
+    "startDate": "Tgl. Mulai",
+    "endDate": "Tgl. Akhir"
   },
   "menu": {
     "profile": "Profil",
@@ -50,7 +63,7 @@
     "orderTransaction": "Pesanan & Transaksi",
     "listMemberUmkm": "List Anggota UMKM",
     "waitingApproval": "Menunggu Approval",
-    "registeredMembem": "Anggota Terdaftar",
+    "registeredMember": "Anggota Terdaftar",
     "rejectedHistory": "Riwayat Penolakan",
     "productMaster": "Master Produk",
     "manageCategory": "Kelola Kategori",
@@ -85,6 +98,7 @@
     "priority": "Prioritas",
     "role": "Role",
     "action": "Aksi",
+    "status": "Status",
     "name": "Nama",
     "key": "Key",
     "category": "Kategori",
@@ -95,8 +109,10 @@
     "businessName": "Nama Usaha",
     "businessAddress": "Alamat Tempat Usaha",
     "gender": "Jenis Kelamin (Opsional)",
-    "female": "Perempuan",
-    "male": "Laki-laki"
+    "genderRequired": "Jenis Kelamin",
+    "codeMember": "No. Anggota",
+    "submissionDate": "Tanggal Pengajuan",
+    "reasonRejected": "Alasan Penolakan"
   },
   "placeholder": {
     "input": "Masukkan {label}",

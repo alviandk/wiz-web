@@ -3,6 +3,29 @@ export const manageDashboardDataTable = [
   { id: 2, title: 'List Anggota', description: 'description', priority: '1', role: 'admin produk' },
 ]
 
+export const manageMemberHistoryTable = [
+  {
+    id: 1,
+    codeMember: 'LM0019012',
+    fullName: 'Budiman Agus',
+    gender: 'L',
+    businessType: 'Kuliner',
+    submissionDate: '2022-12-12',
+    reasonRejected: 'description',
+    status: 'Ditolak Distributor',
+  },
+  {
+    id: 2,
+    codeMember: 'LM0019012',
+    fullName: 'Budiman Agus',
+    gender: 'L',
+    businessType: 'Kuliner',
+    submissionDate: '2022-12-12',
+    reasonRejected: 'description',
+    status: 'Ditolak Distributor',
+  },
+]
+
 export const dataUMKM = [
   {
     id: 1,

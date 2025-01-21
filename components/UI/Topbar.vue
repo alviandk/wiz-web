@@ -112,14 +112,14 @@ const { isModalLanguage, onToggleModalSwitchLanguage, isModalLogout, onToggleMod
             <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
           </div>
           <div class="flex items-center justify-center gap-3 mt-4">
-            <Button class="w-full rounded-xl border px-6 text-center py-3">
+            <button class="w-full rounded-xl border px-6 text-center py-3">
               <img src="/images/flag-indonesia.svg" class="mx-auto mb-2" />
               <p class="text-sm font-medium">{{ $t('text.langIndo') }}</p>
-            </Button>
-            <Button class="w-full rounded-xl border px-6 text-center py-3">
+            </button>
+            <button class="w-full rounded-xl border px-6 text-center py-3">
               <img src="/images/flag-usa.svg" class="mx-auto mb-2" />
               <p class="text-sm font-medium">{{ $t('text.langUsa') }}</p>
-            </Button>
+            </button>
           </div>
         </div>
       </template>

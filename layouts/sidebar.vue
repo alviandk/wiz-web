@@ -38,17 +38,17 @@ const menus = [
       {
         id: 5,
         name: t('menu.waitingApproval'),
-        link: '',
+        link: '/member/waiting-approval',
       },
       {
         id: 6,
-        name: t('menu.registeredMembem'),
-        link: '',
+        name: t('menu.registeredMember'),
+        link: '/member/registered',
       },
       {
         id: 7,
         name: t('menu.rejectedHistory'),
-        link: '',
+        link: '/member/history',
       },
     ],
   },
@@ -204,7 +204,7 @@ const menus = [
     <!-- Right Side -->
     <div :class="`layout-content-wrapper`">
       <UITopbar :on-click="onChangeVisible" :page-title="props.pageTitle" />
-      <div class="layout-content px-10 pt-8 pb-10 min-h-screen bg-white">
+      <div class="layout-content px-8 pt-8 pb-10 min-h-screen bg-white">
         <slot></slot>
       </div>
     </div>

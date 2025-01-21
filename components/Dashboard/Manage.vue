@@ -25,13 +25,7 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
     </div>
     <UITable :value="manageDashboardDataTable">
       <template #default>
-        <Column
-          field="title"
-          :header="$t('label.title')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%; text-transform: capitalize"
-        >
+        <Column field="title" :header="$t('label.title')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
@@ -41,30 +35,18 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
           :header="$t('label.description')"
           header-class="bg-[#F7F9FC]"
           sortable
-          style="width: 20%; text-transform: capitalize"
+          style="width: 20%"
         >
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="priority"
-          :header="$t('label.priority')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%; text-transform: capitalize"
-        >
+        <Column field="priority" :header="$t('label.priority')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="role"
-          :header="$t('label.role')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%; text-transform: capitalize"
-        >
+        <Column field="role" :header="$t('label.role')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
