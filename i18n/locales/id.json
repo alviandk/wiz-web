@@ -4,6 +4,7 @@
     "resetFilter": "Reset Filter",
     "seeAll": "Lihat semua",
     "cancel": "Batal",
+    "canceled": "Batalkan",
     "back": "Kembali",
     "login": "Masuk",
     "apply": "Terapkan",
@@ -22,6 +23,7 @@
     "delete": "Hapus",
     "reject": "Tolak",
     "approve": "Setujui",
+    "confirm": "Konfirmasi",
     "addDashboard": "Tambah Dashboard",
     "detailDashboard": "Detail Dashboard",
     "editDashboard": "Edit Dashboard",
@@ -62,13 +64,17 @@
     "endDate": "Tgl. Akhir",
     "doConfirmApproval": "Lakukan konfirmasi approval UMKM",
     "noTransaction": "{name} belum pernah melakukan transaksi pembelian",
+    "order": "Pembelian",
     "waitingConfirmation": "Menunggu Konfirmasi",
     "orderProcessed": "Pesanan Diproses",
     "orderReceived": "Pesanan Diterima",
     "inDelivery": "Dalam Pengiriman",
     "canceledDistributor": "Dibatalkan Distributor",
     "canceledSystem": "Dibatalkan Sistem",
-    "done": "Selesai"
+    "done": "Selesai",
+    "doConfirmationOrder": "Lakukan konfirmasi pesanan",
+    "openProfile": "Buka Profil",
+    "seeAllOrder": "Tampilkan Semua Pesanan"
   },
   "menu": {
     "profile": "Profil",
@@ -84,6 +90,7 @@
     "registeredMember": "Anggota Terdaftar",
     "rejectedHistory": "Riwayat Penolakan",
     "detailUmkm": "Detail UMKM",
+    "detailOrder": "Detail Pesanan",
     "productMaster": "Master Produk",
     "manageCategory": "Kelola Kategori",
     "unitMaster": "Master Unit/Layer",
@@ -157,7 +164,12 @@
     "completionDate": "Tgl. Selesai",
     "totalOrder": "Jumlah Pesanan",
     "orderer": "Pemesan",
-    "totalPayment": "Total Bayar"
+    "subtotalPayment": "Subtotal Bayar",
+    "totalPayment": "Total Bayar",
+    "deliveryAddress": "Alamat Pengiriman",
+    "paymentMethod": "Metode Bayar",
+    "timeEstimation": "Estimasi Waktu Sampai (ETD):",
+    "productDesc": "Deskripsi Produk"
   },
   "placeholder": {
     "input": "Masukkan {label}",

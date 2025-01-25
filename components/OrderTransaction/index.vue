@@ -133,7 +133,7 @@ const selectedGender = ref(null)
           <template #body>
             <ElementsButton
               class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"
-              @click="navigateTo('/member/registered/1')"
+              @click="navigateTo('/order-transaction/1')"
             >
               {{ $t('text.detail') }}
             </ElementsButton>

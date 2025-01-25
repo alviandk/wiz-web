@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('text.detail') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="'Rezky Kurniawan'">
+  <NuxtLayout name="sidebar" :page-title="'SW01112028392'">
     <OrderTransactionDetail />
   </NuxtLayout>
 </template>
