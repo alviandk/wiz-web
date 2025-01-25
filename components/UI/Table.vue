@@ -19,12 +19,12 @@ const props = defineProps<Props>()
       :pt="{
         root: { class: 'border rounded-xl overflow-hidden' },
         bodyRow: {
-          class: `min-h-[45px] h-[45px] text-[#353F45] text-xs border-b ${props.isLoading ? 'opacity-50' : ''}`,
+          class: `text-[#333333] text-sm border-b ${props.isLoading ? 'opacity-50' : ''}`,
         },
         headerRow: { class: 'text-sm text-[#68788D] font-medium h-[45px]' },
-        columnHeaderContent: {
-          class: 'flex flex-row justify-between',
-        },
+        // columnHeaderContent: {
+        //   class: 'flex flex-row justify-between',
+        // },
       }"
     >
       <slot />

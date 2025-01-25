@@ -8,18 +8,24 @@ const { t } = useI18n()
 const { isModalFilter, onToggleModalFilter } = useOrderTransaction()
 
 const selectedGender = ref(null)
+const selectedOrderTransactionData = ref()
 </script>
 
 <template>
   <div>
-    <div class="flex justify-between items-center gap-3 mb-6">
+    <div class="flex justify-between items-center gap-3 mb-4">
       <div>
         <ElementsInputSelect
           id="allStatus"
           :placeholder="$t('label.allStatus')"
           :options="[
-            { name: 'A', code: 'a' },
-            { name: 'B', code: 'b' },
+            { name: 'Menunggu Konfirmasi', code: 'waitingConfirmation' },
+            { name: 'Pesanan Diproses', code: 'orderProcessed' },
+            { name: 'Pesanan Diterima', code: 'orderReceived' },
+            { name: 'Dalam Pengiriman', code: 'inDelivery' },
+            { name: 'Dibatalkan Distributor', code: 'canceledDistributor' },
+            { name: 'Dibatalkan Sistem', code: 'canceledSystem' },
+            { name: 'Selesai', code: 'done' },
           ]"
           option-label="name"
           option-value="code"
@@ -44,72 +50,43 @@ const selectedGender = ref(null)
         </div>
       </div>
     </div>
-    <UITable :value="orderTransactionData">
+    <UITable v-model:selection="selectedOrderTransactionData" :value="orderTransactionData">
       <template #default>
-        <Column
-          field="transactionNumber"
-          :header="$t('label.transactionNumber')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column selection-mode="multiple" header-style="width: 3rem"></Column>
+        <Column field="transactionNumber" :header="$t('label.transactionNumber')" style="min-width: 10rem">
+          <template #body="slotProps">
+            <p class="font-semibold">{{ slotProps.data.transactionNumber }}</p>
+          </template>
+        </Column>
+        <Column field="purchaseDate" :header="$t('label.purchaseDate')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="purchaseDate"
-          :header="$t('label.purchaseDate')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column field="completionDate" :header="$t('label.completionDate')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="completionDate"
-          :header="$t('label.completionDate')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column field="totalOrder" :header="$t('label.totalOrder')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="totalOrder"
-          :header="$t('label.totalOrder')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column field="orderer" :header="$t('label.orderer')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="orderer" :header="$t('label.orderer')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
+        <Column field="totalPayment" :header="$t('label.totalPayment')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="totalPayment"
-          :header="$t('label.totalPayment')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
-          <template #sorticon>
-            <IconSortable />
-          </template>
-        </Column>
-        <Column field="status" :header="$t('label.status')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
+        <Column field="status" :header="$t('label.status')" sortable style="min-width: 10rem">
           <template #body="slotProps">
             <p
-              class="rounded-full px-2 p-1.5 w-fit"
+              class="rounded-full px-2 p-1.5 w-max"
               :class="
                 slotProps.data.status_approval === 'bank_confirmation'
                   ? 'text-[#F78431] bg-[#FFF6E0]'
@@ -124,12 +101,7 @@ const selectedGender = ref(null)
             </p>
           </template>
         </Column>
-        <Column
-          field="action"
-          :header="$t('label.action')"
-          header-class="bg-[#F7F9FC]"
-          style="width: 20%; text-align: center"
-        >
+        <Column field="action" :header="$t('label.action')" style="min-width: 10rem">
           <template #body>
             <ElementsButton
               class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"

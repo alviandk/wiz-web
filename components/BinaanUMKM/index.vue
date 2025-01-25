@@ -13,7 +13,7 @@ function onPerPageChange() {
 <template>
   <div>
     <div>
-      <div class="flex justify-end items-center gap-3 mb-6">
+      <div class="flex justify-end items-center gap-3 mb-4">
         <div>
           <ElementsInputText
             id="search"
@@ -39,22 +39,15 @@ function onPerPageChange() {
       </div>
       <UITable :value="dataUMKM">
         <template #default>
-          <Column
-            field="nama"
-            :header="$t('label.fullName')"
-            header-class="bg-[#F7F9FC]"
-            sortable
-            style="width: 20%; text-transform: capitalize"
-          >
+          <Column field="nama" :header="$t('label.fullName')" sortable style="width: 20%; text-transform: capitalize">
             <template #sorticon>
               <IconSortable />
             </template>
           </Column>
-          <Column field="telepon" :header="$t('label.noHp')" header-class="bg-[#F7F9FC]" style="width: 20%" />
+          <Column field="telepon" :header="$t('label.noHp')" style="width: 20%" />
           <Column
             field="jenis_usaha"
             :header="$t('label.businessType')"
-            header-class="bg-[#F7F9FC]"
             sortable
             style="width: 20%; text-transform: capitalize"
           >
@@ -65,7 +58,6 @@ function onPerPageChange() {
           <Column
             field="nama_usaha"
             :header="$t('label.businessName')"
-            header-class="bg-[#F7F9FC]"
             sortable
             style="width: 20%; text-transform: capitalize"
           >
@@ -76,7 +68,6 @@ function onPerPageChange() {
           <Column
             field="alamat_usaha"
             :header="$t('label.businessAddress')"
-            header-class="bg-[#F7F9FC]"
             sortable
             style="width: 20%; text-transform: capitalize"
           >
@@ -84,12 +75,7 @@ function onPerPageChange() {
               <IconSortable />
             </template>
           </Column>
-          <Column
-            field="action"
-            :header="$t('label.action')"
-            header-class="bg-[#F7F9FC]"
-            style="width: 20%; text-align: center"
-          >
+          <Column field="action" :header="$t('label.action')" style="width: 20%; text-align: center">
             <template #body>
               <ElementsButton
                 class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"

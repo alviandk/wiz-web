@@ -22,7 +22,7 @@ const businessTypes = ref([
 
 <template>
   <div>
-    <div class="flex justify-end items-center gap-3 mb-6">
+    <div class="flex justify-end items-center gap-3 mb-4">
       <div>
         <ElementsButton class="!bg-[#FFECF0] !text-[#FF3263]" @click="onToggleModalFilter">
           <img src="/images/icon-filter.svg" class="w-6 h-6 mr-2" />
@@ -42,25 +42,13 @@ const businessTypes = ref([
     </div>
     <UITable :value="manageMemberHistoryTable">
       <template #default>
-        <Column
-          field="codeMember"
-          :header="$t('label.codeMember')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column field="codeMember" :header="$t('label.codeMember')" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="fullName" :header="$t('label.fullName')" header-class="bg-[#F7F9FC]" style="width: 20%" />
-        <Column
-          field="gender"
-          :header="$t('label.genderRequired')"
-          header-class="bg-[#F7F9FC]"
-          style="text-transform: capitalize"
-          sortable
-        >
+        <Column field="fullName" :header="$t('label.fullName')" style="width: 20%" />
+        <Column field="gender" :header="$t('label.genderRequired')" style="text-transform: capitalize" sortable>
           <template #body="slotProps">
             {{ slotProps.data.gender === 'L' ? $t('text.male') : $t('text.female') }}
           </template>
@@ -68,50 +56,27 @@ const businessTypes = ref([
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="businessType"
-          :header="$t('label.businessType')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column field="businessType" :header="$t('label.businessType')" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="submissionDate"
-          :header="$t('label.submissionDate')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column field="submissionDate" :header="$t('label.submissionDate')" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="reasonRejected"
-          :header="$t('label.reasonRejected')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
+        <Column field="reasonRejected" :header="$t('label.reasonRejected')" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="status" :header="$t('label.status')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
+        <Column field="status" :header="$t('label.status')" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column
-          field="action"
-          :header="$t('label.action')"
-          header-class="bg-[#F7F9FC]"
-          style="width: 20%; text-align: center"
-        >
+        <Column field="action" :header="$t('label.action')" style="width: 20%; text-align: center">
           <template #body>
             <ElementsButton class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5" @click="navigateTo('/member/1')">
               {{ $t('text.detail') }}

@@ -6,7 +6,7 @@ const { t } = useI18n()
 
 const homeRoute = ref({
   label: t('menu.orderTransaction'),
-  route: '/member',
+  route: '/order-transaction',
 })
 const itemsBreadcrumb = ref([{ label: t('menu.detailOrder') }])
 const items = ref([
@@ -75,7 +75,7 @@ const items = ref([
     <UICard>
       <div class="flex gap-3">
         <div class="w-[20%]">
-          <p class="text-base font-semibold">{{ t('label.orderer') }}</p>
+          <p class="text-base font-semibold mb-2">{{ t('label.orderer') }}</p>
           <div class="flex gap-2 items-center relative cursor-pointer">
             <div class="w-10 h-10 bg-[#FFECF0] text-[#FF234B] rounded-full flex items-center justify-center p-2">
               BA
@@ -87,20 +87,20 @@ const items = ref([
           </div>
         </div>
         <div class="w-[40%]">
-          <p class="text-base font-semibold">{{ t('label.deliveryAddress') }}</p>
+          <p class="text-base font-semibold mb-2">{{ t('label.deliveryAddress') }}</p>
           <div>
-            <p class="text-base text-[#2E8CE2] font-semibold">Toko Jaya Abadi (6281331631888)</p>
+            <p class="text-base text-[#2E8CE2] font-semibold mb-1">Toko Jaya Abadi (6281331631888)</p>
             <p class="text-sm">
               Jalan ABC No. 12, RT010/011, Grogol Selatan, Kebayoran Lama, Kota Jakarta Selatan, 12220
             </p>
           </div>
         </div>
         <div class="w-[20%]">
-          <p class="text-base font-semibold">{{ t('label.paymentMethod') }}</p>
+          <p class="text-base font-semibold mb-2">{{ t('label.paymentMethod') }}</p>
           <img src="/images/logo-bank-dki.svg" />
         </div>
         <div class="w-[20%]">
-          <p class="text-base font-semibold">{{ t('label.timeEstimation') }}</p>
+          <p class="text-base font-semibold mb-2">{{ t('label.timeEstimation') }}</p>
           <div>-</div>
         </div>
       </div>
