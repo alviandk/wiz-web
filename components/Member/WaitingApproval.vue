@@ -55,26 +55,21 @@ const businessTypes = ref([
         </Column>
         <Column field="fullName" :header="$t('label.fullName')" header-class="bg-[#F7F9FC]" style="width: 20%" />
         <Column
+          field="noHp"
+          :header="$t('label.noHp')"
+          header-class="bg-[#F7F9FC]"
+          style="text-transform: capitalize"
+        />
+        <Column
           field="gender"
           :header="$t('label.genderRequired')"
           header-class="bg-[#F7F9FC]"
-          style="text-transform: capitalize"
+          style="width: 20%; text-transform: capitalize"
           sortable
         >
           <template #body="slotProps">
             {{ slotProps.data.gender === 'L' ? $t('text.male') : $t('text.female') }}
           </template>
-          <template #sorticon>
-            <IconSortable />
-          </template>
-        </Column>
-        <Column
-          field="businessType"
-          :header="$t('label.businessType')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
           <template #sorticon>
             <IconSortable />
           </template>
@@ -91,8 +86,8 @@ const businessTypes = ref([
           </template>
         </Column>
         <Column
-          field="reasonRejected"
-          :header="$t('label.reasonRejected')"
+          field="businessType"
+          :header="$t('label.businessType')"
           header-class="bg-[#F7F9FC]"
           sortable
           style="width: 20%"
@@ -102,8 +97,21 @@ const businessTypes = ref([
           </template>
         </Column>
         <Column field="status" :header="$t('label.status')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
-          <template #sorticon>
-            <IconSortable />
+          <template #body="slotProps">
+            <p
+              class="rounded-full px-2 p-1.5 w-fit"
+              :class="
+                slotProps.data.status_approval === 'bank_confirmation'
+                  ? 'text-[#F78431] bg-[#FFF6E0]'
+                  : 'text-[#2E8CE2] bg-[#DEEDFF]'
+              "
+            >
+              {{
+                slotProps.data.status_approval === 'bank_confirmation'
+                  ? t('text.bankConfirmation')
+                  : t('text.waitingApproval')
+              }}
+            </p>
           </template>
         </Column>
         <Column
@@ -167,8 +175,8 @@ const businessTypes = ref([
               <SelectButton
                 v-model="selectedStatus"
                 :options="[
-                  { name: t('text.rejectDistributor'), value: 'reject_distributor' },
-                  { name: t('text.rejectBank'), value: 'reject_bank' },
+                  { name: t('text.waitingApproval'), value: 'waiting_approval' },
+                  { name: t('text.bankConfirmation'), value: 'bank_confirmation' },
                 ]"
                 option-label="name"
                 :pt="{

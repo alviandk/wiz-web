@@ -16,59 +16,77 @@ const itemsBreadcrumb = ref([{ label: t('menu.detailUmkm') }])
           <p class="text-base font-semibold pb-3">{{ $t('label.personalInformation') }}</p>
           <div class="border rounded-xl p-4">
             <div class="w-full mb-4">
-              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.memberCode') }}</p>
-              <p class="text-sm font-semibold text-[#FF234B] capitalize">LM0019012</p>
+              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.memberCodeWiz') }}</p>
+              <p class="text-sm font-semibold capitalize">LM0019012</p>
+            </div>
+            <div class="w-full mb-4">
+              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.identityPhoto') }}</p>
+              <p class="text-sm font-semibold text-[#FF234B] capitalize">
+                Lampiran Foto E-KTP UMKM <i class="pi pi-download ml-2"></i>
+              </p>
             </div>
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.identityNumber') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">3519839209387776</p>
+              <p class="text-sm font-semibold capitalize">3519839209387776</p>
             </div>
             <div class="w-full mb-4">
-              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.name') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">Budiman Agusta</p>
+              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.fullNameOwner') }}</p>
+              <p class="text-sm font-semibold capitalize">Budiman Agusta</p>
             </div>
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.placeBornDate') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">Jakarta Barat, 20/03/1995</p>
+              <p class="text-sm font-semibold capitalize">Jakarta Barat, 20/03/1995</p>
             </div>
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.npwp') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">8393738398190298</p>
+              <p class="text-sm font-semibold capitalize">8393738398190298</p>
             </div>
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.genderRequired') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">Laki-laki</p>
+              <p class="text-sm font-semibold capitalize">Laki-laki</p>
             </div>
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.phoneNumber') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">6281331631888</p>
+              <p class="text-sm font-semibold capitalize">6281331631888</p>
             </div>
           </div>
         </div>
         <div class="w-full">
           <p class="text-base font-semibold pb-3">{{ $t('label.businessType') }}</p>
-          <div class="border rounded-xl p-4">
+          <div class="border rounded-xl p-4 mb-4">
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.businessType') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">Kuliner</p>
+              <p class="text-sm font-semibold capitalize">Kuliner</p>
             </div>
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.businessName') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">Warung Sunda Budi</p>
-            </div>
-            <div class="w-full mb-4">
-              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.businessCreated') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">September 2020</p>
+              <p class="text-sm font-semibold capitalize">Warung Sunda Budi</p>
             </div>
             <div class="w-full mb-4">
               <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.businessAddress') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">
+              <p class="text-sm font-semibold capitalize">
                 Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta
               </p>
             </div>
             <div class="w-full mb-4">
-              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.postCode') }}</p>
-              <p class="text-sm font-semibold text-[#333333] capitalize">12220 - Grogol Selatan, Kebayoran Lama</p>
+              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.businessTelp') }}</p>
+              <p class="text-sm font-semibold capitalize">-</p>
+            </div>
+            <div class="w-full mb-4">
+              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.bankCreditStatus') }}</p>
+              <p class="text-sm font-semibold capitalize">Lancar</p>
+            </div>
+          </div>
+          <div class="border rounded-xl p-4">
+            <div class="w-full mb-1">
+              <p class="text-sm text-[#68788D] font-normal pb-1">{{ $t('label.totalPurchases') }}</p>
+              <p class="text-lg font-semibold capitalize">Rp15.930.000</p>
+            </div>
+            <div class="flex items-start gap-3 py-2.5">
+              <img src="/images/icon-information.svg" class="w-5 h-5 mt-1.5" />
+              <p class="text-xs text-[#68788D]">
+                Total pembelian yang ditampilkan ini adalah nilai terhadap status Selesai pada pesanan
+              </p>
             </div>
           </div>
         </div>
@@ -81,7 +99,7 @@ const itemsBreadcrumb = ref([{ label: t('menu.detailUmkm') }])
                 <div class="line"></div>
               </div>
               <div class="flex flex-col gap-1 w-full rounded-xl bg-[#F5F7F9] p-3.5">
-                <p class="text-sm font-medium text-[#333333]">Menunggu Approval</p>
+                <p class="text-sm font-medium">Menunggu Approval</p>
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-xs text-[#6C6C6C]">Pengajuan: 12 Des 2022, 09.41</p>
@@ -93,43 +111,35 @@ const itemsBreadcrumb = ref([{ label: t('menu.detailUmkm') }])
             </div>
             <div class="status-step flex items-center">
               <div class="step-icon rounded-full mr-2 relative reject">
-                <img src="/images/icon-round-red.svg" class="w-7 h-7" />
+                <img src="/images/icon-round-green.svg" class="w-7 h-7" />
               </div>
               <div class="flex flex-col gap-1 w-full rounded-xl bg-[#F5F7F9] p-3.5">
-                <p class="text-sm font-medium text-[#333333]">Ditolak oleh Bank DKI</p>
+                <p class="text-sm font-medium">Disetujui</p>
                 <div class="flex items-center justify-between">
                   <p class="text-xs text-[#6C6C6C]">Pada: 12 Des 2022, 14.41</p>
-                  <img src="/images/icon-close.svg" class="w-3 h-3" />
+                  <img src="/images/icon-check.svg" class="w-3 h-3" />
                 </div>
               </div>
             </div>
-            <!-- v-if rejectedHistory -->
-            <div class="flex items-start gap-3 bg-[#FFF6E0] rounded-xl py-2.5 px-3.5 mt-8">
-              <img src="/images/icon-warning.svg" class="w-5 h-5 mt-[8px]" />
-              <div>
-                <p class="text-xs text-[#6C6C6C]">Alasan Penolakan</p>
-                <p class="text-sm font-medium text-[#333333]">Bank DKI menolak pengajuan UMKM</p>
-              </div>
-            </div>
-
-            <!-- v-if="waitingApproval" -->
-            <!-- <div class="mt-8">
-              <div class="text-sm text-[#333333] font-semibold">
-                {{ t('text.doConfirmApproval') }}
-              </div>
-              <div class="flex items-center justify-center gap-4 mt-4">
-                <ElementsButton class="!text-[#FF234B] !border !border-[#FF234B] !bg-transparent">
-                  <p class="w-full font-semibold">{{ $t('text.reject') }}</p>
-                </ElementsButton>
-                <ElementsButton>
-                  <p class="w-full font-semibold">{{ $t('text.approve') }}</p>
-                </ElementsButton>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
     </UICard>
+
+    <div class="mt-6">
+      <div class="flex items-center pb-3 gap-3">
+        <p class="text-base font-semibold">{{ $t('label.transactionHistoryCompleted') }}</p>
+        <button class="text-[#FF234B] text-sm font-semibold" @click="navigateTo('/order-transaction/LM0019011')">
+          {{ $t('text.seeAll') }}
+        </button>
+      </div>
+      <MemberRegisteredTable />
+
+      <!-- if there's no data transaction -->
+      <!-- <div class="m-auto flex justify-center items-center h-40">
+        <p class="text-base font-semibold">{{ $t('text.noTransaction', { name: 'Budiman Agusta' }) }}</p>
+      </div> -->
+    </div>
   </div>
 </template>
 

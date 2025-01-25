@@ -11,7 +11,7 @@
         v-model="field.value.value"
         :pt="{
           root: {
-            class: `w-full border-0 bg-[#F3F7FB] ${props.errorMessage ? 'border-red-500' : ''} ${props.rootClass}`,
+            class: `w-full h-[48px] border-0 bg-[#F3F7FB] rounded-xl ${props.errorMessage ? 'border-red-500' : ''} ${props.rootClass}`,
           },
           input: { class: 'text-sm' },
           wrapper: { class: 'text-sm' },

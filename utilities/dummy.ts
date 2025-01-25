@@ -13,6 +13,9 @@ export const manageMemberHistoryTable = [
     submissionDate: '2022-12-12',
     reasonRejected: 'description',
     status: 'Ditolak Distributor',
+    status_approval: 'bank_confirmation',
+    noHp: '098123123123123',
+    age: '20',
   },
   {
     id: 2,
@@ -23,6 +26,9 @@ export const manageMemberHistoryTable = [
     submissionDate: '2022-12-12',
     reasonRejected: 'description',
     status: 'Ditolak Distributor',
+    status_approval: 'waiting_approval',
+    noHp: '098123123123123',
+    age: '20',
   },
 ]
 
@@ -45,4 +51,67 @@ export const dataUMKM = [
   },
 ]
 
-export default { manageDashboardDataTable, dataUMKM }
+export const orderTransactionData = [
+  {
+    id: 1,
+    transactionNumber: 'SW01112028392',
+    purchaseDate: '30 Okt 2022, 09:41',
+    completionDate: '-',
+    totalOrder: '2',
+    orderer: 'Budi Agusta',
+    totalPayment: 'Rp6.400.000',
+    status: 'waiting_confirmation',
+  },
+  {
+    id: 2,
+    transactionNumber: 'SW01112028392',
+    purchaseDate: '30 Okt 2022, 09:41',
+    completionDate: '-',
+    totalOrder: '2',
+    orderer: 'Budi Agusta',
+    totalPayment: 'Rp6.400.000',
+    status: 'order_processed',
+  },
+  {
+    id: 3,
+    transactionNumber: 'SW01112028392',
+    purchaseDate: '30 Okt 2022, 09:41',
+    completionDate: '-',
+    totalOrder: '2',
+    orderer: 'Budi Agusta',
+    totalPayment: 'Rp6.400.000',
+    status: 'in_delivery',
+  },
+  {
+    id: 4,
+    transactionNumber: 'SW01112028392',
+    purchaseDate: '30 Okt 2022, 09:41',
+    completionDate: '-',
+    totalOrder: '2',
+    orderer: 'Budi Agusta',
+    totalPayment: 'Rp6.400.000',
+    status: 'canceled_distributor',
+  },
+  {
+    id: 5,
+    transactionNumber: 'SW01112028392',
+    purchaseDate: '30 Okt 2022, 09:41',
+    completionDate: '-',
+    totalOrder: '2',
+    orderer: 'Budi Agusta',
+    totalPayment: 'Rp6.400.000',
+    status: 'canceled_system',
+  },
+  {
+    id: 6,
+    transactionNumber: 'SW01112028392',
+    purchaseDate: '30 Okt 2022, 09:41',
+    completionDate: '-',
+    totalOrder: '2',
+    orderer: 'Budi Agusta',
+    totalPayment: 'Rp6.400.000',
+    status: 'done',
+  },
+]
+
+export default { manageDashboardDataTable, dataUMKM, orderTransactionData }

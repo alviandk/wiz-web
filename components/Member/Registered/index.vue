@@ -3,13 +3,12 @@ import Column from 'primevue/column'
 import SelectButton from 'primevue/selectbutton'
 import Checkbox from 'primevue/checkbox'
 import { manageMemberHistoryTable } from '~/utilities/dummy'
-import { useMember } from './member-setup'
+import { useMember } from '../member-setup'
 
 const { t } = useI18n()
 const { isModalFilter, onToggleModalFilter } = useMember()
 
 const selectedGender = ref(null)
-const selectedStatus = ref(null)
 const selectedBusinessType = ref(null)
 const businessTypes = ref([
   { name: t('text.fashionGarmenTextil'), key: 'fashionGarmenTextil' },
@@ -55,15 +54,26 @@ const businessTypes = ref([
         </Column>
         <Column field="fullName" :header="$t('label.fullName')" header-class="bg-[#F7F9FC]" style="width: 20%" />
         <Column
+          field="noHp"
+          :header="$t('label.noHp')"
+          header-class="bg-[#F7F9FC]"
+          style="text-transform: capitalize"
+        />
+        <Column
           field="gender"
           :header="$t('label.genderRequired')"
           header-class="bg-[#F7F9FC]"
-          style="text-transform: capitalize"
+          style="width: 20%; text-transform: capitalize"
           sortable
         >
           <template #body="slotProps">
             {{ slotProps.data.gender === 'L' ? $t('text.male') : $t('text.female') }}
           </template>
+          <template #sorticon>
+            <IconSortable />
+          </template>
+        </Column>
+        <Column field="age" :header="$t('label.age')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
           <template #sorticon>
             <IconSortable />
           </template>
@@ -80,40 +90,16 @@ const businessTypes = ref([
           </template>
         </Column>
         <Column
-          field="submissionDate"
-          :header="$t('label.submissionDate')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
-          <template #sorticon>
-            <IconSortable />
-          </template>
-        </Column>
-        <Column
-          field="reasonRejected"
-          :header="$t('label.reasonRejected')"
-          header-class="bg-[#F7F9FC]"
-          sortable
-          style="width: 20%"
-        >
-          <template #sorticon>
-            <IconSortable />
-          </template>
-        </Column>
-        <Column field="status" :header="$t('label.status')" header-class="bg-[#F7F9FC]" sortable style="width: 20%">
-          <template #sorticon>
-            <IconSortable />
-          </template>
-        </Column>
-        <Column
           field="action"
           :header="$t('label.action')"
           header-class="bg-[#F7F9FC]"
           style="width: 20%; text-align: center"
         >
           <template #body>
-            <ElementsButton class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5" @click="navigateTo('/member/1')">
+            <ElementsButton
+              class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"
+              @click="navigateTo('/member/registered/1')"
+            >
               {{ $t('text.detail') }}
             </ElementsButton>
           </template>
@@ -141,7 +127,7 @@ const businessTypes = ref([
     >
       <template #default="slotProps">
         <div class="flex flex-col gap-4">
-          <div class="flex justify-between w-full">
+          <div class="flex items-center justify-between w-full">
             <p class="text-xl font-semibold">{{ $t('text.filter') }}</p>
             <button class="text-[#FF234B] text-sm font-semibold">{{ $t('text.resetFilter') }}</button>
           </div>
@@ -163,22 +149,6 @@ const businessTypes = ref([
               />
             </div>
             <div class="">
-              <p class="text-sm font-semibold py-3">{{ $t('label.status') }}</p>
-              <SelectButton
-                v-model="selectedStatus"
-                :options="[
-                  { name: t('text.rejectDistributor'), value: 'reject_distributor' },
-                  { name: t('text.rejectBank'), value: 'reject_bank' },
-                ]"
-                option-label="name"
-                :pt="{
-                  root: { class: 'flex items-center gap-2' },
-                  button: { class: 'text-sm text-[#68788D] font-medium rounded-xl !border !border-r py-[5px] px-3' },
-                  label: { class: 'text-sm text-[#68788D] font-medium' },
-                }"
-              />
-            </div>
-            <div class="">
               <p class="text-sm font-semibold py-3">{{ $t('label.businessType') }}</p>
               <div
                 v-for="business of businessTypes"
@@ -195,29 +165,23 @@ const businessTypes = ref([
               </div>
             </div>
             <div class="">
-              <p class="text-sm font-semibold pt-3">{{ $t('label.submissionDate') }}</p>
+              <p class="text-sm font-semibold py-3">{{ $t('label.age') }}</p>
               <div class="flex items-center gap-2">
                 <div>
-                  <p class="text-sm font-semibold py-3">{{ $t('text.startDate') }}</p>
-                  <ElementsDatepicker
-                    id="startDate"
-                    placeholder="dd/mm/yyyy"
-                    root-class="h-10"
-                    container-class="w-[227px]"
-                    :max-date="new Date()"
+                  <ElementsInputText
+                    id="start"
+                    :label="$t('text.start')"
+                    :placeholder="$t('placeholder.input', { label: $t('text.start') })"
+                    is-only-number
                   />
                 </div>
                 <div>
-                  <p class="text-sm font-semibold py-3">{{ $t('text.endDate') }}</p>
-                  <ElementsDatepicker
-                    id="endDate"
-                    placeholder="dd/mm/yyyy"
-                    root-class="h-10"
-                    container-class="w-[227px]"
-                    :max-date="new Date()"
+                  <ElementsInputText
+                    id="until"
+                    :label="$t('text.until')"
+                    :placeholder="$t('placeholder.input', { label: $t('text.until') })"
+                    is-only-number
                   />
-                  <!-- :disabled="!props.startDate"
-                :min-date="props.startDate" -->
                 </div>
               </div>
             </div>
