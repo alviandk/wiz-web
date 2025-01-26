@@ -2,6 +2,7 @@
   "text": {
     "filter": "Filter",
     "resetFilter": "Reset Filter",
+    "resetPassword": "Reset Password",
     "seeAll": "Lihat semua",
     "cancel": "Batal",
     "canceled": "Batalkan",
@@ -74,7 +75,21 @@
     "done": "Selesai",
     "doConfirmationOrder": "Lakukan konfirmasi pesanan",
     "openProfile": "Buka Profil",
-    "seeAllOrder": "Tampilkan Semua Pesanan"
+    "seeAllOrder": "Tampilkan Semua Pesanan",
+    "addUser": "Tambah User",
+    "editUser": "Edit User",
+    "addRole": "Tambah Role",
+    "active": "Aktif",
+    "nonActive": "Tidak Aktif",
+    "deleteUserData": "Hapus data User?",
+    "deleteUserDataInformation": "Data yang akan Anda hapus {name}",
+    "create": "Create",
+    "read": "Read",
+    "update": "Update",
+    "deleteEng": "Delete",
+    "print": "Print",
+    "delivery": "Delivery",
+    "canvasser": "Canvasser"
   },
   "menu": {
     "profile": "Profil",
@@ -111,6 +126,7 @@
     }
   },
   "label": {
+    "id": "ID",
     "codeDistributor": "Kode Distributor",
     "username": "Username",
     "password": "Password",
@@ -129,6 +145,8 @@
     "name": "Nama",
     "key": "Key",
     "category": "Kategori",
+    "address": "Alamat",
+    "addressOptional": "Alamat (Opsional)",
     "fullName": "Nama Lengkap",
     "fullNameOwner": "Nama Lengkap/Pemilik Outlet",
     "noHp": "No. Handphone",
@@ -169,7 +187,11 @@
     "deliveryAddress": "Alamat Pengiriman",
     "paymentMethod": "Metode Bayar",
     "timeEstimation": "Estimasi Waktu Sampai (ETD):",
-    "productDesc": "Deskripsi Produk"
+    "productDesc": "Deskripsi Produk",
+    "userStatus": "Status User",
+    "roleName": "Nama Role",
+    "roleDescription": "Deskripsi Role",
+    "permissions": "Permissions"
   },
   "placeholder": {
     "input": "Masukkan {label}",

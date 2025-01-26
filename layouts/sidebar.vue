@@ -96,12 +96,12 @@ const menus = [
       {
         id: 15,
         name: t('menu.user'),
-        link: '',
+        link: '/user',
       },
       {
         id: 16,
         name: t('menu.role'),
-        link: '',
+        link: '/role',
       },
     ],
   },

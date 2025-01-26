@@ -38,7 +38,7 @@ export default defineNuxtModule({
         ],
       },
       options: {
-        ripple: true,
+        // ripple: true,
         locale: {
           startsWith: 'Dimulai dengan',
           contains: 'Mengandung',

@@ -23,5 +23,13 @@
 .p-selectbutton .p-button.p-highlight {
   background: #ffecf0;
   border: 1px solid #ff234b;
-  color: #ff234b;
+  color: #ff234b !important;
+}
+
+/* InputSwitch */
+.p-inputswitch.p-highlight .p-inputswitch-slider {
+  background: #a12128;
+}
+
+.grayscale {
 }

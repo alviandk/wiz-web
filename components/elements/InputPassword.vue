@@ -17,7 +17,7 @@ const field = useField<string>(props.id)
 
 <template>
   <div class="flex flex-col gap-1.5 w-full">
-    <label :for="props.id" :class="`font-bold text-sm text-[#353F45] ${props.classLabel}`">
+    <label v-if="props.label" :for="props.id" :class="`font-bold text-sm text-[#353F45] ${props.classLabel}`">
       {{ props.label }} <span v-if="props.isRequired" class="text-red-500">*</span>
     </label>
     <Password

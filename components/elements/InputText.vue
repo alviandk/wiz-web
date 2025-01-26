@@ -15,6 +15,7 @@ type Props = {
   containerClass?: string
   isOnlyNumber?: boolean
   maxInput?: number
+  disabled?: boolean
 }
 const props = defineProps<Props>()
 const field = useField<string>(props.id)

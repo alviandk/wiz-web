@@ -84,19 +84,38 @@ const selectedOrderTransactionData = ref()
           </template>
         </Column>
         <Column field="status" :header="$t('label.status')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
           <template #body="slotProps">
             <p
-              class="rounded-full px-2 p-1.5 w-max"
-              :class="
-                slotProps.data.status_approval === 'bank_confirmation'
-                  ? 'text-[#F78431] bg-[#FFF6E0]'
-                  : 'text-[#2E8CE2] bg-[#DEEDFF]'
+              v-if="slotProps.data.status === 'waiting_confirmation'"
+              class="rounded-full px-2 p-1.5 w-max text-[#2E8CE2] bg-[#DEEDFF]"
+            >
+              {{ t('text.waitingConfirmation') }}
+            </p>
+            <p
+              v-else-if="slotProps.data.status === 'order_processed' || slotProps.data.status === 'in_delivery'"
+              class="rounded-full px-2 p-1.5 w-max text-[#F78431] bg-[#FFF6E0]"
+            >
+              {{ slotProps.data.status === 'order_processed' ? t('text.orderProcessed') : t('text.inDelivery') }}
+            </p>
+            <p
+              v-else-if="slotProps.data.status === 'done'"
+              class="rounded-full px-2 p-1.5 w-max text-[#19C29A] bg-[#E2FAF4]"
+            >
+              {{ t('text.done') }}
+            </p>
+            <p
+              v-else-if="
+                slotProps.data.status === 'canceled_distributor' || slotProps.data.status === 'canceled_system'
               "
+              class="rounded-full px-2 p-1.5 w-max text-[#FF3263] bg-[#FFECF0]"
             >
               {{
-                slotProps.data.status_approval === 'bank_confirmation'
-                  ? t('text.bankConfirmation')
-                  : t('text.waitingApproval')
+                slotProps.data.status === 'canceled_distributor'
+                  ? t('text.canceledDistributor')
+                  : t('text.canceledSystem')
               }}
             </p>
           </template>

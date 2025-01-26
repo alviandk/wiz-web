@@ -114,4 +114,38 @@ export const orderTransactionData = [
   },
 ]
 
-export default { manageDashboardDataTable, dataUMKM, orderTransactionData }
+export const userData = [
+  {
+    id: 1,
+    fullName: 'Canvasser Pertama',
+    username: 'canvasserpertama',
+    role: 'admin',
+    phoneNumber: '6281331631777',
+    email: 'canv_pert@wiz.web',
+    status: 'active',
+  },
+  {
+    id: 1,
+    fullName: 'Alex Hazim',
+    username: 'alexhazim',
+    role: 'distributor',
+    phoneNumber: '6281331631777',
+    email: 'admin@wiz.web',
+    status: 'non_active',
+  },
+]
+
+export const roleDataTable = [
+  {
+    id: '001929',
+    roleName: 'Role 1',
+    description: 'Lorem Ipsum',
+  },
+  {
+    id: '817383',
+    roleName: 'Role 2',
+    description: 'Lorem Ipsum',
+  },
+]
+
+export default { manageDashboardDataTable, dataUMKM, orderTransactionData, userData }
