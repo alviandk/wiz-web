@@ -9,123 +9,20 @@ type Props = {
 }
 const props = defineProps<Props>()
 
-const { t } = useI18n()
-const { visibleMenu, onChangeVisible } = useSidebar()
-
-const menus = [
-  {
-    id: 1,
-    name: t('menu.dashboard'),
-    icon: 'icon-dashboard.svg',
-    subItems: [
-      {
-        id: 2,
-        name: t('menu.dashboard'),
-        link: '/dashboard',
-      },
-      {
-        id: 3,
-        name: t('menu.manageDashboard'),
-        link: '/dashboard/manage',
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: t('menu.listMemberUmkm'),
-    icon: 'icon-store.svg',
-    subItems: [
-      {
-        id: 5,
-        name: t('menu.waitingApproval'),
-        link: '/member/waiting-approval',
-      },
-      {
-        id: 6,
-        name: t('menu.registeredMember'),
-        link: '/member/registered',
-      },
-      {
-        id: 7,
-        name: t('menu.rejectedHistory'),
-        link: '/member/history',
-      },
-    ],
-  },
-  {
-    id: 8,
-    name: t('menu.manageUMKM'),
-    link: '/manage-umkm',
-    icon: 'icon-umbrella.svg',
-    subItems: [],
-  },
-  {
-    id: 9,
-    name: t('menu.orderTransaction'),
-    link: '/order-transaction',
-    icon: 'icon-document.svg',
-    subItems: [],
-  },
-  {
-    id: 10,
-    name: t('menu.productMaster'),
-    icon: 'icon-box.svg',
-    subItems: [
-      {
-        id: 11,
-        name: t('menu.productMaster'),
-        link: '/product-master',
-      },
-      {
-        id: 12,
-        name: t('menu.manageCategory'),
-        link: '/product-category',
-      },
-      {
-        id: 13,
-        name: t('menu.unitMaster'),
-        link: '/product-unit-layer',
-      },
-    ],
-  },
-  {
-    id: 14,
-    name: t('menu.manageUserRole'),
-    icon: 'icon-group-people.svg',
-    subItems: [
-      {
-        id: 15,
-        name: t('menu.user'),
-        link: '/user',
-      },
-      {
-        id: 16,
-        name: t('menu.role'),
-        link: '/role',
-      },
-    ],
-  },
-  {
-    id: 17,
-    name: t('menu.termsAndPolicy'),
-    link: '/terms-and-policy',
-    icon: 'icon-file.svg',
-    subItems: [],
-  },
-]
+const { menus, visibleMenu, onChangeVisible } = useSidebar()
 </script>
 
 <template>
   <div
-    :class="`layout-container layout-light layout-static ${visibleMenu ? `layout-static-inactive layout-mobile-inactive` : `layout-static-active layout-mobile-active`} bg-[#f8f9fa]`"
+    :class="`layout-container layout-light layout-static ${visibleMenu ? `layout-static-inactive` : `layout-static-active`} bg-[#f8f9fa]`"
   >
     <!-- Sidebar -->
-    <div class="layout-sidebar !w-[17rem]">
+    <div v-if="!visibleMenu" class="layout-sidebar desktop !w-[17rem]">
       <div
         class="sidebar-header p-5 flex items-center gap-3"
         style="background: linear-gradient(90deg, #ff234b 0%, #f78431 100%)"
       >
-        <!-- <i class="pi pi-bars text-white text-[1.5rem] cursor-pointer" @click="onChangeVisible"></i> -->
+        <i class="pi pi-bars text-white text-[1.2rem] cursor-pointer" @click="onChangeVisible"></i>
         <a href="/dashboard" class="m-auto">
           <img src="/images/logo-wizyztem-white.svg" alt="logo" class="w-[160px] h-[31px]" />
         </a>
@@ -200,6 +97,25 @@ const menus = [
         </div>
       </div>
     </div>
+    <div v-else class="layout-sidebar minibar !w-[5rem] mini-sidebar">
+      <div
+        class="sidebar-header p-5 flex justify-center items-center gap-3 h-[72px]"
+        style="background: linear-gradient(90deg, #ff234b 0%, #f78431 100%)"
+      >
+        <i class="pi pi-bars text-white text-[1.2rem] cursor-pointer" @click="onChangeVisible"></i>
+      </div>
+      <div class="layout-content-scroll h-full grid content-between">
+        <div class="layout-menu-container p-6">
+          <div class="flex flex-col gap-1">
+            <div v-for="item in menus" :key="item.id" class="cursor-pointer" @click="onChangeVisible">
+              <div class="w-full">
+                <img :src="`/images/${item.icon}`" alt="icon plus" class="mx-auto h-4 w-4 my-4" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Right Side -->
     <div :class="`layout-content-wrapper`">
@@ -236,10 +152,9 @@ const menus = [
 .layout-content-scroll::-webkit-scrollbar {
   display: none;
 }
-/* @media screen and (min-width: 992px) { */
-.layout-static-inactive .layout-sidebar {
+/* .layout-static-inactive .layout-sidebar {
   transform: translate(-100%);
-}
+} */
 .layout-static .layout-sidebar {
   transition: transform 0.2s;
 }
@@ -248,33 +163,9 @@ const menus = [
   transition: margin-left 0.2s;
 }
 .layout-static-inactive .layout-content-wrapper {
-  margin-left: 0;
+  margin-left: 5rem;
 }
 .layout-static-active .layout-content-wrapper {
   margin-left: 17rem;
 }
-/* } */
-/* @media screen and (max-width: 991px) {
-  .layout-container .layout-sidebar {
-    z-index: 999;
-    transition: transform 0.2s;
-    transform: translate(-100%);
-    box-shadow: none;
-  }
-  .layout-container.layout-mobile-active .layout-sidebar {
-    transform: translate(0);
-  }
-  .layout-container.layout-mobile-inactive .layout-mask {
-    display: none;
-  }
-  .layout-container.layout-mobile-active .layout-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 998;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-} */
 </style>

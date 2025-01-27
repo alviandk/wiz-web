@@ -36,6 +36,108 @@ export const useSidebar = () => {
   const visibleMenu = ref(false)
   const visibleMenuProfile = ref(false)
 
+  const menus = [
+    {
+      id: 1,
+      name: t('menu.dashboard'),
+      icon: 'icon-dashboard.svg',
+      subItems: [
+        {
+          id: 2,
+          name: t('menu.dashboard'),
+          link: '/dashboard',
+        },
+        {
+          id: 3,
+          name: t('menu.manageDashboard'),
+          link: '/dashboard/manage',
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: t('menu.listMemberUmkm'),
+      icon: 'icon-store.svg',
+      subItems: [
+        {
+          id: 5,
+          name: t('menu.waitingApproval'),
+          link: '/member/waiting-approval',
+        },
+        {
+          id: 6,
+          name: t('menu.registeredMember'),
+          link: '/member/registered',
+        },
+        {
+          id: 7,
+          name: t('menu.rejectedHistory'),
+          link: '/member/history',
+        },
+      ],
+    },
+    {
+      id: 8,
+      name: t('menu.manageUMKM'),
+      link: '/manage-umkm',
+      icon: 'icon-umbrella.svg',
+      subItems: [],
+    },
+    {
+      id: 9,
+      name: t('menu.orderTransaction'),
+      link: '/order-transaction',
+      icon: 'icon-document.svg',
+      subItems: [],
+    },
+    {
+      id: 10,
+      name: t('menu.productMaster'),
+      icon: 'icon-box.svg',
+      subItems: [
+        {
+          id: 11,
+          name: t('menu.productMaster'),
+          link: '/product-master',
+        },
+        {
+          id: 12,
+          name: t('menu.manageCategory'),
+          link: '/product-category',
+        },
+        {
+          id: 13,
+          name: t('menu.unitMaster'),
+          link: '/product-unit-layer',
+        },
+      ],
+    },
+    {
+      id: 14,
+      name: t('menu.manageUserRole'),
+      icon: 'icon-group-people.svg',
+      subItems: [
+        {
+          id: 15,
+          name: t('menu.user'),
+          link: '/user',
+        },
+        {
+          id: 16,
+          name: t('menu.role'),
+          link: '/role',
+        },
+      ],
+    },
+    {
+      id: 17,
+      name: t('menu.termsAndPolicy'),
+      link: '/terms-and-policy',
+      icon: 'icon-file.svg',
+      subItems: [],
+    },
+  ]
+
   const menuProfile = ref([
     {
       label: t('menu.profile'),
@@ -96,6 +198,8 @@ export const useSidebar = () => {
   }
 
   return {
+    menus,
+
     target,
     visibleMenu,
     onChangeVisible,
