@@ -12,7 +12,7 @@ const field = useField<number[] | boolean>(props.id)
 </script>
 
 <template>
-  <div class="border rounded-xl py-3 px-4 h-[48px] flex gap-2 w-fit">
+  <div class="border rounded-xl py-3 px-4 h-[48px] flex items-center gap-2 w-fit">
     <Checkbox
       :id="props.id"
       v-model="field.value.value"

@@ -148,4 +148,25 @@ export const roleDataTable = [
   },
 ]
 
-export default { manageDashboardDataTable, dataUMKM, orderTransactionData, userData }
+export const productMasterTable = [
+  {
+    id: 1,
+    productCode: '20230323020',
+    url: '/images/product.png',
+    productName: 'PAKET 1: SEMBAKO',
+    productDesc: 'Lorem Ipsum',
+    category: 'Kuliner',
+    status: 'active',
+    productPrice: 'Rp3.200.000',
+  },
+]
+
+export const productCategoryTable = [
+  {
+    id: 1,
+    initial: 'AP',
+    categoryCode: '20230323123',
+    categoryName: 'Agribisnis/Peternakan/Pertanian',
+    total: 8,
+  },
+]

@@ -1,5 +1,6 @@
 {
   "text": {
+    "currencyIdr": "Rp",
     "filter": "Filter",
     "resetFilter": "Reset Filter",
     "resetPassword": "Reset Password",
@@ -89,7 +90,21 @@
     "deleteEng": "Delete",
     "print": "Print",
     "delivery": "Delivery",
-    "canvasser": "Canvasser"
+    "canvasser": "Canvasser",
+    "addProduct": "Tambah Produk",
+    "halal": "Halal",
+    "nonHalal": "Non-Halal",
+    "normalPrice": "Harga Normal",
+    "distributorPrice": "Harga Distributor",
+    "specialPrice": "Harga Spesial",
+    "publication": "Publikasi",
+    "backToPrevPage": "Kembali ke laman sebelumnya?",
+    "dataCantBeSaved": "Data yang sudah Anda masukkan tidak akan tersimpan",
+    "yesGetBack": "Ya, Kembali",
+    "addCategory": "Tambah Kategori",
+    "editCategoryData": "Ubah Data: {code}",
+    "deleteCategory": "Hapus kategori?",
+    "deleteCategoryInformation": "Data yang akan Anda hapus {catName}"
   },
   "menu": {
     "profile": "Profil",
@@ -191,7 +206,22 @@
     "userStatus": "Status User",
     "roleName": "Nama Role",
     "roleDescription": "Deskripsi Role",
-    "permissions": "Permissions"
+    "permissions": "Permissions",
+    "productCode": "SKU/Kode Produk",
+    "productCategory": "Kategori Produk",
+    "photo": "Foto",
+    "productName": "Nama Produk",
+    "productPrice": "Harga Produk",
+    "productStatus": "Status Produk",
+    "nameUnitLayer": "Nama Unit/Layer",
+    "ingredients": "Ingredients/Bahan-bahan",
+    "ingredientsOpt": "Ingredients/Bahan-bahan (Opsional)",
+    "halalNonHalal": "Halal/Non-Halal",
+    "icon": "Icon",
+    "code": "Code",
+    "categoryCode": "Kode Kategori",
+    "categoryName": "Nama Kategori",
+    "totalProduct": "Jumlah Produk"
   },
   "placeholder": {
     "input": "Masukkan {label}",

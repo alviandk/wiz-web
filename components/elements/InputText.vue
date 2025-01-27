@@ -15,7 +15,6 @@ type Props = {
   containerClass?: string
   isOnlyNumber?: boolean
   maxInput?: number
-  disabled?: boolean
 }
 const props = defineProps<Props>()
 const field = useField<string>(props.id)
@@ -48,7 +47,7 @@ function onUpdate(value: string | undefined) {
         :id="props.id"
         v-bind="$attrs"
         :model-value="field.value.value"
-        :class="`h-[48px] text-sm px-4 py-3 rounded-xl w-full border-0 bg-[#F3F7FB] disabled:bg-[#EDEEF1] ${props.errorMessage ? 'border-red-500' : ''} ${iconPosition === 'left' ? 'pl-10' : 'pr-10'} ${props.class}`"
+        :class="`h-[48px] text-sm px-4 py-3 rounded-xl w-full border-0 bg-[#F3F7FB] disabled:bg-[#D4DDE4] ${props.errorMessage ? 'border-red-500' : ''} ${iconPosition === 'left' ? 'pl-10' : 'pr-10'} ${props.class}`"
         :maxlength="maxInput"
         @update:model-value="onUpdate"
       />

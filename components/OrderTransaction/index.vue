@@ -271,10 +271,3 @@ const selectedOrderTransactionData = ref()
     </UIDialog>
   </div>
 </template>
-
-<style>
-.checkbox-wrapper .p-checkbox.p-highlight .p-checkbox-box {
-  background-color: #ff234b;
-  border-color: #ff234b;
-}
-</style>

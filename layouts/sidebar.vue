@@ -74,17 +74,17 @@ const menus = [
       {
         id: 11,
         name: t('menu.productMaster'),
-        link: '',
+        link: '/product-master',
       },
       {
         id: 12,
         name: t('menu.manageCategory'),
-        link: '',
+        link: '/product-category',
       },
       {
         id: 13,
         name: t('menu.unitMaster'),
-        link: '',
+        link: '/product-unit-layer',
       },
     ],
   },
