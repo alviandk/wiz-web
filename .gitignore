@@ -1,0 +1,50 @@
+# Node or npm
+node_modules
+logs
+*.log*
+*.tgz
+.node_repl_history
+.npm
+.lock-wscript
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional eslint cache
+.eslintcache
+
+# Nuxt dev/build outputs
+.nuxt
+.nitro
+.cache
+.output
+.data
+dist
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Serverless directories
+.serverless
+
+# IDE / Editor
+.idea
+
+# macOS
+.DS_Store
+
+# Vim swap files
+*.swp
+
+# Dockerfile only
+Dockerfile.*
+docker-compose.yml
+docker-compose.*.yml
+
+# Others
+.fleet

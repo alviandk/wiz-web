@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "natqe.reload",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "SonarSource.sonarlint-vscode",
+    "vue.volar",
+    "antfu.iconify",
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur",
+    "vscode.typescript-language-features",
+    "vue.vscode-typescript-vue-plugin"
+  ]
+}
