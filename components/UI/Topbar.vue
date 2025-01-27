@@ -17,7 +17,7 @@ const { isModalLanguage, onToggleModalSwitchLanguage, isModalLogout, onToggleMod
 </script>
 
 <template>
-  <div class="flex items-center justify-between bg-white border-b border-b-[#E7EAF1] px-8 py-[21px]">
+  <div class="flex items-center justify-between bg-white border-b border-b-[#E7EAF1] px-8 py-[16px]">
     <div class="topbar-start flex items-center gap-5">
       <i class="pi pi-bars text-[1.2rem] cursor-pointer" @click="props.onClick"></i>
       <span class="text-xl font-semibold">{{ pageTitle }}</span>
