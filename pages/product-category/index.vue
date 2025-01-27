@@ -6,7 +6,7 @@ useServerSeoMeta({ title: t('menu.manageCategory') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('menu.manageCategory')">
+  <NuxtLayout name="sidebar" :title="t('menu.manageCategory')">
     <ProductCategory />
   </NuxtLayout>
 </template>

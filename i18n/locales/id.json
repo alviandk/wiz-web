@@ -80,6 +80,7 @@
     "addUser": "Tambah User",
     "editUser": "Edit User",
     "addRole": "Tambah Role",
+    "editRole": "Edit Role",
     "active": "Aktif",
     "nonActive": "Tidak Aktif",
     "deleteUserData": "Hapus data User?",

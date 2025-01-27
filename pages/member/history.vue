@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('menu.rejectedHistory') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('menu.rejectedHistory')">
+  <NuxtLayout name="sidebar" :title="t('menu.rejectedHistory')">
     <MemberHistory />
   </NuxtLayout>
 </template>
