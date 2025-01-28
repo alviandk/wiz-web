@@ -6,7 +6,7 @@ useServerSeoMeta({ title: t('menu.orderTransaction') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('menu.orderTransaction')">
+  <NuxtLayout name="sidebar" :title="t('menu.orderTransaction')">
     <OrderTransaction />
   </NuxtLayout>
 </template>

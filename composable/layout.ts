@@ -29,6 +29,7 @@ export async function useLogout() {
 
 export const useSidebar = () => {
   const { t } = useI18n()
+  const props = useAttrs()
   const router = useRouter()
   const { myProfile } = storeToRefs(useAuthStore())
 
@@ -198,6 +199,7 @@ export const useSidebar = () => {
   }
 
   return {
+    props,
     menus,
 
     target,

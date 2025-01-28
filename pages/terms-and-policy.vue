@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('menu.termsAndPolicy') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('menu.termsAndPolicy')">
+  <NuxtLayout name="sidebar" :title="t('menu.termsAndPolicy')">
     <TermsAndPolicy />
   </NuxtLayout>
 </template>

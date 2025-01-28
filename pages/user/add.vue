@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('text.addUser') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('text.addUser')">
+  <NuxtLayout name="sidebar" :title="t('text.addUser')" :is-back="true">
     <ManageUserAdd />
   </NuxtLayout>
 </template>

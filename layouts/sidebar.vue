@@ -4,12 +4,12 @@ import AccordionTab from 'primevue/accordiontab'
 import Divider from 'primevue/divider'
 import { useSidebar } from '~/composable/layout'
 
-type Props = {
-  pageTitle?: string
-}
-const props = defineProps<Props>()
+// type Props = {
+//   pageTitle?: string
+// }
+// const props = defineProps<Props>()
 
-const { menus, visibleMenu, onChangeVisible } = useSidebar()
+const { props, menus, visibleMenu, onChangeVisible } = useSidebar()
 </script>
 
 <template>
@@ -119,12 +119,11 @@ const { menus, visibleMenu, onChangeVisible } = useSidebar()
 
     <!-- Right Side -->
     <div :class="`layout-content-wrapper`">
-      <UITopbar :on-click="onChangeVisible" :page-title="props.pageTitle" />
+      <UITopbar :on-click="onChangeVisible" :page-title="props.title" :is-back="props['is-back'] ?? false" />
       <div class="layout-content px-8 pt-8 pb-10 min-h-screen bg-white">
         <slot></slot>
       </div>
     </div>
-    <div class="layout-mask"></div>
   </div>
 </template>
 

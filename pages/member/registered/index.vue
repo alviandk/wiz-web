@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('menu.registeredMember') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('menu.registeredMember')">
+  <NuxtLayout name="sidebar" :title="t('menu.registeredMember')">
     <MemberRegistered />
   </NuxtLayout>
 </template>

@@ -9,10 +9,6 @@ const { onBack } = useSidebar()
 
 <template>
   <div>
-    <div class="bg-transparent !text-[#2B1713] text-md font-semibold !w-fit mb-6 cursor-pointer" @click="onBack">
-      <i class="pi pi-arrow-left mr-3" />
-      {{ $t('text.back') }}
-    </div>
     <UICard>
       <form @submit.prevent="">
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">

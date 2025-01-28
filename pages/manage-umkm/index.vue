@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('menu.manageUMKM') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('menu.manageUMKM')">
+  <NuxtLayout name="sidebar" :title="t('menu.manageUMKM')">
     <BinaanUMKM />
   </NuxtLayout>
 </template>
