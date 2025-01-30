@@ -120,3 +120,39 @@ export const useForgotPassword = () => {
     onSubmitForgot,
   }
 }
+
+export const useForgotPasswordAdmin = () => {
+  const { t } = useI18n()
+  const toast = useToasts()
+
+  const isLoadingForgotAdmin = ref(false)
+  const isDisableAdmin = ref(true)
+
+  const validationSchema = toTypedSchema(
+    object({
+      email: string()
+        .required(t(keyLocalization, { label: t('label.email') }))
+        .email(t('validation.email', { label: 'nama@domain.com' })),
+    }),
+  )
+  const { handleSubmit, errors, meta } = useForm({ validationSchema })
+
+  watch(meta, () => {
+    if (!meta.value.pending) {
+      isDisableAdmin.value = !meta.value.valid
+    }
+  })
+
+  const onSubmitForgotAdmin = handleSubmit((form) => {
+    console.log('form forgot password', form) // eslint-disable-line
+    toast.error({ message: 'Email yang Anda masukkan tidak terdaftar' })
+    toast.success({ message: 'Berhasil' })
+  })
+
+  return {
+    errorAdmin: errors,
+    isDisableAdmin,
+    isLoadingForgotAdmin,
+    onSubmitForgotAdmin,
+  }
+}

@@ -39,7 +39,7 @@ const props = defineProps<Props>()
           <p class="w-full font-semibold">{{ $t('text.login') }}</p>
         </ElementsButton>
         <div class="flex justify-center">
-          <NuxtLink class="text-sm font-semibold text-[#1F76B6] w-fit" to="/forgot-password">{{
+          <NuxtLink class="text-sm font-semibold text-[#1F76B6] w-fit" to="/forgot-password-admin">{{
             $t('text.forgotPassword')
           }}</NuxtLink>
         </div>
