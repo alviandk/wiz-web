@@ -1,6 +1,6 @@
 import { getActivePinia } from 'pinia'
 import { onClickOutside } from '@vueuse/core'
-// import { IS_LOGIN } from '~/constants/cookies'
+import { IS_LOGIN, LOGIN_ROLE } from '~/constants/cookies'
 import { useAuthStore } from '~/stores/auth'
 
 export function useResetAllPinia() {
@@ -14,7 +14,9 @@ export function useResetAllPinia() {
   }
 }
 
-export async function useLogout() {
+export function useLogout() {
+  useCookie(IS_LOGIN).value = null
+  useCookie(LOGIN_ROLE).value = null
   // try {
   //   const nuxtApp = useNuxtApp()
   //   await $fetch('/api/auth/logout', { method: 'POST' })
@@ -226,8 +228,8 @@ export const useTopBar = () => {
     isModalLogout.value = !isModalLogout.value
   }
 
-  async function onLogout() {
-    await useLogout()
+  function onLogout() {
+    useLogout()
     navigateTo('/')
   }
 

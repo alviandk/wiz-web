@@ -133,6 +133,7 @@
   "page": {
     "home": {
       "welcome": "Selamat datang Distributor!",
+      "welcomeAdmin": "Selamat datang Admin WIZYSTEM!",
       "subInfo": "Silakan masuk menggunakan akun Anda.",
       "presentBy": "Present by:",
       "supportBy": "Support by:"

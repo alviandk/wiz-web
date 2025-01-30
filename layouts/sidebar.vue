@@ -22,7 +22,7 @@ const { props, menus, visibleMenu, onChangeVisible } = useSidebar()
         class="sidebar-header p-5 flex items-center gap-3"
         style="background: linear-gradient(90deg, #ff234b 0%, #f78431 100%)"
       >
-        <i class="pi pi-bars text-white text-[1.2rem] cursor-pointer" @click="onChangeVisible"></i>
+        <i class="pi pi-bars text-[#ffffff] text-[1.2rem] cursor-pointer" @click="onChangeVisible"></i>
         <a href="/dashboard" class="m-auto">
           <img src="/images/logo-wizyztem-white.svg" alt="logo" class="w-[160px] h-[31px]" />
         </a>
