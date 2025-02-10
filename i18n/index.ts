@@ -5,13 +5,13 @@ export const fallbackLocale = 'id'
 export const availableLocales: Array<LocaleObject> = [
   {
     code: 'id',
-    iso: 'id-ID',
+    language: 'id',
     file: 'id.json',
     name: 'Bahasa Indonesia',
   },
   {
     code: 'en',
-    iso: 'en-US',
+    language: 'en',
     file: 'en.json',
     name: 'English',
   },
