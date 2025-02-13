@@ -2,17 +2,17 @@
 import Column from 'primevue/column'
 import Divider from 'primevue/divider'
 import Menu from 'primevue/menu'
-import FileUpload from 'primevue/fileupload'
-import Button from 'primevue/button'
-import Badge from 'primevue/badge'
+// import FileUpload from 'primevue/fileupload'
+// import Button from 'primevue/button'
+// import Badge from 'primevue/badge'
 
 import { leadsData } from '~/utilities/dummy'
 
-import { usePrimeVue } from 'primevue/config'
-import { useToast } from 'primevue/usetoast'
+// import { usePrimeVue } from 'primevue/config'
+// import { useToast } from 'primevue/usetoast'
 import { useLeads } from './leads-setup'
 
-const toast = useToast()
+// const toast = useToast()
 const {
   listCSV,
   visibleCSV,
@@ -23,43 +23,43 @@ const {
   onChangeVisibleCSV,
 } = useLeads()
 
-const $primevue = usePrimeVue()
-const fileData = ref([])
+// const $primevue = usePrimeVue()
+// const fileData = ref([])
 
-const formatSize = (bytes: any) => {
-  const k = 1024
-  const dm = 3
-  const sizes = $primevue.config.locale?.fileSizeTypes || 0
-  console.log('sizes', sizes) // eslint-disable-line
+// const formatSize = (bytes: any) => {
+//   const k = 1024
+//   const dm = 3
+//   const sizes = $primevue.config.locale?.fileSizeTypes || 0
+//   console.log('sizes', sizes) // eslint-disable-line
 
-  if (bytes === 0) {
-    return `0 ${[sizes]}`
-  }
+//   if (bytes === 0) {
+//     return `0 ${[sizes]}`
+//   }
 
-  const i = Math.floor(Math.log(bytes) / Math.log(k))
-  const formattedSize = parseFloat((bytes / k ** i).toFixed(dm))
+//   const i = Math.floor(Math.log(bytes) / Math.log(k))
+//   const formattedSize = parseFloat((bytes / k ** i).toFixed(dm))
 
-  return `${formattedSize} ${sizes}`
-}
+//   return `${formattedSize} ${sizes}`
+// }
 
-const onTemplatedUpload = (e: any) => {
-  console.log('eventt', e.target.value) // eslint-disable-line
-  toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 })
-}
+// const onTemplatedUpload = (e: any) => {
+//   console.log('eventt', e.target.value) // eslint-disable-line
+//   toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 })
+// }
 
-const totalSize = ref(0)
-const totalSizePercent = ref(0)
-const onRemoveTemplatingFile = (file: any, removeFileCallback: any, index: any) => {
-  removeFileCallback(index)
-  totalSize.value -= parseInt(formatSize(file.size), 10)
-  totalSizePercent.value = totalSize.value / 10
-}
-const onSelectedFiles = (event: any) => {
-  fileData.value = event.files
-  fileData.value.forEach((file: any) => {
-    totalSize.value += parseInt(formatSize(file.size), 10)
-  })
-}
+// const totalSize = ref(0)
+// const totalSizePercent = ref(0)
+// const onRemoveTemplatingFile = (file: any, removeFileCallback: any, index: any) => {
+//   removeFileCallback(index)
+//   totalSize.value -= parseInt(formatSize(file.size), 10)
+//   totalSizePercent.value = totalSize.value / 10
+// }
+// const onSelectedFiles = (event: any) => {
+//   fileData.value = event.files
+//   fileData.value.forEach((file: any) => {
+//     totalSize.value += parseInt(formatSize(file.size), 10)
+//   })
+// }
 </script>
 
 <template>
@@ -196,7 +196,8 @@ const onSelectedFiles = (event: any) => {
             <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
           </div>
           <div class="grid grid-cols-2 content-center gap-3 mt-4">
-            <div class="rounded-xl border border-dashed !border-color-[#1F76B6] px-6 text-center py-3">
+            <img src="/images/upload-image-blue.svg" class="cursor-pointer" />
+            <!-- <div class="rounded-xl border border-dashed !border-color-[#1F76B6] px-6 text-center py-3">
               <FileUpload
                 name="demo[]"
                 url="/api/upload"
@@ -289,7 +290,7 @@ const onSelectedFiles = (event: any) => {
                   </div>
                 </template>
               </FileUpload>
-            </div>
+            </div> -->
             <div class="flex items-center h-full rounded-xl border px-6 text-center py-3">
               <div>
                 <p class="text-xs font-normal text-[#333333] mb-4">{{ $t('text.importInformation') }}</p>

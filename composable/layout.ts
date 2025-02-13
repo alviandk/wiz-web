@@ -244,7 +244,8 @@ export const useTopBar = () => {
 
   function onLogout() {
     useLogout()
-    navigateTo('/')
+    const role = useCookie(LOGIN_ROLE).value
+    navigateTo(`/${role}`)
   }
 
   return {
