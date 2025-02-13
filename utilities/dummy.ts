@@ -198,3 +198,13 @@ export const multiDistributorData = [
     total_umkm: 140,
   },
 ]
+
+export const unitLayerData = [
+  {
+    id: 1,
+    code: 'dus',
+    name: 'dus',
+    desc: 'kardus indomie',
+    total: 4,
+  },
+]

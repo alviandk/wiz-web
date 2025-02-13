@@ -119,7 +119,8 @@
     "addDistributor": "Tambah Distributor",
     "editDistributor": "Edit Distributor",
     "cantDeleteDistributor": "Tidak dapat menghapus Distributor",
-    "deleteDistributorInformation": "{x} masih mempunyai 140 UMKM. Tidak dapat menghapus Distributor."
+    "deleteDistributorInformation": "{x} masih mempunyai 140 UMKM. Tidak dapat menghapus Distributor.",
+    "addUnitLayer": "Tambah Unit/Layer"
   },
   "menu": {
     "profile": "Profil",
@@ -138,7 +139,7 @@
     "detailOrder": "Detail Pesanan",
     "productMaster": "Master Produk",
     "manageCategory": "Kelola Kategori",
-    "unitMaster": "Master Unit/Layer",
+    "unitLayerProduct": "Master Unit/Layer",
     "manageUserRole": "Pengelolaan User & Role",
     "user": "User",
     "role": "Role",
@@ -234,6 +235,7 @@
     "productPrice": "Harga Produk",
     "productStatus": "Status Produk",
     "nameUnitLayer": "Nama Unit/Layer",
+    "codeUnitLayer": "Kode Unit/Layer",
     "ingredients": "Ingredients/Bahan-bahan",
     "ingredientsOpt": "Ingredients/Bahan-bahan (Opsional)",
     "halalNonHalal": "Halal/Non-Halal",

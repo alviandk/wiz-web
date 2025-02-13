@@ -110,7 +110,7 @@ export const useSidebar = () => {
         },
         {
           id: 13,
-          name: t('menu.unitMaster'),
+          name: t('menu.unitLayerProduct'),
           link: '/unit-layer',
         },
       ],
