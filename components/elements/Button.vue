@@ -1,7 +1,7 @@
 <template>
   <Button
     :pt="{
-      root: `${props.class} w-full bg-[#FF234B] rounded-xl min-h-[32px] text-sm font-semibold h-12 text-white disabled:bg-[#B5C0CB] disabled:!text-white disabled:border-none justify-center border-transparent px-4`,
+      root: `${props.class} w-full rounded-xl min-h-[32px] text-sm font-semibold h-12 text-white bg-[#FF234B] disabled:bg-[#B5C0CB] disabled:!text-white disabled:border-none justify-center border-0 px-4`,
     }"
     :link="props.attrButton?.link"
   >

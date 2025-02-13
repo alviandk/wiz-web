@@ -26,7 +26,7 @@
       </div>
 
       <div class="flex items-center justify-end mt-6">
-        <ElementsButton class="!w-fit !bg-[#FF234B]">
+        <ElementsButton class="!w-fit">
           {{ $t('menu.changePassword') }}
         </ElementsButton>
       </div>

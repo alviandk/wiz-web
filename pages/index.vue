@@ -1,9 +1,9 @@
 <script setup lang="ts">
-// definePageMeta({ middleware: ['login'] })
-</script>
+import { useLogout } from '~/composable/layout'
 
-<template>
-  <NuxtLayout name="auth">
-    <SignIn />
-  </NuxtLayout>
-</template>
+// navigateTo('/')
+
+onBeforeMount(() => {
+  useLogout()
+})
+</script>
