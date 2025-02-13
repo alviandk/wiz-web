@@ -186,3 +186,15 @@ export const leadsData = [
     branchDKI: 'KC Balaikota',
   },
 ]
+
+export const multiDistributorData = [
+  {
+    id: 1,
+    distributorName: 'PDC',
+    distributorCode: 'PDC001',
+    distributorAddress: 'Jalan ABC No. 129,...',
+    phone: '6281331631000',
+    email: 'pdc@gmail.com',
+    total_umkm: 140,
+  },
+]

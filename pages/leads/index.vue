@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import { useLogout } from '~/composable/layout'
-
 const { t } = useI18n()
 
 // definePageMeta({ middleware: ['login'] })
-onBeforeMount(() => {
-  useLogout()
-})
+useServerSeoMeta({ title: t('menu.leadsData') })
 </script>
 
 <template>

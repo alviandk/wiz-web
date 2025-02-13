@@ -4,6 +4,7 @@
     "filter": "Filter",
     "resetFilter": "Reset Filter",
     "resetPassword": "Reset Password",
+    "optional": "Opsional",
     "seeAll": "Lihat semua",
     "cancel": "Batal",
     "canceled": "Batalkan",
@@ -26,6 +27,7 @@
     "reject": "Tolak",
     "approve": "Setujui",
     "confirm": "Konfirmasi",
+    "understand": "Mengerti",
     "addDashboard": "Tambah Dashboard",
     "detailDashboard": "Detail Dashboard",
     "editDashboard": "Edit Dashboard",
@@ -113,7 +115,11 @@
     "leadTemplate": "Template Leads",
     "exportDataLeads": "Expor Data Leads",
     "exportInformation": "Mohon diperhatikan sebelum mengunduh, informasi di atas merupakan data yang ditampilkan berdasarkan penggunaan filter yang Anda gunakan di halaman utama Data Leads.",
-    "downloadData": "Unduh Data"
+    "downloadData": "Unduh Data",
+    "addDistributor": "Tambah Distributor",
+    "editDistributor": "Edit Distributor",
+    "cantDeleteDistributor": "Tidak dapat menghapus Distributor",
+    "deleteDistributorInformation": "{x} masih mempunyai 140 UMKM. Tidak dapat menghapus Distributor."
   },
   "menu": {
     "profile": "Profil",
@@ -137,7 +143,8 @@
     "user": "User",
     "role": "Role",
     "termsAndPolicy": "Syarat & Ketentuan",
-    "leadsData": "Data Leads"
+    "leadsData": "Data Leads",
+    "multiDistributor": "Multi Distributor"
   },
   "page": {
     "home": {
@@ -180,6 +187,7 @@
     "phoneNumberOwner": "Nomor Handphone Usaha/Pemilik Outlet",
     "businessCreated": "Usaha berdiri",
     "businessType": "Jenis Usaha",
+    "businessTypeOptional": "Jenis Usaha",
     "businessName": "Nama Usaha",
     "businessAddress": "Alamat Tempat Usaha",
     "businessTelp": "Nomor Telepon Usaha",
@@ -236,6 +244,8 @@
     "totalProduct": "Jumlah Produk",
     "allDistributor": "Semua Distributor",
     "distributorName": "Nama Distributor",
+    "distributorCode": "Kode Distributor",
+    "distributorAddress": "Alamat Distributor",
     "averagesBuy": "Rata-rata Pembelian",
     "averagesBuyMonth": "Rata-rata Pembelian/Bulan",
     "distributor": "Distributor",
@@ -243,7 +253,21 @@
     "topOrCash": "Top/Cash",
     "day": "Hari",
     "umkmHaveBankAccount": "UMKM punya rekening?",
-    "branchDKI": "Cabang Bank DKI"
+    "branchDKI": "Cabang Bank DKI",
+    "umkmTotal": "Total UMKM",
+    "nib": "Nomor Induk Berusaha (NIB)",
+    "fullNameDistributor": "Nama Lengkap Pemilik Distributor",
+    "phoneDistributor": "Nomor Handphone Usaha/Pemilik Distributor",
+    "nikDistributor": "NIK Pemilik Distributor",
+    "npwpBusiness": "NPWP Usaha",
+    "province": "Provinsi",
+    "regencyOrCity": "Kabupaten/Kota",
+    "district": "Kecamatan",
+    "subDistrict": "Kelurahan",
+    "zipCode": "Kode Pos",
+    "namePIC": "Nama PIC",
+    "jobPositionPIC": "Jabatan PIC",
+    "emailPIC": "Email PIC"
   },
   "placeholder": {
     "input": "Masukkan {label}",

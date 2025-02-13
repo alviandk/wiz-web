@@ -146,6 +146,13 @@ export const useSidebar = () => {
       icon: 'icon-file.svg',
       subItems: [],
     },
+    {
+      id: 19,
+      name: t('menu.multiDistributor'),
+      link: '/multi-distributor',
+      icon: 'menu-multi-distributor.svg',
+      subItems: [],
+    },
   ]
 
   const menuProfile = ref([
