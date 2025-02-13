@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('menu.waitingApproval') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('menu.waitingApproval')">
+  <NuxtLayout name="sidebar" :title="t('menu.waitingApproval')">
     <MemberWaitingApproval />
   </NuxtLayout>
 </template>

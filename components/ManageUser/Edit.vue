@@ -2,12 +2,10 @@
 import Divider from 'primevue/divider'
 import SelectButton from 'primevue/selectbutton'
 import InputSwitch from 'primevue/inputswitch'
-import { useSidebar } from '~/composable/layout'
 import { useManageUserRoleStore } from '~/stores/manage-user-role'
 import { useManageUserRole } from './manage-user-setup'
 
 const { t } = useI18n()
-const { onBack } = useSidebar()
 const {
   onChangeEdit,
   onToggleModalConfirmationDelete,
@@ -23,10 +21,6 @@ const selectStatusActive = ref(true)
 
 <template>
   <div>
-    <div class="bg-transparent !text-[#2B1713] text-md font-semibold !w-fit mb-6 cursor-pointer" @click="onBack">
-      <i class="pi pi-arrow-left mr-3" />
-      {{ $t('text.back') }}
-    </div>
     <UICard>
       <form @submit.prevent="">
         <div class="flex flex-wrap md:flex-nowrap gap-3 mb-4">

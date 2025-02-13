@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('text.editUser') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('text.editUser')">
+  <NuxtLayout name="sidebar" :title="t('text.editUser')" :is-back="true">
     <ManageUserEdit />
   </NuxtLayout>
 </template>

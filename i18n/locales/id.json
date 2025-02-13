@@ -40,6 +40,7 @@
     "addData": "Tambah Data",
     "editData": "Edit Data",
     "importCsv": "Impor CSV",
+    "exportCsv": "Ekspor CSV",
     "totalData": "Total {x} data",
     "editProduct": "Edit Produk",
     "deleteUmkm": "Hapus UMKM?",
@@ -80,6 +81,7 @@
     "addUser": "Tambah User",
     "editUser": "Edit User",
     "addRole": "Tambah Role",
+    "editRole": "Edit Role",
     "active": "Aktif",
     "nonActive": "Tidak Aktif",
     "deleteUserData": "Hapus data User?",
@@ -104,7 +106,8 @@
     "addCategory": "Tambah Kategori",
     "editCategoryData": "Ubah Data: {code}",
     "deleteCategory": "Hapus kategori?",
-    "deleteCategoryInformation": "Data yang akan Anda hapus {catName}"
+    "deleteCategoryInformation": "Data yang akan Anda hapus {catName}",
+    "csvLeads": "CSV Leads"
   },
   "menu": {
     "profile": "Profil",
@@ -127,11 +130,13 @@
     "manageUserRole": "Pengelolaan User & Role",
     "user": "User",
     "role": "Role",
-    "termsAndPolicy": "Syarat & Ketentuan"
+    "termsAndPolicy": "Syarat & Ketentuan",
+    "leadsData": "Data Leads"
   },
   "page": {
     "home": {
       "welcome": "Selamat datang Distributor!",
+      "welcomeAdmin": "Selamat datang Admin WIZYSTEM!",
       "subInfo": "Silakan masuk menggunakan akun Anda.",
       "presentBy": "Present by:",
       "supportBy": "Support by:"
@@ -221,7 +226,8 @@
     "code": "Code",
     "categoryCode": "Kode Kategori",
     "categoryName": "Nama Kategori",
-    "totalProduct": "Jumlah Produk"
+    "totalProduct": "Jumlah Produk",
+    "allDistributor": "Semua Distributor"
   },
   "placeholder": {
     "input": "Masukkan {label}",

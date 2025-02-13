@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('text.addProduct') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('text.addProduct')">
+  <NuxtLayout name="sidebar" :title="t('text.addProduct')" :is-back="true">
     <ProductMasterAdd />
   </NuxtLayout>
 </template>

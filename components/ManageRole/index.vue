@@ -27,22 +27,22 @@ import { roleDataTable } from '~/utilities/dummy'
     </div>
     <UITable :value="roleDataTable">
       <template #default>
-        <Column field="id" :header="$t('label.id')" sortable style="width: 25%">
+        <Column field="id" :header="$t('label.id')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="roleName" :header="$t('label.roleName')" sortable style="width: 25%">
+        <Column field="roleName" :header="$t('label.roleName')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="description" :header="$t('label.description')" sortable style="width: 25%">
+        <Column field="description" :header="$t('label.description')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="action" :header="$t('label.action')" style="width: 10%">
+        <Column field="action" :header="$t('label.action')" style="min-width: 6rem">
           <template #body>
             <ElementsButton
               class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"

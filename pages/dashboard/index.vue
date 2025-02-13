@@ -6,7 +6,7 @@ useServerSeoMeta({ title: t('text.dashboard') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('text.dashboard')">
+  <NuxtLayout name="sidebar" :title="t('text.dashboard')">
     <Dashboard />
   </NuxtLayout>
 </template>

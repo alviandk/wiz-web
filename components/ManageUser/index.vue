@@ -27,28 +27,28 @@ const { t } = useI18n()
     </div>
     <UITable :value="userData">
       <template #default>
-        <Column field="fullName" :header="$t('label.fullName')" sortable style="width: 20%">
+        <Column field="fullName" :header="$t('label.fullName')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="username" :header="$t('label.username')" sortable style="width: 20%">
+        <Column field="username" :header="$t('label.username')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="role" :header="$t('label.role')" sortable style="width: 20%">
+        <Column field="role" :header="$t('label.role')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="phoneNumber" :header="$t('label.noHp')" style="width: 20%" />
-        <Column field="email" :header="$t('label.email')" sortable style="width: 20%">
+        <Column field="phoneNumber" :header="$t('label.noHp')" style="min-width: 10rem" />
+        <Column field="email" :header="$t('label.email')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="status" :header="$t('label.status')" sortable style="width: 20%">
+        <Column field="status" :header="$t('label.status')" sortable style="min-width: 8rem">
           <template #sorticon>
             <IconSortable />
           </template>
@@ -58,7 +58,7 @@ const { t } = useI18n()
             </p>
           </template>
         </Column>
-        <Column field="action" :header="$t('label.action')" style="width: 20%; text-align: center">
+        <Column field="action" :header="$t('label.action')" style="min-width: 6rem; text-align: center">
           <template #body>
             <ElementsButton
               class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"

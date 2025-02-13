@@ -25,27 +25,30 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
     </div>
     <UITable :value="manageDashboardDataTable">
       <template #default>
-        <Column field="title" :header="$t('label.title')" sortable style="width: 20%">
+        <Column field="title" :header="$t('label.title')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
+          <template #body="slotProps">
+            <p class="text-sm font-semibold">{{ slotProps.data.title }}</p>
+          </template>
+        </Column>
+        <Column field="description" :header="$t('label.description')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="description" :header="$t('label.description')" sortable style="width: 20%">
+        <Column field="priority" :header="$t('label.priority')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="priority" :header="$t('label.priority')" sortable style="width: 20%">
+        <Column field="role" :header="$t('label.role')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="role" :header="$t('label.role')" sortable style="width: 20%">
-          <template #sorticon>
-            <IconSortable />
-          </template>
-        </Column>
-        <Column field="action" :header="$t('label.action')" style="width: 20%; text-align: center">
+        <Column field="action" :header="$t('label.action')" style="min-width: 6rem; text-align: center">
           <template #body>
             <ElementsButton
               class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"

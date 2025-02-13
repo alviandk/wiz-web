@@ -4,7 +4,7 @@ useServerSeoMeta({ title: t('text.addDashboard') })
 </script>
 
 <template>
-  <NuxtLayout name="sidebar" :page-title="t('text.addDashboard')">
+  <NuxtLayout name="sidebar" :title="t('text.addDashboard')" :is-back="true">
     <DashboardAdd />
   </NuxtLayout>
 </template>

@@ -68,7 +68,7 @@ const selectedOrderTransactionData = ref()
             <IconSortable />
           </template>
         </Column>
-        <Column field="totalOrder" :header="$t('label.totalOrder')" sortable style="min-width: 10rem">
+        <Column field="totalOrder" :header="$t('label.totalOrder')" sortable style="min-width: 8rem">
           <template #sorticon>
             <IconSortable />
           </template>
@@ -90,19 +90,19 @@ const selectedOrderTransactionData = ref()
           <template #body="slotProps">
             <p
               v-if="slotProps.data.status === 'waiting_confirmation'"
-              class="rounded-full px-2 p-1.5 w-max text-[#2E8CE2] bg-[#DEEDFF]"
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#2E8CE2] bg-[#DEEDFF]"
             >
               {{ t('text.waitingConfirmation') }}
             </p>
             <p
               v-else-if="slotProps.data.status === 'order_processed' || slotProps.data.status === 'in_delivery'"
-              class="rounded-full px-2 p-1.5 w-max text-[#F78431] bg-[#FFF6E0]"
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#F78431] bg-[#FFF6E0]"
             >
               {{ slotProps.data.status === 'order_processed' ? t('text.orderProcessed') : t('text.inDelivery') }}
             </p>
             <p
               v-else-if="slotProps.data.status === 'done'"
-              class="rounded-full px-2 p-1.5 w-max text-[#19C29A] bg-[#E2FAF4]"
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#19C29A] bg-[#E2FAF4]"
             >
               {{ t('text.done') }}
             </p>
@@ -110,7 +110,7 @@ const selectedOrderTransactionData = ref()
               v-else-if="
                 slotProps.data.status === 'canceled_distributor' || slotProps.data.status === 'canceled_system'
               "
-              class="rounded-full px-2 p-1.5 w-max text-[#FF3263] bg-[#FFECF0]"
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#FF3263] bg-[#FFECF0]"
             >
               {{
                 slotProps.data.status === 'canceled_distributor'

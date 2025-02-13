@@ -1,7 +1,6 @@
 <script setup lang="ts">
 type Props = {
   errors: {
-    codeDistributor?: string
     email?: string
   }
   isDisable: boolean
@@ -17,18 +16,13 @@ const props = defineProps<Props>()
       <p class="text-xl text-[#333333] mb-6 font-semibold leading-6">{{ $t('page.forgotPass.title') }}</p>
       <form class="flex flex-col gap-4" @submit.prevent="props.onSubmitForgot">
         <ElementsInputText
-          id="codeDistributor"
-          :label="$t('label.codeDistributor')"
-          :placeholder="$t('placeholder.input', { label: $t('label.codeDistributor') })"
-        />
-        <ElementsInputText
           id="email"
           :label="$t('label.email')"
           :placeholder="$t('placeholder.input', { label: $t('label.email') })"
         />
         <ElementsButton
           type="submit"
-          class="mt-1.5"
+          class="mt-1.5 bg-[#1F76B6]"
           :disabled="props.isDisable || props.isLoadingForgot"
           :is-loading="props.isLoadingForgot"
         >
@@ -38,7 +32,7 @@ const props = defineProps<Props>()
           <span class="text-[#333333] font-normal mr-2">
             {{ $t('text.haveAccount') }}
           </span>
-          <NuxtLink class="text-[#FF234B] font-semibold" to="/distributor">{{ $t('text.loginHere') }}</NuxtLink>
+          <NuxtLink class="text-[#1F76B6] font-semibold" to="/admin">{{ $t('text.loginHere') }}</NuxtLink>
         </div>
       </form>
     </div>

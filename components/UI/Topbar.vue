@@ -5,22 +5,22 @@ import Divider from 'primevue/divider'
 // import { useAuthStore } from '~/stores/auth'
 
 type Props = {
-  pageTitle?: string
-  onClick: () => void
+  pageTitle?: any
+  isBack?: any
 }
 
 const props = defineProps<Props>()
 
-const { onChangeVisibleProfile, visibleMenuProfile, menuProfile } = useSidebar()
+const { onBack, onChangeVisibleProfile, visibleMenuProfile, menuProfile } = useSidebar()
 const { isModalLanguage, onToggleModalSwitchLanguage, isModalLogout, onToggleModalLogout, onLogout } = useTopBar()
 // const { myProfile } = storeToRefs(useAuthStore())
 </script>
 
 <template>
-  <div class="flex items-center justify-between bg-white border-b border-b-[#E7EAF1] px-8 py-[21px]">
-    <div class="topbar-start flex items-center gap-5">
-      <i class="pi pi-bars text-[1.2rem] cursor-pointer" @click="props.onClick"></i>
-      <span class="text-xl font-semibold">{{ pageTitle }}</span>
+  <div class="flex items-center justify-between bg-white border-b border-b-[#E7EAF1] px-8 py-[16px]">
+    <div class="topbar-start flex items-center gap-2">
+      <i v-if="isBack" class="pi pi-arrow-left py-2 pr-2 text-lg cursor-pointer" @click="onBack" />
+      <span class="text-xl font-semibold">{{ props.pageTitle }}</span>
     </div>
     <div class="topbar-end flex items-center gap-5">
       <img src="/images/icon-bell.svg" class="cursor-pointer" />
