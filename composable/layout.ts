@@ -111,29 +111,36 @@ export const useSidebar = () => {
         {
           id: 13,
           name: t('menu.unitMaster'),
-          link: '/product-unit-layer',
+          link: '/unit-layer',
         },
       ],
     },
     {
       id: 14,
+      name: t('menu.leadsData'),
+      link: '/leads',
+      icon: 'icon-umbrella.svg',
+      subItems: [],
+    },
+    {
+      id: 15,
       name: t('menu.manageUserRole'),
       icon: 'icon-group-people.svg',
       subItems: [
         {
-          id: 15,
+          id: 16,
           name: t('menu.user'),
           link: '/user',
         },
         {
-          id: 16,
+          id: 17,
           name: t('menu.role'),
           link: '/role',
         },
       ],
     },
     {
-      id: 17,
+      id: 18,
       name: t('menu.termsAndPolicy'),
       link: '/terms-and-policy',
       icon: 'icon-file.svg',

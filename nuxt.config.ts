@@ -2,6 +2,7 @@ import { availableLocales, fallbackLocale } from './i18n'
 
 export default defineNuxtConfig({
   extends: ['layers/base'],
+  devtools: { enabled: false },
 
   /* --- Private/public runtime configs (env. variables) --- */
   runtimeConfig: {},

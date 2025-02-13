@@ -29,7 +29,7 @@
     "addDashboard": "Tambah Dashboard",
     "detailDashboard": "Detail Dashboard",
     "editDashboard": "Edit Dashboard",
-    "searchData": "Cari Data",
+    "searchData": "Cari data",
     "writeDescProduct": "Tulis Deskripsi Produk",
     "deleteDashboard": "Hapus data Dashboard?",
     "deleteDashboardInformation": "Data yang akan Anda hapus {title}",
@@ -107,7 +107,13 @@
     "editCategoryData": "Ubah Data: {code}",
     "deleteCategory": "Hapus kategori?",
     "deleteCategoryInformation": "Data yang akan Anda hapus {catName}",
-    "csvLeads": "CSV Leads"
+    "csvLeads": "CSV Leads",
+    "importDataLeads": "Impor Data Leads",
+    "importInformation": "Unduh Template Leads di bawah, lakukan pengisian sesuai format yang ada, lalu unggah kembali.",
+    "leadTemplate": "Template Leads",
+    "exportDataLeads": "Expor Data Leads",
+    "exportInformation": "Mohon diperhatikan sebelum mengunduh, informasi di atas merupakan data yang ditampilkan berdasarkan penggunaan filter yang Anda gunakan di halaman utama Data Leads.",
+    "downloadData": "Unduh Data"
   },
   "menu": {
     "profile": "Profil",
@@ -184,6 +190,7 @@
     "submissionDate": "Tanggal Pengajuan",
     "reasonRejected": "Alasan Penolakan",
     "personalInformation": "Informasi Data Diri",
+    "identityInformation": "Identitas Diri",
     "loanApplicationStatus": "Status Pengajuan Pinjaman",
     "memberCode": "Nomor Anggota",
     "memberCodeWiz": "Nomor Anggota WIZ",
@@ -227,7 +234,16 @@
     "categoryCode": "Kode Kategori",
     "categoryName": "Nama Kategori",
     "totalProduct": "Jumlah Produk",
-    "allDistributor": "Semua Distributor"
+    "allDistributor": "Semua Distributor",
+    "distributorName": "Nama Distributor",
+    "averagesBuy": "Rata-rata Pembelian",
+    "averagesBuyMonth": "Rata-rata Pembelian/Bulan",
+    "distributor": "Distributor",
+    "saldoPlafonRecommendation": "Rekomendasi Saldo Plafon",
+    "topOrCash": "Top/Cash",
+    "day": "Hari",
+    "umkmHaveBankAccount": "UMKM punya rekening?",
+    "branchDKI": "Cabang Bank DKI"
   },
   "placeholder": {
     "input": "Masukkan {label}",

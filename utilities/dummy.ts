@@ -170,3 +170,19 @@ export const productCategoryTable = [
     total: 8,
   },
 ]
+
+export const leadsData = [
+  {
+    id: 1,
+    distributorName: 'Distributor Pertama',
+    businessName: 'Warung Sunda Budi',
+    fullName: 'Rezky Kurniawan',
+    businessAddress: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
+    phoneNo: '6281331631888',
+    averagesBuy: 'Rp9.378.383',
+    averagesBuyMonth: 'Rp28.135.149',
+    saldoPlafonRecommendation: 'Rp20.000.000 - Rp50.000.000',
+    topOrCash: 'TOP 7 Hari',
+    branchDKI: 'KC Balaikota',
+  },
+]
