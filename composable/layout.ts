@@ -110,33 +110,47 @@ export const useSidebar = () => {
         },
         {
           id: 13,
-          name: t('menu.unitMaster'),
-          link: '/product-unit-layer',
+          name: t('menu.unitLayerProduct'),
+          link: '/unit-layer',
         },
       ],
     },
     {
       id: 14,
+      name: t('menu.leadsData'),
+      link: '/leads',
+      icon: 'icon-umbrella.svg',
+      subItems: [],
+    },
+    {
+      id: 15,
       name: t('menu.manageUserRole'),
       icon: 'icon-group-people.svg',
       subItems: [
         {
-          id: 15,
+          id: 16,
           name: t('menu.user'),
           link: '/user',
         },
         {
-          id: 16,
+          id: 17,
           name: t('menu.role'),
           link: '/role',
         },
       ],
     },
     {
-      id: 17,
+      id: 18,
       name: t('menu.termsAndPolicy'),
       link: '/terms-and-policy',
       icon: 'icon-file.svg',
+      subItems: [],
+    },
+    {
+      id: 19,
+      name: t('menu.multiDistributor'),
+      link: '/multi-distributor',
+      icon: 'menu-multi-distributor.svg',
       subItems: [],
     },
   ]
@@ -230,7 +244,8 @@ export const useTopBar = () => {
 
   function onLogout() {
     useLogout()
-    navigateTo('/')
+    const role = useCookie(LOGIN_ROLE).value
+    navigateTo(`/${role}`)
   }
 
   return {

@@ -170,3 +170,41 @@ export const productCategoryTable = [
     total: 8,
   },
 ]
+
+export const leadsData = [
+  {
+    id: 1,
+    distributorName: 'Distributor Pertama',
+    businessName: 'Warung Sunda Budi',
+    fullName: 'Rezky Kurniawan',
+    businessAddress: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
+    phoneNo: '6281331631888',
+    averagesBuy: 'Rp9.378.383',
+    averagesBuyMonth: 'Rp28.135.149',
+    saldoPlafonRecommendation: 'Rp20.000.000 - Rp50.000.000',
+    topOrCash: 'TOP 7 Hari',
+    branchDKI: 'KC Balaikota',
+  },
+]
+
+export const multiDistributorData = [
+  {
+    id: 1,
+    distributorName: 'PDC',
+    distributorCode: 'PDC001',
+    distributorAddress: 'Jalan ABC No. 129,...',
+    phone: '6281331631000',
+    email: 'pdc@gmail.com',
+    total_umkm: 140,
+  },
+]
+
+export const unitLayerData = [
+  {
+    id: 1,
+    code: 'dus',
+    name: 'dus',
+    desc: 'kardus indomie',
+    total: 4,
+  },
+]

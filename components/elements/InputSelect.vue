@@ -1,10 +1,33 @@
+<script lang="ts" setup>
+import Dropdown from 'primevue/dropdown'
+import InputIcon from 'primevue/inputicon'
+
+type Props = {
+  id: string
+  label?: string
+  iconPosition?: 'left' | 'right'
+  errorMessage?: string
+  isRequired?: boolean
+  classLabel?: string
+  class?: string
+  classErrorMessage?: string
+  itemClass?: string
+  rootClass?: string
+  containerClass?: string
+}
+const props = defineProps<Props>()
+const field = useField<string>(props.id)
+</script>
+
 <template>
-  <div :class="`flex flex-col w-full ${props.containerClass}`">
+  <div :class="`flex flex-col  gap-1.5 w-full ${props.containerClass}`">
     <label :for="props.id" :class="`font-bold text-sm text-[#353F45] ${props.classLabel}`">
       {{ props.label }} <span v-if="props.isRequired" class="text-red-500">*</span>
     </label>
-    <span :class="`${props.iconPosition === 'left' ? 'p-input-icon-left' : 'p-input-icon-right'}`">
-      <slot name="icon" />
+    <div class="relative" :icon-position="`${props.iconPosition === 'left' ? 'left' : 'right'}`">
+      <InputIcon class="absolute left-3.5 top-3.5">
+        <slot name="icon" />
+      </InputIcon>
       <Dropdown
         :id="props.id"
         v-bind="$attrs"
@@ -23,32 +46,12 @@
         }"
         empty-message=" "
       />
-    </span>
+    </div>
     <span v-if="props.errorMessage" :class="`text-[#EB3821] text-sm ${props.classErrorMessage}`">
       {{ props.errorMessage }}
     </span>
   </div>
 </template>
-
-<script lang="ts" setup>
-import Dropdown from 'primevue/dropdown'
-
-type Props = {
-  id: string
-  label?: string
-  iconPosition?: 'left' | 'right'
-  errorMessage?: string
-  isRequired?: boolean
-  classLabel?: string
-  class?: string
-  classErrorMessage?: string
-  itemClass?: string
-  rootClass?: string
-  containerClass?: string
-}
-const props = defineProps<Props>()
-const field = useField<string>(props.id)
-</script>
 
 <style scoped>
 .p-dropdown.p-disabled {

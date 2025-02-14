@@ -32,7 +32,7 @@ const props = defineProps<Props>()
         />
         <ElementsButton
           type="submit"
-          class="mt-1.5 bg-[#1F76B6]"
+          class="mt-1.5 blue-dark-button"
           :disabled="props.isDisable || props.isLoadingLogin"
           :is-loading="props.isLoadingLogin"
         >

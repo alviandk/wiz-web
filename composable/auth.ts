@@ -37,6 +37,7 @@ export const useLogin = () => {
   const onSubmitLogin = handleSubmit((form) => {
     console.log('form submit', form) // eslint-disable-line
     // sementara, hilangkan navigasi ketika sudah integrasi karna sudah menggunakan middleware`
+    useCookieData(LOGIN_ROLE).value = 'distributor'
     navigateTo('/dashboard')
   })
 
