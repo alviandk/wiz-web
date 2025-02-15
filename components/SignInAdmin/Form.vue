@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 type Props = {
   errors: {
-    username?: string
+    email?: string
     password?: string
   }
+  msgError: string
   isDisable: boolean
   isLoadingLogin: boolean
   onSubmitLogin: () => void
@@ -21,15 +22,21 @@ const props = defineProps<Props>()
       <p class="text-sm text-[#68788D] font-normal mb-6">{{ $t('page.home.subInfo') }}</p>
       <form class="flex flex-col gap-4" @submit.prevent="props.onSubmitLogin">
         <ElementsInputText
-          id="username"
+          id="email"
           :label="$t('label.username')"
+          :error-message="props.errors.email"
           :placeholder="$t('placeholder.input', { label: $t('label.username') })"
         />
         <ElementsInputPassword
           id="password"
           :label="$t('label.password')"
+          :error-message="props.errors.password"
           :placeholder="$t('placeholder.input', { label: $t('label.password') })"
         />
+
+        <p v-if="props.msgError" class="text-[#EB3821] text-sm font-normal">
+          {{ msgError }}
+        </p>
         <ElementsButton
           type="submit"
           class="mt-1.5 blue-dark-button"

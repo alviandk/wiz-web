@@ -278,7 +278,20 @@
   },
   "validation": {
     "requiredFreeText": "{label} perlu diisi",
-    "requiredSelect": "{label} perlu dipilih"
+    "requiredSelect": "{label} perlu dipilih",
+    "email": "Format email harus {label}",
+    "passwordNotMatch": "Kata sandi tidak sama",
+    "minPass": "{label} minimal 8 karakter",
+    "maxPass": "{label} maksimal 16 karakter",
+    "passwordInRule": "Kata sandi tanpa spasi, & min. punya 1 huruf kecil, 1 huruf besar, 1 angka, dan 1 simbol",
+    "number": "{label} wajib angka",
+    "length16": "{label} berisi 16 digit",
+    "noCapitalNoSpaces": "{label} tidak huruf kapital dan tidak ada spasi",
+    "phoneRole": "Nomor telepon hanya angka dan di awali dengan angka 0",
+    "phone": "{label} hanya angka dan di awali dengan angka {number}",
+    "available": "{label} tersedia",
+    "notAvailable": "{label} sudah terdaftar",
+    "letters": "Kolom {label} wajib diisi dengan huruf"
   },
   "termsAndPolicy": {
     "general": {
