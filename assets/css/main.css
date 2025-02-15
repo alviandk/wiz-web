@@ -32,6 +32,12 @@
   background-color: #1f76b6 !important;
 }
 
+.red-outline-button {
+  color: #ff234b !important;
+  background-color: transparent !important;
+  border: 1px solid #ff234b !important;
+}
+
 /* SelectButton */
 .p-selectbutton .p-button {
   border: 1px solid #d1d5db;
