@@ -128,6 +128,9 @@
     "cantDeleteDistributor": "Tidak dapat menghapus Distributor",
     "deleteDistributorInformation": "{x} masih mempunyai 140 UMKM. Tidak dapat menghapus Distributor.",
     "addUnitLayer": "Tambah Unit/Layer",
+    "editUnitLayer": "Edit Unit/Layer",
+    "deleteUnitLayer": "Hapus Unit/Layer?",
+    "deleteUnitLayerInfo": "Data yang akan Anda hapus {x}",
     "dataLeads": "Data Leads",
     "noDataLeads": "Tidak Data Leads"
   },

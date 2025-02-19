@@ -1,4 +1,6 @@
 export const useUnitLayer = () => {
+  const { isEditableUnit, setIsEditableUnit } = useProductStore()
+
   const isModalAdd = ref(false)
   const isModalEdit = ref(false)
   const isModalDelete = ref(false)
@@ -15,6 +17,10 @@ export const useUnitLayer = () => {
     isModalDelete.value = !isModalDelete.value
   }
 
+  function onChangeEditUnit() {
+    setIsEditableUnit(true)
+  }
+
   return {
     isModalAdd,
     onToggleModalAdd,
@@ -24,6 +30,9 @@ export const useUnitLayer = () => {
 
     isModalDelete,
     onToggleModalDelete,
+
+    isEditableUnit,
+    onChangeEditUnit,
   }
 }
 

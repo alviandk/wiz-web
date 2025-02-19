@@ -1,6 +1,7 @@
 export const useProductStore = defineStore('product', () => {
   const isEditableProduct = ref(false)
   const isEditableCategory = ref(false)
+  const isEditableUnit = ref(false)
 
   function setIsEditableProduct(param: boolean) {
     isEditableProduct.value = param
@@ -10,12 +11,19 @@ export const useProductStore = defineStore('product', () => {
     isEditableCategory.value = param
   }
 
+  function setIsEditableUnit(param: boolean) {
+    isEditableUnit.value = param
+  }
+
   return {
     isEditableProduct,
     setIsEditableProduct,
 
     isEditableCategory,
     setIsEditableCategory,
+
+    isEditableUnit,
+    setIsEditableUnit,
   }
 })
 
