@@ -63,6 +63,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'waiting_confirmation',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 2,
@@ -73,6 +74,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'order_processed',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 3,
@@ -83,6 +85,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'in_delivery',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 4,
@@ -93,6 +96,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'canceled_distributor',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 5,
@@ -103,6 +107,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'canceled_system',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 6,
@@ -113,6 +118,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'done',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
 ]
 

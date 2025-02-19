@@ -63,7 +63,7 @@ const selectedOrderTransactionData = ref()
             <IconSortable />
           </template>
         </Column>
-        <Column field="completionDate" :header="$t('label.completionDate')" sortable style="min-width: 10rem">
+        <Column field="address" :header="$t('label.address')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
