@@ -230,7 +230,7 @@ const { isEditable } = storeToRefs(useMultiDistributorStore())
             {{ $t('text.save') }}
           </ElementsButton>
 
-          <ElementsButton v-if="!isEditable" class="!w-fit blue-light-button" @click="onChangeEdit">
+          <ElementsButton v-if="!isEditable" class="!w-fit red-light-button" @click="onChangeEdit">
             <IconEditBlue class="mr-3" />
             {{ $t('text.editDistributor') }}
           </ElementsButton>
@@ -253,7 +253,7 @@ const { isEditable } = storeToRefs(useMultiDistributorStore())
           <p class="pb-10 text-base font-normal">{{ $t('text.deleteDistributorInformation', { x: 'PIC' }) }}</p>
 
           <div class="flex gap-4 items-center justify-center">
-            <ElementsButton class="blue-dark-button" @click="slotProps.closeCallback">
+            <ElementsButton class="red-dark-button" @click="slotProps.closeCallback">
               <p class="w-full font-semibold">{{ $t('text.understand') }}</p>
             </ElementsButton>
           </div>

@@ -2,10 +2,16 @@ import { useBinaanUmkmStore } from '~/stores/binaan-umkm'
 
 export const useBinaanUmkm = () => {
   const { isEditable, setIsEditable } = useBinaanUmkmStore()
+
+  const isModalImport = ref(false)
   const isModalConfirmationDelete = ref(false)
 
   function onChangeEdit() {
     setIsEditable(true)
+  }
+
+  function onToggleModalImport() {
+    isModalImport.value = !isModalImport.value
   }
 
   function onToggleModalConfirmationDelete() {
@@ -19,6 +25,9 @@ export const useBinaanUmkm = () => {
   return {
     isEditable,
     onChangeEdit,
+
+    isModalImport,
+    onToggleModalImport,
 
     isModalConfirmationDelete,
     onToggleModalConfirmationDelete,

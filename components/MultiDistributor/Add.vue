@@ -162,7 +162,7 @@ const { onBack } = useSidebar()
           <ElementsButton class="!w-[120px] blue-outline-button" @click="onBack">
             {{ $t('text.cancel') }}
           </ElementsButton>
-          <ElementsButton class="!w-[120px] blue-dark-button" disabled>
+          <ElementsButton class="!w-[120px] red-dark-button" disabled>
             {{ $t('text.save') }}
           </ElementsButton>
         </div>

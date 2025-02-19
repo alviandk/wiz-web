@@ -3,7 +3,7 @@ import Column from 'primevue/column'
 import SelectButton from 'primevue/selectbutton'
 import Checkbox from 'primevue/checkbox'
 import { manageMemberHistoryTable } from '~/utilities/dummy'
-import { useMember } from './member-setup'
+import { useMember } from '../member-setup'
 
 const { t } = useI18n()
 const { isModalFilter, onToggleModalFilter } = useMember()
@@ -48,11 +48,10 @@ const businessTypes = ref([
           </template>
         </Column>
         <Column field="fullName" :header="$t('label.fullName')" style="min-width: 10rem" />
-        <Column field="noHp" :header="$t('label.noHp')" style="text-transform: capitalize" />
         <Column
           field="gender"
           :header="$t('label.genderRequired')"
-          style="min-width: 8rem; text-transform: capitalize"
+          style="text-transform: capitalize; min-width: 8rem"
           sortable
         >
           <template #body="slotProps">
@@ -62,12 +61,17 @@ const businessTypes = ref([
             <IconSortable />
           </template>
         </Column>
-        <Column field="submissionDate" :header="$t('label.submissionDate')" sortable style="min-width: 8rem">
+        <Column field="businessType" :header="$t('label.businessType')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="businessType" :header="$t('label.businessType')" sortable style="min-width: 10rem">
+        <Column field="submissionDate" :header="$t('label.submissionDate')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
+        </Column>
+        <Column field="reasonRejected" :header="$t('label.reasonRejected')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
@@ -76,26 +80,13 @@ const businessTypes = ref([
           <template #sorticon>
             <IconSortable />
           </template>
-          <template #body="slotProps">
-            <p
-              class="rounded-full px-2 p-1.5 w-fit text-xs font-medium"
-              :class="
-                slotProps.data.status_approval === 'bank_confirmation'
-                  ? 'text-[#F78431] bg-[#FFF6E0]'
-                  : 'text-[#2E8CE2] bg-[#DEEDFF]'
-              "
-            >
-              {{
-                slotProps.data.status_approval === 'bank_confirmation'
-                  ? t('text.bankConfirmation')
-                  : t('text.waitingApproval')
-              }}
-            </p>
-          </template>
         </Column>
         <Column field="action" :header="$t('label.action')" style="min-width: 6rem; text-align: center">
           <template #body>
-            <ElementsButton class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5" @click="navigateTo('/member/1')">
+            <ElementsButton
+              class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"
+              @click="navigateTo('/member/1?s=rejected')"
+            >
               {{ $t('text.detail') }}
             </ElementsButton>
           </template>
@@ -149,8 +140,8 @@ const businessTypes = ref([
               <SelectButton
                 v-model="selectedStatus"
                 :options="[
-                  { name: t('text.waitingApproval'), value: 'waiting_approval' },
-                  { name: t('text.bankConfirmation'), value: 'bank_confirmation' },
+                  { name: t('text.rejectDistributor'), value: 'reject_distributor' },
+                  { name: t('text.rejectBank'), value: 'reject_bank' },
                 ]"
                 option-label="name"
                 :pt="{

@@ -38,6 +38,16 @@
   border: 1px solid #ff234b !important;
 }
 
+.red-light-button {
+  color: #ff234b !important;
+  background-color: #fdf0f1 !important;
+}
+
+.red-dark-button {
+  color: #ffffff !important;
+  background-color: #ff234b !important;
+}
+
 /* SelectButton */
 .p-selectbutton .p-button {
   border: 1px solid #d1d5db;

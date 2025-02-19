@@ -196,7 +196,7 @@ const {
             <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
           </div>
           <div class="grid grid-cols-2 content-center gap-3 mt-4">
-            <img src="/images/upload-image-blue.svg" class="cursor-pointer" />
+            <img src="/images/upload-file-red.svg" class="cursor-pointer" />
             <!-- <div class="rounded-xl border border-dashed !border-color-[#1F76B6] px-6 text-center py-3">
               <FileUpload
                 name="demo[]"
@@ -294,7 +294,7 @@ const {
             <div class="flex items-center h-full rounded-xl border px-6 text-center py-3">
               <div>
                 <p class="text-xs font-normal text-[#333333] mb-4">{{ $t('text.importInformation') }}</p>
-                <ElementsButton class="w-fit blue-light-button">{{ $t('text.leadTemplate') }}</ElementsButton>
+                <ElementsButton class="w-fit red-light-button">{{ $t('text.leadTemplate') }}</ElementsButton>
               </div>
             </div>
           </div>
@@ -340,7 +340,7 @@ const {
             <Divider />
             <div class="flex items-center justify-between gap-3">
               <p class="text-sm font-normal text-[#333333] w-[50%]">{{ $t('text.exportInformation') }}</p>
-              <ElementsButton class="!w-[150px] blue-dark-button">
+              <ElementsButton class="!w-[150px] red-dark-button">
                 <IconDownload class="mr-2" />
                 {{ $t('text.downloadData') }}
               </ElementsButton>

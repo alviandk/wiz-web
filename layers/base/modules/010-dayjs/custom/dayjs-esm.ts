@@ -3,6 +3,7 @@ import dayjs from 'dayjs/esm'
 // timezone related
 import dayjsPluginUtc from 'dayjs/esm/plugin/utc'
 import dayjsPluginTimeZone from 'dayjs/esm/plugin/timezone'
+import localeId from 'dayjs/esm/locale/id'
 
 // locales related
 import dayjsPluginLocaleDate from 'dayjs/esm/plugin/localeData'
@@ -12,6 +13,7 @@ import dayjsPluginUpdateLocale from 'dayjs/esm/plugin/updateLocale'
 // custom
 import dayjsCustomPluginHuman from './dayjs-plugin-human'
 
+dayjs.locale(localeId)
 dayjs.extend(dayjsPluginUtc)
 dayjs.extend(dayjsPluginTimeZone)
 dayjs.extend(dayjsPluginLocaleDate)
