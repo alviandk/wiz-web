@@ -1,12 +1,10 @@
 import { object, string } from 'yup'
-import { useMemberStore } from '~/stores/member'
 
 const keyLocalization = 'validation.requiredFreeText'
 
 export const useMember = () => {
   const { t } = useI18n()
 
-  const memberStore = useMemberStore()
   const isDisable = ref(false)
   const isModalFilter = ref(false)
   const isModalApprove = ref(false)
@@ -24,14 +22,9 @@ export const useMember = () => {
     isModalReject.value = !isModalReject.value
   }
 
-  function goToMemberCompleteHistory(name: string) {
-    memberStore.setMemberSelectedHistory(name)
-    memberStore.setIsShowCompleteHistory(true)
-  }
-
   function onBackHistory() {
-    memberStore.setIsShowCompleteHistory(false)
-    memberStore.setMemberSelectedHistory('')
+    // memberStore.setIsShowCompleteHistory(false)
+    // memberStore.setMemberSelectedHistory('')
   }
 
   const validationSchema = toTypedSchema(
@@ -65,7 +58,6 @@ export const useMember = () => {
 
     isDisable,
     onSubmit,
-    goToMemberCompleteHistory,
     onBackHistory,
   }
 }

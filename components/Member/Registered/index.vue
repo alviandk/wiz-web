@@ -39,6 +39,7 @@ const businessTypes = ref([
         </ElementsInputText>
       </div>
     </div>
+
     <UITable :value="manageMemberHistoryTable">
       <template #default>
         <Column field="codeMember" :header="$t('label.codeMember')" sortable style="min-width: 10rem">
@@ -70,6 +71,15 @@ const businessTypes = ref([
           </template>
         </Column>
         <Column field="businessType" :header="$t('label.businessType')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
+        </Column>
+        <Column field="leads" :header="$t('label.dataLeadsOrNo')" style="min-width: 10rem" sortable>
+          <template #body="slotProps">
+            <p v-if="slotProps.data.leads === 'yes'" class="text-[#FF234B] text-sm">{{ $t('text.dataLeads') }}</p>
+            <p v-else class="text-sm text-[#99A6B8]">{{ $t('text.noDataLeads') }}</p>
+          </template>
           <template #sorticon>
             <IconSortable />
           </template>

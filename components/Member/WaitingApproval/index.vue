@@ -56,15 +56,7 @@ const businessTypes = ref([
           </template>
         </Column>
         <Column field="noHp" :header="$t('label.noHp')" style="text-transform: capitalize" />
-        <Column
-          field="gender"
-          :header="$t('label.genderRequired')"
-          style="min-width: 10rem; text-transform: capitalize"
-          sortable
-        >
-          <template #body="slotProps">
-            {{ slotProps.data.gender === 'L' ? $t('text.male') : $t('text.female') }}
-          </template>
+        <Column field="businessType" :header="$t('label.businessType')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
@@ -77,7 +69,11 @@ const businessTypes = ref([
             {{ useDayjs(slotProps.data.submissionDate).format('DD MMM YYYY, HH:mm') }}
           </template>
         </Column>
-        <Column field="businessType" :header="$t('label.businessType')" sortable style="min-width: 10rem">
+        <Column field="leads" :header="$t('label.dataLeadsOrNo')" style="min-width: 10rem" sortable>
+          <template #body="slotProps">
+            <p v-if="slotProps.data.leads === 'yes'" class="text-[#FF234B] text-sm">{{ $t('text.dataLeads') }}</p>
+            <p v-else class="text-sm text-[#99A6B8]">{{ $t('text.noDataLeads') }}</p>
+          </template>
           <template #sorticon>
             <IconSortable />
           </template>

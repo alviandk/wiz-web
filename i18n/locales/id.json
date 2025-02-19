@@ -127,7 +127,9 @@
     "editDistributor": "Edit Distributor",
     "cantDeleteDistributor": "Tidak dapat menghapus Distributor",
     "deleteDistributorInformation": "{x} masih mempunyai 140 UMKM. Tidak dapat menghapus Distributor.",
-    "addUnitLayer": "Tambah Unit/Layer"
+    "addUnitLayer": "Tambah Unit/Layer",
+    "dataLeads": "Data Leads",
+    "noDataLeads": "Tidak Data Leads"
   },
   "menu": {
     "profile": "Profil",
@@ -276,7 +278,8 @@
     "zipCode": "Kode Pos",
     "namePIC": "Nama PIC",
     "jobPositionPIC": "Jabatan PIC",
-    "emailPIC": "Email PIC"
+    "emailPIC": "Email PIC",
+    "dataLeadsOrNo": "Data Leads/Tidak Data Leads"
   },
   "placeholder": {
     "input": "Masukkan {label}",

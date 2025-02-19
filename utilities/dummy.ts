@@ -11,11 +11,12 @@ export const manageMemberHistoryTable = [
     gender: 'L',
     businessType: 'Kuliner',
     submissionDate: '2022-12-12',
-    reasonRejected: 'description',
+    reasonRejected: 'Ditolak Bank DKI',
     status: 'Ditolak Distributor',
     status_approval: 'bank_confirmation',
     noHp: '098123123123123',
     age: '20',
+    leads: 'yes',
   },
   {
     id: 2,
@@ -24,11 +25,12 @@ export const manageMemberHistoryTable = [
     gender: 'L',
     businessType: 'Kuliner',
     submissionDate: '2022-12-12',
-    reasonRejected: 'description',
+    reasonRejected: 'Data kurang lengkap',
     status: 'Ditolak Distributor',
     status_approval: 'waiting_approval',
     noHp: '098123123123123',
     age: '20',
+    leads: 'no',
   },
 ]
 
