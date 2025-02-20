@@ -2,17 +2,11 @@
 import Column from 'primevue/column'
 import Divider from 'primevue/divider'
 import Menu from 'primevue/menu'
-// import FileUpload from 'primevue/fileupload'
-// import Button from 'primevue/button'
-// import Badge from 'primevue/badge'
 
 import { leadsData } from '~/utilities/dummy'
+import { useLeads } from '../leads-setup'
 
-// import { usePrimeVue } from 'primevue/config'
-// import { useToast } from 'primevue/usetoast'
-import { useLeads } from './leads-setup'
-
-// const toast = useToast()
+const { t } = useI18n()
 const {
   listCSV,
   visibleCSV,
@@ -22,44 +16,6 @@ const {
   onToggleModalExport,
   onChangeVisibleCSV,
 } = useLeads()
-
-// const $primevue = usePrimeVue()
-// const fileData = ref([])
-
-// const formatSize = (bytes: any) => {
-//   const k = 1024
-//   const dm = 3
-//   const sizes = $primevue.config.locale?.fileSizeTypes || 0
-//   console.log('sizes', sizes) // eslint-disable-line
-
-//   if (bytes === 0) {
-//     return `0 ${[sizes]}`
-//   }
-
-//   const i = Math.floor(Math.log(bytes) / Math.log(k))
-//   const formattedSize = parseFloat((bytes / k ** i).toFixed(dm))
-
-//   return `${formattedSize} ${sizes}`
-// }
-
-// const onTemplatedUpload = (e: any) => {
-//   console.log('eventt', e.target.value) // eslint-disable-line
-//   toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 })
-// }
-
-// const totalSize = ref(0)
-// const totalSizePercent = ref(0)
-// const onRemoveTemplatingFile = (file: any, removeFileCallback: any, index: any) => {
-//   removeFileCallback(index)
-//   totalSize.value -= parseInt(formatSize(file.size), 10)
-//   totalSizePercent.value = totalSize.value / 10
-// }
-// const onSelectedFiles = (event: any) => {
-//   fileData.value = event.files
-//   fileData.value.forEach((file: any) => {
-//     totalSize.value += parseInt(formatSize(file.size), 10)
-//   })
-// }
 </script>
 
 <template>
@@ -67,11 +23,16 @@ const {
     <div class="flex justify-between items-center gap-3 mb-4">
       <div>
         <ElementsInputSelect
-          id="allDistributor"
-          :placeholder="$t('label.allDistributor')"
+          id="statusLeadsDistributor"
+          :placeholder="$t('label.allStatus')"
           :options="[
-            { name: 'A', code: 'a' },
-            { name: 'B', code: 'b' },
+            { name: 'Menunggu Approval', code: '1' },
+            { name: 'Verifikasi Bank DKI', code: '2' },
+            { name: 'Pembuatan Rekening', code: '3' },
+            { name: 'Cetak Dokumen', code: '4' },
+            { name: 'Ditolak Bank', code: '5' },
+            { name: 'Ditolak Distributor', code: '6' },
+            { name: 'Disetujui', code: '7' },
           ]"
           option-label="name"
           option-value="code"
@@ -87,6 +48,12 @@ const {
           >
             <template #icon> <i class="pi pi-search"></i> </template>
           </ElementsInputText>
+        </div>
+        <div>
+          <ElementsButton @click="navigateTo('/leads/add')">
+            <i class="pi pi-plus mr-2"></i>
+            {{ $t('text.addData') }}
+          </ElementsButton>
         </div>
         <div
           class="relative bg-[#fdf0f1] rounded-xl h-[48px] text-sm px-4 py-3 cursor-pointer"
@@ -126,24 +93,17 @@ const {
         </div>
       </div>
     </div>
+
     <UITable :value="leadsData">
       <template #default>
-        <Column field="distributorName" :header="$t('label.distributorName')" style="min-width: 10rem">
-          <template #body="slotProps">
-            <p class="font-semibold">{{ slotProps.data.distributorName }}</p>
-          </template>
-          <template #sorticon>
-            <IconSortable />
-          </template>
-        </Column>
         <Column field="businessName" :header="$t('label.businessName')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
           </template>
         </Column>
-        <Column field="fullName" :header="$t('label.fullName')" sortable style="min-width: 10rem">
-          <template #sorticon>
-            <IconSortable />
+        <Column field="fullNameOwner" :header="$t('label.fullNameOwner')" style="min-width: 10rem">
+          <template #body="slotProps">
+            <p class="font-semibold">{{ slotProps.data.fullNameOwner }}</p>
           </template>
         </Column>
         <Column field="businessAddress" :header="$t('label.businessAddress')" sortable style="min-width: 8rem">
@@ -152,9 +112,46 @@ const {
           </template>
         </Column>
         <Column field="phoneNo" :header="$t('label.noHp')" style="min-width: 10rem" />
-        <Column field="averagesBuy" :header="$t('label.averagesBuy')" sortable style="min-width: 10rem">
+        <Column field="averagesBuyMonth" :header="$t('label.averagesBuyMonth')" sortable style="min-width: 10rem">
           <template #sorticon>
             <IconSortable />
+          </template>
+        </Column>
+        <Column field="status" :header="$t('label.status')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
+          <template #body="slotProps">
+            <p
+              v-if="slotProps.data.status === 'waiting_confirmation'"
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#2E8CE2] bg-[#DEEDFF]"
+            >
+              {{ t('text.waitingConfirmation') }}
+            </p>
+            <p
+              v-else-if="slotProps.data.status === 'verification'"
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#F78431] bg-[#FFF6E0]"
+            >
+              Verifikasi Bank DKI
+            </p>
+            <p
+              v-else-if="slotProps.data.status === 'approve'"
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#19C29A] bg-[#E2FAF4]"
+            >
+              Disetujui
+            </p>
+            <p
+              v-else-if="
+                slotProps.data.status === 'canceled_distributor' || slotProps.data.status === 'canceled_system'
+              "
+              class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#FF3263] bg-[#FFECF0]"
+            >
+              {{
+                slotProps.data.status === 'canceled_distributor'
+                  ? t('text.canceledDistributor')
+                  : t('text.canceledSystem')
+              }}
+            </p>
           </template>
         </Column>
         <Column field="action" :header="$t('label.action')" style="min-width: 10rem">

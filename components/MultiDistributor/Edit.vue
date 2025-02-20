@@ -217,13 +217,10 @@ const { isEditable } = storeToRefs(useMultiDistributorStore())
         </div>
 
         <div class="flex gap-3 items-center justify-end mt-6">
-          <ElementsButton
-            class="rounded-xl blue-outline-button !w-fit !px-2.5"
-            @click="onToggleModalConfirmationDelete"
-          >
-            <IconTrashBlue />
+          <ElementsButton class="rounded-xl red-outline-button !w-fit !px-2.5" @click="onToggleModalConfirmationDelete">
+            <IconTrash />
           </ElementsButton>
-          <ElementsButton v-if="isEditable" class="!w-[120px] blue-outline-button" @click="isEditable = false">
+          <ElementsButton v-if="isEditable" class="!w-[120px] red-outline-button" @click="isEditable = false">
             {{ $t('text.cancel') }}
           </ElementsButton>
           <ElementsButton v-if="isEditable" class="!w-[120px]" disabled>
@@ -231,7 +228,7 @@ const { isEditable } = storeToRefs(useMultiDistributorStore())
           </ElementsButton>
 
           <ElementsButton v-if="!isEditable" class="!w-fit red-light-button" @click="onChangeEdit">
-            <IconEditBlue class="mr-3" />
+            <IconEdit class="mr-3" />
             {{ $t('text.editDistributor') }}
           </ElementsButton>
         </div>

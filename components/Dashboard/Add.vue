@@ -58,7 +58,7 @@ const { onBack } = useSidebar()
           </div>
           <Divider type="dashed" />
           <div class="flex justify-end">
-            <ElementsButton class="!w-fit" @click="navigateTo('/dashboard/add/1')">
+            <ElementsButton class="!w-fit">
               <i class="pi pi-plus mr-3"></i>
               {{ $t('text.add') }}
             </ElementsButton>
@@ -68,7 +68,7 @@ const { onBack } = useSidebar()
           <ElementsButton class="!w-[120px] bg-transparent !border !border-[#FF234B] !text-[#FF234B]" @click="onBack">
             {{ $t('text.cancel') }}
           </ElementsButton>
-          <ElementsButton class="!w-[120px]">
+          <ElementsButton class="!w-[120px]" disabled>
             {{ $t('text.save') }}
           </ElementsButton>
         </div>

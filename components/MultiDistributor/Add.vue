@@ -159,7 +159,7 @@ const { onBack } = useSidebar()
         </div>
 
         <div class="flex gap-3 items-center justify-end mt-6">
-          <ElementsButton class="!w-[120px] blue-outline-button" @click="onBack">
+          <ElementsButton class="!w-[120px] red-outline-button" @click="onBack">
             {{ $t('text.cancel') }}
           </ElementsButton>
           <ElementsButton class="!w-[120px] red-dark-button" disabled>

@@ -28,7 +28,7 @@ const { isModalImport, onToggleModalImport } = useBinaanUmkm()
           </ElementsInputText>
         </div>
         <div>
-          <ElementsButton @click="navigateTo('/manage-umkm/add/1')">
+          <ElementsButton @click="navigateTo('/manage-umkm/add')">
             <i class="pi pi-plus mr-2"></i>
             {{ $t('text.addData') }}
           </ElementsButton>

@@ -13,6 +13,8 @@
     "apply": "Terapkan",
     "start": "Dari",
     "until": "Hingga",
+    "have": "Punya",
+    "dontHave": "Tidak Punya",
     "forgotPassword": "Lupa Password?",
     "sendConfirmation": "Kirim Konfirmasi",
     "haveAccount": "Sudah punya akun?",
@@ -132,7 +134,11 @@
     "deleteUnitLayer": "Hapus Unit/Layer?",
     "deleteUnitLayerInfo": "Data yang akan Anda hapus {x}",
     "dataLeads": "Data Leads",
-    "noDataLeads": "Tidak Data Leads"
+    "noDataLeads": "Tidak Data Leads",
+    "addDataLeads": "Tambah Data Leads",
+    "editDataLeads": "Ubah Data Leads",
+    "deleteDataLeads": "Hapus Data Leads?",
+    "deleteDataLeadsInfo": "Data yang akan Anda hapus {x}"
   },
   "menu": {
     "profile": "Profil",
@@ -267,6 +273,7 @@
     "topOrCash": "Top/Cash",
     "day": "Hari",
     "umkmHaveBankAccount": "UMKM punya rekening?",
+    "umkmHaveOtherBankAccount": "UMKM punya rekening lain?",
     "branchDKI": "Cabang Bank DKI",
     "umkmTotal": "Total UMKM",
     "nib": "Nomor Induk Berusaha (NIB)",

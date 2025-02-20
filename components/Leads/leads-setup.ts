@@ -3,6 +3,7 @@ export const useLeads = () => {
   const visibleCSV = ref(false)
   const isModalImport = ref(false)
   const isModalExport = ref(false)
+  const isModalDelete = ref(false)
 
   const listCSV = ref([
     { label: t('text.importCsv'), icon: 'import' },
@@ -21,6 +22,10 @@ export const useLeads = () => {
     isModalExport.value = !isModalExport.value
   }
 
+  function onToggleModalDelete() {
+    isModalDelete.value = !isModalDelete.value
+  }
+
   return {
     listCSV,
     visibleCSV,
@@ -32,6 +37,9 @@ export const useLeads = () => {
     onToggleModalExport,
 
     onChangeVisibleCSV,
+
+    isModalDelete,
+    onToggleModalDelete,
   }
 }
 

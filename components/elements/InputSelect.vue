@@ -39,7 +39,7 @@ const field = useField<string>(props.id)
           input: { class: 'text-sm' },
           wrapper: { class: 'text-sm' },
           item: ({ context }) => ({
-            class: `text-[#353F45] hover:text-[#FF234B] hover:bg-[#FDF0F1] focus:bg-white ${context.selected ? 'bg-[#FDF0F1] text-[#FF234B]' : ''} ${
+            class: `text-[#353F45] hover:text-[#28BCDC] hover:bg-[#F1FDFF] focus:bg-white ${context.selected ? 'bg-[#F1FDFF] text-[#28BCDC]' : ''} ${
               props.itemClass
             }`,
           }),

@@ -17,7 +17,7 @@ import { multiDistributorData } from '~/utilities/dummy'
         </ElementsInputText>
       </div>
       <div>
-        <ElementsButton class="red-dark-button" @click="navigateTo('/multi-distributor/add/1')">
+        <ElementsButton class="red-dark-button" @click="navigateTo('/multi-distributor/add')">
           <i class="pi pi-plus mr-3"></i>
           {{ $t('text.addDistributor') }}
         </ElementsButton>
