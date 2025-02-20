@@ -84,7 +84,7 @@ const selectedProducts = ref()
         </Column>
         <Column field="action" :header="$t('label.action')" style="min-width: 10rem">
           <template #body>
-            <ElementsButton class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5">
+            <ElementsButton class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5" @click="navigateTo('/product-master/1')">
               {{ $t('text.detail') }}
             </ElementsButton>
           </template>

@@ -1,7 +1,7 @@
-import { useProductCategoryStore } from '~/stores/product'
+import { useProductStore } from '~/stores/product'
 
 export const useProductCategory = () => {
-  const { isEditableCategory, setIsEditableCategory } = useProductCategoryStore()
+  const { isEditableCategory, setIsEditableCategory } = useProductStore()
 
   const isModalCategoryAdd = ref(false)
   const isModalCategoryEdit = ref(false)

@@ -217,21 +217,18 @@ const { isEditable } = storeToRefs(useMultiDistributorStore())
         </div>
 
         <div class="flex gap-3 items-center justify-end mt-6">
-          <ElementsButton
-            class="rounded-xl blue-outline-button !w-fit !px-2.5"
-            @click="onToggleModalConfirmationDelete"
-          >
-            <IconTrashBlue />
+          <ElementsButton class="rounded-xl red-outline-button !w-fit !px-2.5" @click="onToggleModalConfirmationDelete">
+            <IconTrash />
           </ElementsButton>
-          <ElementsButton v-if="isEditable" class="!w-[120px] blue-outline-button" @click="isEditable = false">
+          <ElementsButton v-if="isEditable" class="!w-[120px] red-outline-button" @click="isEditable = false">
             {{ $t('text.cancel') }}
           </ElementsButton>
           <ElementsButton v-if="isEditable" class="!w-[120px]" disabled>
             {{ $t('text.save') }}
           </ElementsButton>
 
-          <ElementsButton v-if="!isEditable" class="!w-fit blue-light-button" @click="onChangeEdit">
-            <IconEditBlue class="mr-3" />
+          <ElementsButton v-if="!isEditable" class="!w-fit red-light-button" @click="onChangeEdit">
+            <IconEdit class="mr-3" />
             {{ $t('text.editDistributor') }}
           </ElementsButton>
         </div>
@@ -253,7 +250,7 @@ const { isEditable } = storeToRefs(useMultiDistributorStore())
           <p class="pb-10 text-base font-normal">{{ $t('text.deleteDistributorInformation', { x: 'PIC' }) }}</p>
 
           <div class="flex gap-4 items-center justify-center">
-            <ElementsButton class="blue-dark-button" @click="slotProps.closeCallback">
+            <ElementsButton class="red-dark-button" @click="slotProps.closeCallback">
               <p class="w-full font-semibold">{{ $t('text.understand') }}</p>
             </ElementsButton>
           </div>

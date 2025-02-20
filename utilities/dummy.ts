@@ -11,11 +11,12 @@ export const manageMemberHistoryTable = [
     gender: 'L',
     businessType: 'Kuliner',
     submissionDate: '2022-12-12',
-    reasonRejected: 'description',
+    reasonRejected: 'Ditolak Bank DKI',
     status: 'Ditolak Distributor',
     status_approval: 'bank_confirmation',
     noHp: '098123123123123',
     age: '20',
+    leads: 'yes',
   },
   {
     id: 2,
@@ -24,11 +25,12 @@ export const manageMemberHistoryTable = [
     gender: 'L',
     businessType: 'Kuliner',
     submissionDate: '2022-12-12',
-    reasonRejected: 'description',
+    reasonRejected: 'Data kurang lengkap',
     status: 'Ditolak Distributor',
     status_approval: 'waiting_approval',
     noHp: '098123123123123',
     age: '20',
+    leads: 'no',
   },
 ]
 
@@ -61,6 +63,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'waiting_confirmation',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 2,
@@ -71,6 +74,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'order_processed',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 3,
@@ -81,6 +85,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'in_delivery',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 4,
@@ -91,6 +96,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'canceled_distributor',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 5,
@@ -101,6 +107,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'canceled_system',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
   {
     id: 6,
@@ -111,6 +118,7 @@ export const orderTransactionData = [
     orderer: 'Budi Agusta',
     totalPayment: 'Rp6.400.000',
     status: 'done',
+    address: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
   },
 ]
 
@@ -177,6 +185,7 @@ export const leadsData = [
     distributorName: 'Distributor Pertama',
     businessName: 'Warung Sunda Budi',
     fullName: 'Rezky Kurniawan',
+    fullNameOwner: 'Rezky Kurniawan',
     businessAddress: 'Jalan ABC No. 129, Kebayoran Lama, Jakarta Selatan, DKI Jakarta',
     phoneNo: '6281331631888',
     averagesBuy: 'Rp9.378.383',
@@ -184,6 +193,22 @@ export const leadsData = [
     saldoPlafonRecommendation: 'Rp20.000.000 - Rp50.000.000',
     topOrCash: 'TOP 7 Hari',
     branchDKI: 'KC Balaikota',
+    status: 'verification',
+  },
+  {
+    id: 2,
+    distributorName: 'Distributor Pertama',
+    businessName: 'CV. Wijaya Abadi',
+    fullName: 'Putra Wijaya',
+    fullNameOwner: 'Putra Wijaya',
+    businessAddress: 'Jakarta Pusat, DKI...',
+    phoneNo: '6281331631617',
+    averagesBuy: 'Rp9.378.383',
+    averagesBuyMonth: 'Rp 10.748.946',
+    saldoPlafonRecommendation: 'Rp20.000.000 - Rp50.000.000',
+    topOrCash: 'TOP 7 Hari',
+    branchDKI: 'KC Balaikota',
+    status: 'approve',
   },
 ]
 

@@ -13,6 +13,8 @@
     "apply": "Terapkan",
     "start": "Dari",
     "until": "Hingga",
+    "have": "Punya",
+    "dontHave": "Tidak Punya",
     "forgotPassword": "Lupa Password?",
     "sendConfirmation": "Kirim Konfirmasi",
     "haveAccount": "Sudah punya akun?",
@@ -45,6 +47,9 @@
     "exportCsv": "Ekspor CSV",
     "totalData": "Total {x} data",
     "editProduct": "Edit Produk",
+    "importDataUmkm": "Impor Data UMKM",
+    "importUmkmInformation": "Unduh Template Umkm di bawah, lakukan pengisian sesuai format yang ada, lalu unggah kembali.",
+    "umkmTemplate": "Template UMKM",
     "deleteUmkm": "Hapus UMKM?",
     "deleteUmkmInformation": "Data yang akan Anda hapus {name}",
     "editProfile": "Edit Profil",
@@ -68,6 +73,10 @@
     "startDate": "Tgl. Mulai",
     "endDate": "Tgl. Akhir",
     "doConfirmApproval": "Lakukan konfirmasi approval UMKM",
+    "rejectUmkm": "Tolak data UMKM?",
+    "rejectInformation": "Data yang akan Anda tolak {x}",
+    "approveUmkm": "Setujui data UMKM?",
+    "approveInformation": "Data yang akan Anda setujui {x}",
     "noTransaction": "{name} belum pernah melakukan transaksi pembelian",
     "order": "Pembelian",
     "waitingConfirmation": "Menunggu Konfirmasi",
@@ -120,7 +129,18 @@
     "editDistributor": "Edit Distributor",
     "cantDeleteDistributor": "Tidak dapat menghapus Distributor",
     "deleteDistributorInformation": "{x} masih mempunyai 140 UMKM. Tidak dapat menghapus Distributor.",
-    "addUnitLayer": "Tambah Unit/Layer"
+    "addUnitLayer": "Tambah Unit/Layer",
+    "editUnitLayer": "Edit Unit/Layer",
+    "deleteUnitLayer": "Hapus Unit/Layer?",
+    "deleteUnitLayerInfo": "Data yang akan Anda hapus {x}",
+    "dataLeads": "Data Leads",
+    "noDataLeads": "Tidak Data Leads",
+    "addDataLeads": "Tambah Data Leads",
+    "editDataLeads": "Ubah Data Leads",
+    "deleteDataLeads": "Hapus Data Leads?",
+    "deleteDataLeadsInfo": "Data yang akan Anda hapus {x}",
+    "deleteProduct": "Hapus produk?",
+    "deleteProductInfo": "{x} sedang ditampilkan di user UMKM. Lanjutkan hapus produk ini?"
   },
   "menu": {
     "profile": "Profil",
@@ -255,6 +275,7 @@
     "topOrCash": "Top/Cash",
     "day": "Hari",
     "umkmHaveBankAccount": "UMKM punya rekening?",
+    "umkmHaveOtherBankAccount": "UMKM punya rekening lain?",
     "branchDKI": "Cabang Bank DKI",
     "umkmTotal": "Total UMKM",
     "nib": "Nomor Induk Berusaha (NIB)",
@@ -269,7 +290,8 @@
     "zipCode": "Kode Pos",
     "namePIC": "Nama PIC",
     "jobPositionPIC": "Jabatan PIC",
-    "emailPIC": "Email PIC"
+    "emailPIC": "Email PIC",
+    "dataLeadsOrNo": "Data Leads/Tidak Data Leads"
   },
   "placeholder": {
     "input": "Masukkan {label}",
@@ -278,7 +300,20 @@
   },
   "validation": {
     "requiredFreeText": "{label} perlu diisi",
-    "requiredSelect": "{label} perlu dipilih"
+    "requiredSelect": "{label} perlu dipilih",
+    "email": "Format email harus {label}",
+    "passwordNotMatch": "Kata sandi tidak sama",
+    "minPass": "{label} minimal 8 karakter",
+    "maxPass": "{label} maksimal 16 karakter",
+    "passwordInRule": "Kata sandi tanpa spasi, & min. punya 1 huruf kecil, 1 huruf besar, 1 angka, dan 1 simbol",
+    "number": "{label} wajib angka",
+    "length16": "{label} berisi 16 digit",
+    "noCapitalNoSpaces": "{label} tidak huruf kapital dan tidak ada spasi",
+    "phoneRole": "Nomor telepon hanya angka dan di awali dengan angka 0",
+    "phone": "{label} hanya angka dan di awali dengan angka {number}",
+    "available": "{label} tersedia",
+    "notAvailable": "{label} sudah terdaftar",
+    "letters": "Kolom {label} wajib diisi dengan huruf"
   },
   "termsAndPolicy": {
     "general": {

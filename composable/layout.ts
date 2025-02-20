@@ -2,6 +2,7 @@ import { getActivePinia } from 'pinia'
 import { onClickOutside } from '@vueuse/core'
 import { IS_LOGIN, LOGIN_ROLE } from '~/constants/cookies'
 import { useAuthStore } from '~/stores/auth'
+import { useAppsStore } from '~/stores/apps'
 
 export function useResetAllPinia() {
   const activepinia = getActivePinia()
@@ -32,8 +33,10 @@ export function useLogout() {
 export const useSidebar = () => {
   const { t } = useI18n()
   const props = useAttrs()
+  const route = useRoute()
   const router = useRouter()
   const { myProfile } = storeToRefs(useAuthStore())
+  const appsStore = useAppsStore()
 
   const target = ref(null)
   const visibleMenu = ref(false)
@@ -44,16 +47,19 @@ export const useSidebar = () => {
       id: 1,
       name: t('menu.dashboard'),
       icon: 'icon-dashboard.svg',
+      link: '/dashboard',
       subItems: [
         {
           id: 2,
           name: t('menu.dashboard'),
           link: '/dashboard',
+          subItems: [],
         },
         {
           id: 3,
           name: t('menu.manageDashboard'),
           link: '/dashboard/manage',
+          subItems: [],
         },
       ],
     },
@@ -61,21 +67,25 @@ export const useSidebar = () => {
       id: 4,
       name: t('menu.listMemberUmkm'),
       icon: 'icon-store.svg',
+      link: '/member',
       subItems: [
         {
           id: 5,
           name: t('menu.waitingApproval'),
           link: '/member/waiting-approval',
+          subItems: [],
         },
         {
           id: 6,
           name: t('menu.registeredMember'),
           link: '/member/registered',
+          subItems: [],
         },
         {
           id: 7,
           name: t('menu.rejectedHistory'),
           link: '/member/history',
+          subItems: [],
         },
       ],
     },
@@ -97,21 +107,25 @@ export const useSidebar = () => {
       id: 10,
       name: t('menu.productMaster'),
       icon: 'icon-box.svg',
+      link: '/product',
       subItems: [
         {
           id: 11,
           name: t('menu.productMaster'),
           link: '/product-master',
+          subItems: [],
         },
         {
           id: 12,
           name: t('menu.manageCategory'),
           link: '/product-category',
+          subItems: [],
         },
         {
           id: 13,
           name: t('menu.unitLayerProduct'),
           link: '/unit-layer',
+          subItems: [],
         },
       ],
     },
@@ -126,16 +140,19 @@ export const useSidebar = () => {
       id: 15,
       name: t('menu.manageUserRole'),
       icon: 'icon-group-people.svg',
+      link: '/user-role',
       subItems: [
         {
           id: 16,
           name: t('menu.user'),
           link: '/user',
+          subItems: [],
         },
         {
           id: 17,
           name: t('menu.role'),
           link: '/role',
+          subItems: [],
         },
       ],
     },
@@ -198,6 +215,24 @@ export const useSidebar = () => {
     return '-'
   }
 
+  function isActiveAccordion(link: any, listMenu: { link: any }[]) {
+    const splitPath = `/${route.path.split('/')[1]}`
+    if (link === '/member') {
+      return link === splitPath ? 0 : -1
+    }
+    return listMenu.map((item) => item.link).findIndex((item) => item === splitPath) >= 0 ? 0 : -1
+  }
+
+  function onSetMenu(link: any, subItems?: { link: any }[]) {
+    if (subItems?.length) {
+      appsStore.setMenu(link)
+      navigateTo(link + subItems[0].link)
+    } else {
+      appsStore.setMenu(link)
+      navigateTo(link)
+    }
+  }
+
   onClickOutside(target, () => {
     visibleMenu.value = false
   })
@@ -220,10 +255,13 @@ export const useSidebar = () => {
 
     target,
     visibleMenu,
+    isActiveAccordion,
     onChangeVisible,
+    onSetMenu,
     onBack,
 
     menuProfile,
+    appsState: appsStore.getAllState(),
     initialName: computed(() => getInitialName()),
     visibleMenuProfile,
     onChangeVisibleProfile,
