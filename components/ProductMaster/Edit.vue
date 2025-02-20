@@ -2,12 +2,10 @@
 import SelectButton from 'primevue/selectbutton'
 import InputSwitch from 'primevue/inputswitch'
 import Divider from 'primevue/divider'
-import { useSidebar } from '~/composable/layout'
 import { useProductStore } from '~/stores/product'
 import { useProductMaster } from './product-master-setup'
 
 const { t } = useI18n()
-const { onBack } = useSidebar()
 const {
   onToggleModalBack,
   isModalBack,
@@ -16,8 +14,14 @@ const {
   isModalConfirmationDelete,
 } = useProductMaster()
 const { isEditableProduct } = storeToRefs(useProductStore())
+const { setIsEditableProduct } = useProductStore()
 const selectedHalal = ref(null)
 const selectStatusActive = ref(true)
+
+function cancelSaveProduct() {
+  setIsEditableProduct(false)
+  isModalBack.value = false
+}
 </script>
 
 <template>
@@ -206,7 +210,11 @@ const selectStatusActive = ref(true)
         <div class="flex gap-3 items-center justify-between mt-6">
           <p class="text-sm text-[#68788D] font-medium">Ditambahkan pada: 30 Okt 2022, 09.41</p>
           <div class="flex gap-3">
-            <ElementsButton v-if="!isEditableProduct" class="rounded-xl red-outline-button !w-fit !px-2.5">
+            <ElementsButton
+              v-if="!isEditableProduct"
+              class="rounded-xl red-outline-button !w-fit !px-2.5"
+              @click="onToggleModalConfirmationDelete"
+            >
               <IconTrash />
             </ElementsButton>
             <ElementsButton v-if="isEditableProduct" class="!w-[120px] red-outline-button" @click="onToggleModalBack">
@@ -240,6 +248,7 @@ const selectStatusActive = ref(true)
           </div>
           <p class="pb-10 text-base font-normal">{{ $t('text.dataCantBeSaved') }}</p>
 
+          {{ isEditableProduct }}
           <div :class="`flex gap-4`">
             <ElementsButton
               class="!text-[#FF234B] !border !border-[#FF234B] !bg-transparent"
@@ -247,7 +256,7 @@ const selectStatusActive = ref(true)
             >
               <p class="w-full font-semibold">{{ $t('text.cancel') }}</p>
             </ElementsButton>
-            <ElementsButton @click="onBack">
+            <ElementsButton @click="cancelSaveProduct">
               <p class="w-full font-semibold">{{ $t('text.yesGetBack') }}</p>
             </ElementsButton>
           </div>
@@ -256,27 +265,13 @@ const selectStatusActive = ref(true)
     </UIDialog>
 
     <!-- Popup Delete -->
-    <UIDialog
-      root-class="max-w-[460px]"
-      container-class="p-6"
+    <UIModalConfirmation
       :visible="isModalConfirmationDelete"
-      @update:visible="onToggleModalConfirmationDelete"
-    >
-      <template #default="slotProps">
-        <div class="flex flex-col gap-4">
-          <div class="flex justify-between w-full">
-            <p class="text-xl font-semibold">{{ t('text.cantDeleteDistributor') }}</p>
-            <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
-          </div>
-          <p class="pb-10 text-base font-normal">{{ $t('text.deleteDistributorInformation', { x: 'PIC' }) }}</p>
-
-          <div class="flex gap-4 items-center justify-center">
-            <ElementsButton class="red-dark-button" @click="slotProps.closeCallback">
-              <p class="w-full font-semibold">{{ $t('text.understand') }}</p>
-            </ElementsButton>
-          </div>
-        </div>
-      </template>
-    </UIDialog>
+      :title="$t('text.deleteProduct')"
+      :description="$t('text.deleteProductInfo', { x: 'PAKET 1: SEMBAKO UNTUK TOKO KELONTONG' })"
+      :text-confirm="$t('text.delete')"
+      :on-cancel="onToggleModalConfirmationDelete"
+      :on-submit="() => {}"
+    />
   </div>
 </template>

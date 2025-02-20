@@ -9,7 +9,7 @@ import { useSidebar } from '~/composable/layout'
 // }
 // const props = defineProps<Props>()
 
-const { props, menus, visibleMenu, onChangeVisible } = useSidebar()
+const { props, menus, visibleMenu, onChangeVisible, onSetMenu, isActiveAccordion, appsState } = useSidebar()
 </script>
 
 <template>
@@ -28,18 +28,20 @@ const { props, menus, visibleMenu, onChangeVisible } = useSidebar()
         </a>
       </div>
       <div class="layout-content-scroll h-full grid content-between">
-        <div class="layout-menu-container p-6">
+        <div class="layout-menu-container pt-6 px-2">
           <div class="flex flex-col gap-1">
             <div v-for="item in menus" :key="item.id">
               <div
                 v-if="!item.subItems.length"
-                class="w-full text-[#68788D] font-semibold text-sm h-[45px] items-center flex gap-3 cursor-pointer mb-1"
-                @click="navigateTo(item.link)"
+                class="w-full text-[#68788D] font-semibold text-sm h-[45px] items-center flex gap-3 cursor-pointer rounded-xl mb-1 !px-4 hover:bg-[#F5F7F9] hover:!text-[#FF234B]"
+                :class="appsState.menuActive.value === item.link ? 'bg-[#F5F7F9] color-primary' : ''"
+                @click="onSetMenu(item.link)"
               >
                 <img :src="`/images/${item.icon}`" alt="icon plus" class="h-4 w-4" /> <span>{{ item.name }}</span>
               </div>
               <Accordion
                 v-if="item.subItems.length"
+                :active-index="isActiveAccordion(item.link, item.subItems)"
                 :pt="{
                   root: { class: 'm-0 min-h-[45px]' },
                 }"
@@ -48,17 +50,18 @@ const { props, menus, visibleMenu, onChangeVisible } = useSidebar()
                   :pt="{
                     header: { class: 'bg-transparent border-none' },
                     headerAction: {
-                      class: 'bg-transparent border-none flex-row-reverse focus:shadow-none h-[45px] px-0',
+                      class:
+                        'bg-transparent border-none flex-row-reverse focus:shadow-none h-[45px] py-0 !px-4 rounded-xl hover:!bg-[#F5F7F9] hover:!text-[#FF234B]',
                     },
                     headerIcon: { class: 'flex-row-reverse' },
                     content: {
-                      class: '!bg-transparent border-none py-0',
+                      class: '!bg-transparent border-none p-0',
                     },
                   }"
                 >
                   <template #header>
                     <div
-                      class="text-left w-full text-sm font-semibold text-[#68788D] items-center flex gap-3 justify-start"
+                      class="text-left w-full h-full text-sm font-semibold text-[#68788D] items-center flex gap-3 justify-start hover:!text-[#FF234B]"
                     >
                       <img :src="`/images/${item.icon}`" alt="icon plus" class="h-4 w-4" />
                       <!-- <IconBlock class="h-4 w-4" /> -->
@@ -69,10 +72,10 @@ const { props, menus, visibleMenu, onChangeVisible } = useSidebar()
                     v-for="child in item.subItems"
                     :key="child.id"
                     :to="child.link"
-                    :class="`p-3 w-full block relative text-sm font-semibold text-[#68788D] rounded-xl cursor-pointer hover:bg-[#F5F7F9] hover:text-[#FF234B]`"
-                    @click="navigateTo(child.link)"
+                    class="py-3 pr-3 pl-11 w-full block relative text-sm font-semibold text-[#68788D] rounded-xl cursor-pointer hover:bg-[#F5F7F9] hover:!text-[#FF234B]"
+                    :class="appsState.menuActive.value === child.link ? 'bg-[#F5F7F9] color-primary' : ''"
+                    @click="onSetMenu(child.link, child.subItems)"
                   >
-                    <!-- ${appsState.menuActive.value === child.link ? 'bg-[#1D634A]' : ''} -->
                     {{ child.name }}
                   </div>
                 </AccordionTab>
@@ -105,12 +108,10 @@ const { props, menus, visibleMenu, onChangeVisible } = useSidebar()
         <i class="pi pi-bars text-white text-[1.2rem] cursor-pointer" @click="onChangeVisible"></i>
       </div>
       <div class="layout-content-scroll h-full grid content-between">
-        <div class="layout-menu-container p-6">
-          <div class="flex flex-col gap-1">
-            <div v-for="item in menus" :key="item.id" class="cursor-pointer" @click="onChangeVisible">
-              <div class="w-full">
-                <img :src="`/images/${item.icon}`" alt="icon plus" class="mx-auto h-4 w-4 my-4" />
-              </div>
+        <div class="layout-menu-container pt-6 px-2">
+          <div class="flex flex-col gap-3">
+            <div v-for="item in menus" :key="item.id" class="cursor-pointer w-full" @click="onChangeVisible">
+              <img :src="`/images/${item.icon}`" alt="icon plus" class="mx-auto h-4 w-4 my-3" />
             </div>
           </div>
         </div>

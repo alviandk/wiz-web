@@ -138,7 +138,9 @@
     "addDataLeads": "Tambah Data Leads",
     "editDataLeads": "Ubah Data Leads",
     "deleteDataLeads": "Hapus Data Leads?",
-    "deleteDataLeadsInfo": "Data yang akan Anda hapus {x}"
+    "deleteDataLeadsInfo": "Data yang akan Anda hapus {x}",
+    "deleteProduct": "Hapus produk?",
+    "deleteProductInfo": "{x} sedang ditampilkan di user UMKM. Lanjutkan hapus produk ini?"
   },
   "menu": {
     "profile": "Profil",
