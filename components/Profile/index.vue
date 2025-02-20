@@ -29,9 +29,13 @@ const { isEditable } = storeToRefs(useProfileStore())
         />
       </div>
       <div class="">
-        <p class="text-sm font-semibold py-3">{{ $t('label.noHp') }}</p>
+        <p class="text-sm font-semibold py-3">{{ $t('label.phoneNumber') }}</p>
         <p v-if="!isEditable" class="w-full text-sm font-normal text-[#333333] p-3">091823910283</p>
-        <ElementsInputText v-else id="noHp" :placeholder="$t('placeholder.input', { label: $t('label.noHp') })" />
+        <ElementsInputText
+          v-else
+          id="phoneNumber"
+          :placeholder="$t('placeholder.input', { label: $t('label.phoneNumber') })"
+        />
       </div>
       <div class="">
         <p class="text-sm font-semibold py-3">{{ $t('label.email') }}</p>

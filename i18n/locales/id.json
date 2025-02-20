@@ -140,7 +140,10 @@
     "deleteDataLeads": "Hapus Data Leads?",
     "deleteDataLeadsInfo": "Data yang akan Anda hapus {x}",
     "deleteProduct": "Hapus produk?",
-    "deleteProductInfo": "{x} sedang ditampilkan di user UMKM. Lanjutkan hapus produk ini?"
+    "deleteProductInfo": "{x} sedang ditampilkan di user UMKM. Lanjutkan hapus produk ini?",
+    "addTermsPolicy": "Tambah S&K",
+    "editTermsPolicy": "Ubah S&K",
+    "editLocation": "Edit Lokasi"
   },
   "menu": {
     "profile": "Profil",
@@ -165,7 +168,8 @@
     "role": "Role",
     "termsAndPolicy": "Syarat & Ketentuan",
     "leadsData": "Data Leads",
-    "multiDistributor": "Multi Distributor"
+    "multiDistributor": "Multi Distributor",
+    "configLocation": "Konfigurasi Lokasi"
   },
   "page": {
     "home": {
@@ -291,7 +295,8 @@
     "namePIC": "Nama PIC",
     "jobPositionPIC": "Jabatan PIC",
     "emailPIC": "Email PIC",
-    "dataLeadsOrNo": "Data Leads/Tidak Data Leads"
+    "dataLeadsOrNo": "Data Leads/Tidak Data Leads",
+    "createdDate": "Tgl. Ditambahkan"
   },
   "placeholder": {
     "input": "Masukkan {label}",
