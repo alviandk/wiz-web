@@ -233,3 +233,12 @@ export const unitLayerData = [
     total: 4,
   },
 ]
+
+export const termsAndPolicyData = [
+  {
+    id: 1,
+    title: 'Syarat dan Ketentuan Privasi',
+    createdDate: '2022-10-30',
+    category: 'Aplikasi',
+  },
+]
