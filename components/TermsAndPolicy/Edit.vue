@@ -3,7 +3,8 @@ import { useTermsAndPolicy } from './terms-and-policy-setup'
 
 const { t } = useI18n()
 
-const { isModalConfirmationDelete, onToggleModalConfirmationDelete, onSubmitDelete } = useTermsAndPolicy()
+const { isModalConfirmationDelete, onToggleModalConfirmationDelete, onSubmitDelete, onChangeEdit } = useTermsAndPolicy()
+const { isEditable } = storeToRefs(useTermsAndPolicyStore())
 </script>
 
 <template>
@@ -25,7 +26,10 @@ const { isModalConfirmationDelete, onToggleModalConfirmationDelete, onSubmitDele
       </div>
 
       <p class="font-semibold text-sm text-[#333333] mb-2">{{ t('text.writeTermsAndPolicy') }}</p>
-      <div class="border rounded-xl p-4">
+      <div v-if="isEditable">
+        <UIEditor />
+      </div>
+      <div v-else class="border rounded-xl p-4">
         <div>
           <p class="font-semibold text-base text-[#333333] mb-3">{{ t('termsAndPolicy.general.title') }}</p>
           <p class="font-normal text-sm text-[#333333]">{{ t('termsAndPolicy.general.description') }}</p>
@@ -49,7 +53,19 @@ const { isModalConfirmationDelete, onToggleModalConfirmationDelete, onSubmitDele
           >
             <IconTrash />
           </ElementsButton>
-          <ElementsButton class="!w-fit !bg-[#FDF0F1] !text-[#FF234B]">
+
+          <ElementsButton
+            v-if="isEditable"
+            class="!w-[120px] bg-transparent !border !border-[#FF234B] !text-[#FF234B]"
+            @click="isEditable = false"
+          >
+            {{ $t('text.cancel') }}
+          </ElementsButton>
+          <ElementsButton v-if="isEditable" class="!w-[120px]" disabled>
+            {{ $t('text.update') }}
+          </ElementsButton>
+
+          <ElementsButton v-if="!isEditable" class="!w-fit !bg-[#FDF0F1] !text-[#FF234B]" @click="onChangeEdit">
             <IconEdit class="mr-3" />
             {{ $t('text.editS&K') }}
           </ElementsButton>

@@ -61,7 +61,7 @@ const { isModalLanguage, onToggleModalSwitchLanguage, isModalLogout, onToggleMod
                   </a>
                   <Divider class="my-0 mx-4 w-auto" />
 
-                  <a
+                  <!-- <a
                     v-if="item.icon === 'change-lang'"
                     class="flex gap-4 p-4 text-sm font-medium"
                     v-bind="propsMenu.action"
@@ -70,7 +70,7 @@ const { isModalLanguage, onToggleModalSwitchLanguage, isModalLogout, onToggleMod
                     <img src="/images/icon-globe.svg" class="w-5 h-5" />
                     <div>{{ label }} <span class="font-normal">Bahasa Indonesia</span></div>
                   </a>
-                  <Divider class="my-0 mx-4 w-auto" />
+                  <Divider class="my-0 mx-4 w-auto" /> -->
 
                   <a
                     v-if="item.icon === 'logout'"

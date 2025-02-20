@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useSidebar } from '~/composable/layout'
+
 const { t } = useI18n()
+const { onBack } = useSidebar()
 </script>
 
 <template>
@@ -31,7 +34,16 @@ const { t } = useI18n()
       </div>
 
       <p class="font-semibold text-sm text-[#333333] mb-2">{{ t('text.writeTermsAndPolicy') }}</p>
-      <div>editor</div>
+      <UIEditor />
+
+      <div class="flex gap-3 items-center justify-end mt-6">
+        <ElementsButton class="!w-[120px] bg-transparent !border !border-[#FF234B] !text-[#FF234B]" @click="onBack">
+          {{ $t('text.cancel') }}
+        </ElementsButton>
+        <ElementsButton class="!w-[120px]" disabled>
+          {{ $t('text.publication') }}
+        </ElementsButton>
+      </div>
     </UICard>
   </div>
 </template>
