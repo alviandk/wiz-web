@@ -17,7 +17,7 @@ import { manageDashboardDataTable } from '~/utilities/dummy'
         </ElementsInputText>
       </div>
       <div>
-        <ElementsButton @click="navigateTo('/dashboard/add/1')">
+        <ElementsButton @click="navigateTo('/dashboard/add')">
           <i class="pi pi-plus mr-3"></i>
           {{ $t('text.addDashboard') }}
         </ElementsButton>

@@ -17,7 +17,7 @@ import { multiDistributorData } from '~/utilities/dummy'
         </ElementsInputText>
       </div>
       <div>
-        <ElementsButton class="blue-dark-button" @click="navigateTo('/multi-distributor/add/1')">
+        <ElementsButton class="red-dark-button" @click="navigateTo('/multi-distributor/add')">
           <i class="pi pi-plus mr-3"></i>
           {{ $t('text.addDistributor') }}
         </ElementsButton>
@@ -58,7 +58,7 @@ import { multiDistributorData } from '~/utilities/dummy'
         <Column field="action" :header="$t('label.action')" style="min-width: 6rem; text-align: center">
           <template #body>
             <ElementsButton
-              class="blue-dark-button !rounded-lg !text-[12px] !h-fit !w-fit py-0 px-5"
+              class="red-dark-button !rounded-lg !text-[12px] !h-fit !w-fit py-0 px-5"
               @click="navigateTo('/multi-distributor/edit/1')"
             >
               {{ $t('text.detail') }}

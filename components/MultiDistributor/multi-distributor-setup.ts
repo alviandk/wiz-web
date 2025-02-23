@@ -1,4 +1,4 @@
-import { useMultiDistributorStore } from "~/stores/multi-distributor"
+import { useMultiDistributorStore } from '~/stores/multi-distributor'
 
 export const useMultiDistributor = () => {
   const { isEditable, setIsEditable } = useMultiDistributorStore()

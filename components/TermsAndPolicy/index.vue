@@ -1,69 +1,62 @@
 <script setup lang="ts">
-import { useTermsAndPolicy } from './terms-and-policy-setup'
-
-const { t } = useI18n()
-
-const { isModalConfirmationDelete, onToggleModalConfirmationDelete, onSubmitDelete } = useTermsAndPolicy()
+import Column from 'primevue/column'
+import { termsAndPolicyData } from '~/utilities/dummy'
 </script>
 
 <template>
   <div>
-    <UICard>
-      <div class="grid grid-cols-2 mb-6">
-        <div>
-          <label class="font-semibold text-sm text-[#333333]">
-            {{ t('label.title') }}
-          </label>
-          <p class="text-sm font-normal mt-3">Syarat dan Ketentuan Privasi</p>
-        </div>
-        <div>
-          <label class="font-semibold text-sm text-[#333333]">
-            {{ t('label.category') }}
-          </label>
-          <p class="text-sm font-normal mt-3">UMKM</p>
-        </div>
+    <div class="flex justify-end items-center gap-3 mb-4">
+      <div>
+        <ElementsInputText
+          id="search"
+          :placeholder="$t('text.searchData')"
+          container-class="w-[240px]"
+          icon-position="left"
+        >
+          <template #icon> <i class="pi pi-search"></i> </template>
+        </ElementsInputText>
       </div>
-
-      <p class="font-semibold text-sm text-[#333333] mb-2">{{ t('text.writeTermsAndPolicy') }}</p>
-      <div class="border rounded-xl p-4">
-        <div>
-          <p class="font-semibold text-base text-[#333333] mb-3">{{ t('termsAndPolicy.general.title') }}</p>
-          <p class="font-normal text-sm text-[#333333]">{{ t('termsAndPolicy.general.description') }}</p>
-        </div>
-        <div>
-          <p class="font-semibold text-base text-[#333333] my-3">{{ t('termsAndPolicy.general.title') }}</p>
-          <p class="font-normal text-sm text-[#333333]">{{ t('termsAndPolicy.general.description') }}</p>
-        </div>
-        <div>
-          <p class="font-semibold text-base text-[#333333] my-3">{{ t('termsAndPolicy.general.title') }}</p>
-          <p class="font-normal text-sm text-[#333333]">{{ t('termsAndPolicy.general.description') }}</p>
-        </div>
+      <div>
+        <ElementsButton class="red-dark-button" @click="navigateTo('/terms-and-policy/add')">
+          <i class="pi pi-plus mr-3"></i>
+          {{ $t('text.addTermsPolicy') }}
+        </ElementsButton>
       </div>
-
-      <div class="flex justify-between flex-wrap md:flex-nowrap items-center mt-6">
-        <p class="font-medium text-sm text-[#68788D] pb-4 md:pb-0">Ditambahkan pada: 30 Okt 2022, 09.41</p>
-        <div class="flex gap-3 items-center justify-end">
-          <ElementsButton
-            class="rounded-xl !border !border-[#FF234B] bg-transparent !w-fit !px-2.5"
-            @click="onToggleModalConfirmationDelete"
-          >
-            <IconTrash />
-          </ElementsButton>
-          <ElementsButton class="!w-fit !bg-[#FDF0F1] !text-[#FF234B]">
-            <IconEdit class="mr-3" />
-            {{ $t('text.editS&K') }}
-          </ElementsButton>
-        </div>
-      </div>
-    </UICard>
-
-    <UIModalConfirmation
-      :visible="isModalConfirmationDelete"
-      :title="$t('text.deleteS&K')"
-      :description="$t('text.deleteS&KInformation')"
-      :text-confirm="$t('text.delete')"
-      :on-cancel="onToggleModalConfirmationDelete"
-      :on-submit="onSubmitDelete"
-    />
+    </div>
+    <UITable :value="termsAndPolicyData">
+      <template #default>
+        <Column field="title" :header="$t('label.title')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
+          <template #body="slotProps">
+            <p class="font-semibold">{{ slotProps.data.title }}</p>
+          </template>
+        </Column>
+        <Column field="createdDate" :header="$t('label.createdDate')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
+          <template #body="slotProps">
+            {{ useDayjs(slotProps.data.submissionDate).format('DD MMM YYYY, HH:mm') }}
+          </template>
+        </Column>
+        <Column field="category" :header="$t('label.category')" sortable style="min-width: 10rem">
+          <template #sorticon>
+            <IconSortable />
+          </template>
+        </Column>
+        <Column field="action" :header="$t('label.action')" style="min-width: 6rem; text-align: center">
+          <template #body>
+            <ElementsButton
+              class="red-dark-button !rounded-full !text-[12px] !h-fit !w-fit py-0 px-5"
+              @click="navigateTo('/terms-and-policy/edit/1')"
+            >
+              {{ $t('text.detail') }}
+            </ElementsButton>
+          </template>
+        </Column>
+      </template>
+    </UITable>
   </div>
 </template>

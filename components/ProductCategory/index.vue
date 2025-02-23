@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Column from 'primevue/column'
 import { productCategoryTable } from '~/utilities/dummy'
-import { useProductCategoryStore } from '~/stores/product'
+import { useProductStore } from '~/stores/product'
 import { useProductCategory } from './product-category-setup'
 
 const { t } = useI18n()
@@ -14,7 +14,7 @@ const {
   onToggleModalConfirmationDelete,
   onChangeEditCategory,
 } = useProductCategory()
-const { isEditableCategory } = storeToRefs(useProductCategoryStore())
+const { isEditableCategory } = storeToRefs(useProductStore())
 </script>
 
 <template>
@@ -89,6 +89,7 @@ const { isEditableCategory } = storeToRefs(useProductCategoryStore())
       />
     </div>
 
+    <!-- Popup Add Category -->
     <UIDialog
       root-class="max-w-[500px]"
       container-class="p-6"
@@ -128,6 +129,7 @@ const { isEditableCategory } = storeToRefs(useProductCategoryStore())
       </template>
     </UIDialog>
 
+    <!-- Popup Edit Category -->
     <UIDialog
       root-class="max-w-[500px]"
       container-class="p-6"
@@ -195,6 +197,7 @@ const { isEditableCategory } = storeToRefs(useProductCategoryStore())
       </template>
     </UIDialog>
 
+    <!-- Popup Delete Category -->
     <UIModalConfirmation
       :visible="isModalConfirmationDelete"
       :title="$t('text.deleteCategory')"

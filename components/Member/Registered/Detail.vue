@@ -1,22 +1,15 @@
 <script setup lang="ts">
-import Column from 'primevue/column'
-import { useMemberStore } from '~/stores/member'
-import { orderTransactionData } from '~/utilities/dummy'
-import { useMember } from '../member-setup'
-
 const { t } = useI18n()
-const { goToMemberCompleteHistory, onBackHistory } = useMember()
-const { memberSelectedHistory, isShowCompleteHistory } = storeToRefs(useMemberStore())
 
 const homeRoute = ref({
-  label: t('text.historyApprovalReject'),
-  route: '/member',
+  label: t('menu.registeredMember'),
+  route: '/member/registered',
 })
 const itemsBreadcrumb = ref([{ label: t('menu.detailUmkm') }])
 </script>
 <template>
   <div>
-    <div v-if="!isShowCompleteHistory">
+    <div>
       <ElementsBreadcrumb :home="homeRoute" :items="itemsBreadcrumb" />
       <UICard>
         <div class="flex flex-wrap md:flex-nowrap gap-4">
@@ -137,132 +130,18 @@ const itemsBreadcrumb = ref([{ label: t('menu.detailUmkm') }])
       <div class="mt-6">
         <div class="flex items-center pb-3 gap-3">
           <p class="text-base font-semibold">{{ $t('label.transactionHistoryCompleted') }}</p>
-          <button class="text-[#FF234B] text-sm font-semibold" @click="goToMemberCompleteHistory('Rezky Kurniawan')">
+          <button
+            class="text-[#FF234B] text-sm font-semibold"
+            @click="navigateTo(`/member/transaction-history?q=${'Rezky Kurniawan'}`)"
+          >
             {{ $t('text.seeAll') }}
           </button>
         </div>
-        <MemberRegisteredTable />
-
+        <MemberRegisteredTable :table-only="true" />
         <!-- if there's no data transaction -->
         <!-- <div class="m-auto flex justify-center items-center h-40">
         <p class="text-base font-semibold">{{ $t('text.noTransaction', { name: 'Budiman Agusta' }) }}</p>
       </div> -->
-      </div>
-    </div>
-
-    <div v-else>
-      <div
-        class="bg-transparent !text-[#2B1713] text-md font-semibold !w-fit mb-6 cursor-pointer flex items-center gap-1"
-        @click="onBackHistory"
-      >
-        <i class="pi pi-arrow-left mr-3" />
-        <p class="text-xl font-semibold">{{ memberSelectedHistory }}</p>
-      </div>
-      <div class="flex items-center gap-3 bg-[#F5F7F9] rounded-full w-fit py-1 px-4 mb-4">
-        <p class="text-sm font-medium text-[#68788D]">{{ t('label.totalPurchases') + ': ' }}</p>
-        <p class="text-base font-semibold">Rp15.930.000</p>
-        <img
-          v-tooltip.right="{
-            value: 'Total pembelian yang ditampilkan ini adalah nilai terhadap status Selesai pada pesanan',
-            pt: {
-              text: 'bg-primary font-normal text-sm',
-            },
-          }"
-          src="/images/icon-information.svg"
-          class="w-4 h-4"
-        />
-      </div>
-      <UITable :value="orderTransactionData">
-        <template #default>
-          <Column field="transactionNumber" :header="$t('label.transactionNumber')" style="min-width: 10rem">
-            <template #body="slotProps">
-              <p class="font-semibold">{{ slotProps.data.transactionNumber }}</p>
-            </template>
-          </Column>
-          <Column field="purchaseDate" :header="$t('label.purchaseDate')" sortable style="min-width: 10rem">
-            <template #sorticon>
-              <IconSortable />
-            </template>
-          </Column>
-          <Column field="completionDate" :header="$t('label.completionDate')" sortable style="min-width: 10rem">
-            <template #sorticon>
-              <IconSortable />
-            </template>
-          </Column>
-          <Column field="totalOrder" :header="$t('label.totalOrder')" sortable style="min-width: 10rem">
-            <template #sorticon>
-              <IconSortable />
-            </template>
-          </Column>
-          <Column field="orderer" :header="$t('label.orderer')" sortable style="min-width: 10rem">
-            <template #sorticon>
-              <IconSortable />
-            </template>
-          </Column>
-          <Column field="totalPayment" :header="$t('label.totalPayment')" sortable style="min-width: 10rem">
-            <template #sorticon>
-              <IconSortable />
-            </template>
-          </Column>
-          <Column field="status" :header="$t('label.status')" sortable style="min-width: 10rem">
-            <template #sorticon>
-              <IconSortable />
-            </template>
-            <template #body="slotProps">
-              <p
-                v-if="slotProps.data.status === 'waiting_confirmation'"
-                class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#2E8CE2] bg-[#DEEDFF]"
-              >
-                {{ t('text.waitingConfirmation') }}
-              </p>
-              <p
-                v-else-if="slotProps.data.status === 'order_processed' || slotProps.data.status === 'in_delivery'"
-                class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#F78431] bg-[#FFF6E0]"
-              >
-                {{ slotProps.data.status === 'order_processed' ? t('text.orderProcessed') : t('text.inDelivery') }}
-              </p>
-              <p
-                v-else-if="slotProps.data.status === 'done'"
-                class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#19C29A] bg-[#E2FAF4]"
-              >
-                {{ t('text.done') }}
-              </p>
-              <p
-                v-else-if="
-                  slotProps.data.status === 'canceled_distributor' || slotProps.data.status === 'canceled_system'
-                "
-                class="rounded-full px-2 p-1.5 text-xs font-medium w-max text-[#FF3263] bg-[#FFECF0]"
-              >
-                {{
-                  slotProps.data.status === 'canceled_distributor'
-                    ? t('text.canceledDistributor')
-                    : t('text.canceledSystem')
-                }}
-              </p>
-            </template>
-          </Column>
-          <Column field="action" :header="$t('label.action')" style="min-width: 10rem">
-            <template #body>
-              <ElementsButton
-                class="!text-[12px] !rounded-full !h-fit !w-fit py-0 px-5"
-                @click="navigateTo('/order-transaction/1')"
-              >
-                {{ $t('text.detail') }}
-              </ElementsButton>
-            </template>
-          </Column>
-        </template>
-      </UITable>
-      <div class="px-8 -mx-[32px]">
-        <UIPagination
-          :item-count="5"
-          :per-page="5"
-          :total-data="6"
-          :on-go-to-page="() => {}"
-          :on-page-size-change="() => {}"
-          :total-page="10"
-          :page="1"
-        />
       </div>
     </div>
   </div>

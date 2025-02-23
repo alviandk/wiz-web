@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import Steps from 'primevue/steps'
 import Divider from 'primevue/divider'
+import { useOrderTransaction } from './order-transaction-setup'
 
 const { t } = useI18n()
+const { isModalIngredients, onToggleModalIngredients, isModalDesc, onToggleModalDesc } = useOrderTransaction()
 
 const homeRoute = ref({
   label: t('menu.orderTransaction'),
@@ -113,13 +115,19 @@ const items = ref([
             <p>PAKET 1: SEMBAKO UNTUK TOKO KELONTONG</p>
             <p class="text-[#FF234B]">Rp3.200.000</p>
           </div>
-          <div class="w-[20%] text-sm font-normal">
+          <div class="w-[15%] text-sm font-normal">
             <p class="text-[#68788D]">{{ t('label.totalOrder') }}</p>
             <p class="text-[#333333] font-semibold">1</p>
           </div>
           <div class="w-[20%] text-sm font-normal">
+            <p class="text-[#68788D]">{{ t('label.ingredients') }}</p>
+            <p class="text-[#FF234B] font-semibold cursor-pointer" @click="onToggleModalIngredients">
+              Baca Selengkapnya
+            </p>
+          </div>
+          <div class="w-[20%] text-sm font-normal">
             <p class="text-[#68788D]">{{ t('label.productDesc') }}</p>
-            <p class="text-[#FF234B] font-semibold cursor-pointer">Baca Selengkapnya</p>
+            <p class="text-[#FF234B] font-semibold cursor-pointer" @click="onToggleModalDesc">Baca Selengkapnya</p>
           </div>
           <div class="w-[20%] text-sm font-normal">
             <p class="text-[#68788D]">{{ t('label.subtotalPayment') }}</p>
@@ -132,13 +140,19 @@ const items = ref([
             <p>PAKET 1: SEMBAKO UNTUK TOKO KELONTONG</p>
             <p class="text-[#FF234B]">Rp3.200.000</p>
           </div>
-          <div class="w-[20%] text-sm font-normal">
+          <div class="w-[15%] text-sm font-normal">
             <p class="text-[#68788D]">{{ t('label.totalOrder') }}</p>
             <p class="text-[#333333] font-semibold">1</p>
           </div>
           <div class="w-[20%] text-sm font-normal">
+            <p class="text-[#68788D]">{{ t('label.ingredients') }}</p>
+            <p class="text-[#FF234B] font-semibold cursor-pointer" @click="onToggleModalIngredients">
+              Baca Selengkapnya
+            </p>
+          </div>
+          <div class="w-[20%] text-sm font-normal">
             <p class="text-[#68788D]">{{ t('label.productDesc') }}</p>
-            <p class="text-[#FF234B] font-semibold cursor-pointer">Baca Selengkapnya</p>
+            <p class="text-[#FF234B] font-semibold cursor-pointer" @click="onToggleModalDesc">Baca Selengkapnya</p>
           </div>
           <div class="w-[20%] text-sm font-normal">
             <p class="text-[#68788D]">{{ t('label.subtotalPayment') }}</p>
@@ -150,11 +164,85 @@ const items = ref([
         </p> -->
         <Divider />
         <div class="flex justify-between">
-          <p class="w-[80%] text-[#333333] font-semibold">{{ t('label.totalPayment') }}</p>
-          <p class="w-[20%] text-[#FF234B]">Rp6.400.000</p>
+          <p class="w-full text-[#333333] font-semibold">{{ t('label.totalPayment') }}</p>
+          <p class="w-[20%] text-[#FF234B] font-semibold">Rp6.400.000</p>
         </div>
       </div>
     </UICard>
+
+    <!-- Popup Ingredients -->
+    <UIDialog
+      root-class="max-w-[500px]"
+      container-class="p-6"
+      :visible="isModalIngredients"
+      @update:visible="onToggleModalIngredients"
+    >
+      <template #default="slotProps">
+        <div class="flex justify-between w-full">
+          <p class="text-xl font-semibold">{{ t('label.ingredients') }}</p>
+          <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
+        </div>
+
+        <div class="flex flex-col gap-4 mt-4">
+          <div>
+            <p class="text-sm font-semibold">{{ $t('label.productName') }}</p>
+            <p class="text-sm">PAKET 1: SEMBAKO UNTUK TOKO KELONTONG</p>
+          </div>
+          <div>
+            <p class="text-sm font-semibold">{{ $t('label.ingredients') }}</p>
+            <ul class="text-sm text-[#333333] pl-4" style="list-style-type: disc">
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit,</li>
+              <li>Sed do eiusmod tempor incididunt</li>
+              <li>Ut enim ad minim veniam</li>
+              <li>Quis nostrud exercitation</li>
+            </ul>
+          </div>
+        </div>
+      </template>
+    </UIDialog>
+
+    <!-- Popup Product Description -->
+    <UIDialog
+      root-class="max-w-[500px]"
+      container-class="p-6"
+      :visible="isModalDesc"
+      @update:visible="onToggleModalDesc"
+    >
+      <template #default="slotProps">
+        <div class="flex justify-between w-full">
+          <p class="text-xl font-semibold">{{ t('label.productDesc') }}</p>
+          <Icon name="mdi:close" class="text-[30px] text-[#798F9F] cursor-pointer" @click="slotProps.closeCallback" />
+        </div>
+
+        <div class="flex flex-col gap-4 mt-4">
+          <div>
+            <p class="text-sm font-semibold">{{ $t('label.productName') }}</p>
+            <p class="text-sm">PAKET 1: SEMBAKO UNTUK TOKO KELONTONG</p>
+          </div>
+          <div>
+            <p class="text-sm font-semibold">{{ $t('label.productDesc') }}</p>
+            <div class="text-sm text-[#333333]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum. <br /><br />
+
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+              id est laborum. <br /><br />
+
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+              id est laborum.
+            </div>
+          </div>
+        </div>
+      </template>
+    </UIDialog>
   </div>
 </template>
 

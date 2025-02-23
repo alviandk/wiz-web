@@ -24,6 +24,9 @@ export default defineNuxtModule({
     nuxt.options.runtimeConfig.debug = {
       contexts: undefined,
     }
+    nuxt.options.runtimeConfig.sessions = {
+      token: nuxt.options.runtimeConfig?.sessions?.token ?? '',
+    }
 
     // used in fetcher.ts
     nuxt.options.runtimeConfig.endpoint = {

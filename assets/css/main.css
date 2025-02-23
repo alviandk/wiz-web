@@ -12,6 +12,14 @@
   /* color: #333333; */
 }
 
+.color-primary {
+  color: #ff234b !important;
+}
+
+.color-primary-wiz {
+  color: #1f76b6 !important;
+}
+
 .container-card {
   box-shadow: 0px 2px 16px 0px #8a8d8f33;
 }
@@ -32,14 +40,32 @@
   background-color: #1f76b6 !important;
 }
 
+.red-outline-button {
+  color: #ff234b !important;
+  background-color: transparent !important;
+  border: 1px solid #ff234b !important;
+}
+
+.red-light-button {
+  color: #ff234b !important;
+  background-color: #fdf0f1 !important;
+}
+
+.red-dark-button {
+  color: #ffffff !important;
+  background-color: #ff234b !important;
+}
+
 /* SelectButton */
 .p-selectbutton .p-button {
-  border: 1px solid #d1d5db;
+  /* border: 1px solid #d1d5db; */
+  border: none !important;
+  color: #68788d;
 }
 .p-selectbutton .p-button.p-highlight {
-  background: #ffecf0;
-  border: 1px solid #ff234b;
-  color: #ff234b !important;
+  background: #f1fdff;
+  border: 1px solid #28bcdc !important;
+  color: #28bcdc !important;
 }
 
 /* InputSwitch */
